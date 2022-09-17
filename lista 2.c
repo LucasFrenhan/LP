@@ -6,10 +6,10 @@
 
 #ifdef ex1
 /* Exercício 1 -  As ligacoes telefonicas são cobradas pela sua duracao.
-O sistema registra os instantes em que a ligacao foi iniciada e concluida.
-Escreva um programa que recebe via teclado dois instantes dados em
-horas, minutos e segundo e determina o intervalo de tempo
-(em horas, minutos e segundos) decorrido entre eles. */
+   O sistema registra os instantes em que a ligacao foi iniciada e concluida.
+   Escreva um programa que recebe via teclado dois instantes dados em
+   horas, minutos e segundo e determina o intervalo de tempo
+   (em horas, minutos e segundos) decorrido entre eles. */
 
  int main ()
  {
@@ -75,8 +75,8 @@ horas, minutos e segundo e determina o intervalo de tempo
 
 #ifdef ex2
 /* Exercício 2 - Escreva um programa para adivinhar um numero entre 1 e 99 que o usuario
-pensou. Digite via teclado os simbolos =, > ou < a cada pergunta. Utilize o
-comando if-else. */
+   pensou. Digite via teclado os simbolos =, > ou < a cada pergunta. Utilize o
+   comando if-else. */
 
 int main ()
 {
@@ -134,8 +134,8 @@ int main ()
 
 #ifdef ex3
 /* Exercício 3 - Reescreva o programa do exercicio anterior
-agora utilizando o comando switch. Conte o n. de tentativas
-e imprima o resultado no video. */
+   agora utilizando o comando switch. Conte o n. de tentativas
+   e imprima o resultado no video. */
 
 int main ()
 {
@@ -196,8 +196,8 @@ int main ()
 
 #ifdef ex4
 /* Exercício 4 - Escreva um programa que receba via teclado numeros
-inteiros positivos. Quando o numero digitado for negativo o programa
-deve parar e calcula a media dos valores positivos digitados. */
+   inteiros positivos. Quando o numero digitado for negativo o programa
+   deve parar e calcula a media dos valores positivos digitados. */
 
 int main ()
 {
@@ -244,15 +244,15 @@ int main ()
 
 #ifdef ex5
 /* Exercício 5 - Um posto está vendendo combustíveis com a seguinte tabela de descontos:
-Álcool: até 20 litros, desconto de 3% por litro
+   Álcool: até 20 litros, desconto de 3% por litro
         acima de 20 litros, desconto de 5% por litro
-Gasolina: até 20 litros, desconto de 4% por litro
+   Gasolina: até 20 litros, desconto de 4% por litro
           acima de 20 litros, desconto de 6% por litro
 
-Escreva um programa que leia o número de litros vendidos e o tipo de
-combustível (codificado da seguinte forma: A-álcool, G-gasolina). Calcule e
-imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da
-gasolina é R$ 5,88 e o preço do litro do álcool é R$ 4,18. */
+   Escreva um programa que leia o número de litros vendidos e o tipo de
+   combustível (codificado da seguinte forma: A-álcool, G-gasolina). Calcule e
+   imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da
+   gasolina é R$ 5,88 e o preço do litro do álcool é R$ 4,18. */
 
 int main()
 {
