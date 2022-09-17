@@ -46,19 +46,19 @@ int main()
     int i;
     char c;
 
-    printf("Esse programa tem como objetivo imprimir as variáveis no vídeo em um determinado formato.\n");
+    printf("Esse programa tem como objetivo imprimir as variÃ¡veis no vÃ­deo em um determinado formato.\n");
 
-    printf("Digite um número para o short: ");
+    printf("Digite um nÃºmero para o short: ");
     scanf("%d",&s);
-    printf("Digite um número para o float: ");
+    printf("Digite um nÃºmero para o float: ");
     scanf("%f",&f);
-    printf("Digite um número para o long: ");
+    printf("Digite um nÃºmero para o long: ");
     scanf("%ld",&l);
-    printf("Digite um número para o double: ");
+    printf("Digite um nÃºmero para o double: ");
     scanf("%lf",&d);
-    printf("Digite um número para o int: ");
+    printf("Digite um nÃºmero para o int: ");
     scanf("%d",&i);
-    printf("Digite um número para o char: ");
+    printf("Digite um nÃºmero para o char: ");
     scanf("%c",&c);
     c = getchar();
 
@@ -67,14 +67,14 @@ int main()
 
 
     printf("%9d%19d%19d\n",s,l,i);
-    printf("%19.1f%21.0lf%18c\n",f,d,c);
+    printf("%19.1f%21.1f%18c\n",f,d,c);
 }
 #endif // ex2
 
 #ifdef ex3
 
 /* 3 - Escreva um programa que determine o menor multiplo de um numero inteiro. Este
-   múltiplo deve ser maior que o limite minimo recebido. Recebe os 2 numeros via teclado.
+   mÃºltiplo deve ser maior que o limite minimo recebido. Recebe os 2 numeros via teclado.
    Ex: menor multiplo de 13 maior que 100. Resultado: 104. */
 
 int main()
@@ -83,10 +83,10 @@ int main()
 
     int limite, mult, x, menor_mult = 0;
 
-    printf("Esse programa tem como objetivo encontrar o menor múltiplo de um número inteiro.\n");
+    printf("Esse programa tem como objetivo encontrar o menor mÃºltiplo de um nÃºmero inteiro.\n");
     printf("\nDigite o limite: ");
     scanf("%d",&limite);
-    printf("Digite o múltiplo: ");
+    printf("Digite o mÃºltiplo: ");
     scanf("%d",&mult);
 
     for(x=limite+mult+1; x>limite; x--)
@@ -103,15 +103,15 @@ int main()
                 }
         }
     }
-    printf("\nO menor múltiplo de %d maior que o limite mínimo encontrado de %d é =  %d",mult, limite, menor_mult);
+    printf("\nO menor mÃºltiplo de %d maior que o limite mÃ­nimo encontrado de %d Ã© =  %d",mult, limite, menor_mult);
 }
 
 #endif // ex3
 
 #ifdef ex4
 
-/* 4 - Escreva um programa que permute o conteúdo de duas variáveis sem utilizar uma
-    variável auxiliar. */
+/* 4 - Escreva um programa que permute o conteÃºdo de duas variÃ¡veis sem utilizar uma
+    variÃ¡vel auxiliar. */
 
 int main ()
 {
@@ -119,7 +119,7 @@ int main ()
 
     int x, y;
 
-    printf("Esse programa tem como objetivo trocar o valor das variáveis sem o uso de um auxiliar.\n");
+    printf("Esse programa tem como objetivo trocar o valor das variÃ¡veis sem o uso de um auxiliar.\n");
 
     printf("\nInsira o valor de x: ");
     scanf("%d", &x);
@@ -140,9 +140,9 @@ int main ()
 
 #ifdef ex5
 
-/*  5 - Escreva um programa que lê um valor em reais e calcula qual o menor número
-    possível de notas de $100, $50, $20, $10, $5, $2 e $1 em que o valor lido pode
-    ser decomposto. Escrever o valor lido e a relação de notas necessárias. */
+/*  5 - Escreva um programa que lÃª um valor em reais e calcula qual o menor nÃºmero
+    possÃ­vel de notas de $100, $50, $20, $10, $5, $2 e $1 em que o valor lido pode
+    ser decomposto. Escrever o valor lido e a relaÃ§Ã£o de notas necessÃ¡rias. */
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
@@ -150,7 +150,7 @@ int main()
     int valor;
     int  cem=0, cinquenta=0, vinte=0, dez=0, cinco=0, dois=0, um=0;
 
-    printf("Esse programa tem como objetivo receber um valor em reais e decompor em cédulas.\n");
+    printf("Esse programa tem como objetivo receber um valor em reais e decompor em cÃ©dulas.\n");
     printf("Digite um valor R$: ");
     scanf("%d", &valor);
 
