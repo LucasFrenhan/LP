@@ -5,7 +5,6 @@
 #include <locale.h>
 
 #ifdef ex1
-
 /* 1 - Escreva um programa que receba via teclado um tempo em segundos e converta
     para horas, minutos e segundos. */
 
@@ -72,7 +71,6 @@ int main()
 #endif // ex2
 
 #ifdef ex3
-
 /* 3 - Escreva um programa que determine o menor multiplo de um numero inteiro. Este
    múltiplo deve ser maior que o limite minimo recebido. Recebe os 2 numeros via teclado.
    Ex: menor multiplo de 13 maior que 100. Resultado: 104. */
@@ -109,7 +107,6 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-
 /* 4 - Escreva um programa que permute o conteúdo de duas variáveis sem utilizar uma
     variável auxiliar. */
 
@@ -139,7 +136,6 @@ int main ()
 #endif // ex4
 
 #ifdef ex5
-
 /*  5 - Escreva um programa que lê um valor em reais e calcula qual o menor número
     possível de notas de $100, $50, $20, $10, $5, $2 e $1 em que o valor lido pode
     ser decomposto. Escrever o valor lido e a relação de notas necessárias. */
