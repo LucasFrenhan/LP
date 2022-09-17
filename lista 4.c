@@ -1,16 +1,12 @@
-#define ex4
+#define ex5
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
 
-/*******************************************************************************
-5 - Receba via teclado 10 valores inteiros e ordene por ordem crescente assim
-    que sao digitados. Guarde-os em um vetor. Mostre ao final os valores ordenados.
-*********************************************************************************/
 
 #ifdef ex1
-/* ExercÃ­cio 1 - Escreva um programa que receba um vetor de tamanho 10 e o decomponha em dois
+/* Exercício 1 - Escreva um programa que receba um vetor de tamanho 10 e o decomponha em dois
    outros vetores. Um contera' as componentes de ordem impar e o outro contera'
    as componentes de ordem par. Por exemplo, se o vetor dado for v = {3, 5, 6, 8, 1, 4, 2, 3, 7},
    o programa deve gerar os vetores u = {3, 6, 1, 2, 7} e w = {5, 8, 4, 3}. */
@@ -23,7 +19,7 @@ void criaVetor()
 
     for(c=0; c<10; c++)
     {
-        printf("Digite o %dÂ°:",c+1);
+        printf("Digite o %d°:",c+1);
         scanf("%d",&vetorA[c]);
     }
 }
@@ -99,7 +95,7 @@ int main()
         converteVetorPar();
         converteVetorImpar();
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -108,10 +104,10 @@ int main()
 #endif // ex1
 
 #ifdef ex2
-/* ExercÃ­cio 2 - Receba via teclado valores do tipo int para uma vetor 5 x 5. Receba via
+/* Exercício 2 - Receba via teclado valores do tipo int para uma vetor 5 x 5. Receba via
    teclado um valor x. O programa dever fazer a busca desse valor x no vetor
    e, ao final escrever a localizacao (linha e coluna) ou uma mensagem de
-   â€nao encontradoâ€. */
+   ”nao encontrado”. */
 
 int vetor[5][5];
 
@@ -138,7 +134,7 @@ int verificaVetor(int x)
         {
             if (x==vetor[i][j])
             {
-                printf("O nÃºmero %d estÃ¡ na posiÃ§Ã£o no vetor[%d] [%d]\n",x,i,j);
+                printf("O número %d está na posição no vetor[%d] [%d]\n",x,i,j);
                 k++;
             }
         }
@@ -178,12 +174,12 @@ int main()
 
         if(kx==0)
         {
-            printf("O nÃºmero digitado nÃ£o estÃ¡ no vetor\n");
+            printf("O número digitado não está no vetor\n");
         }
 
         imprimiVetor();
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -210,7 +206,7 @@ void criaVetorA()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um nÃºmero inteiro para o vetor A [%d][%d]:",i,j);
+            printf("\nDigite um número inteiro para o vetor A [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorA[i][j] = x;
         }
@@ -224,7 +220,7 @@ void criaVetorB()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um nÃºmero inteiro para o vetor B [%d][%d]:",i,j);
+            printf("\nDigite um número inteiro para o vetor B [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorB[i][j] = x;
         }
@@ -249,7 +245,7 @@ void imprimiVetorA()
 {
     int i,j;
 
-    printf("O conteÃºdo do vetor A\n");
+    printf("O conteúdo do vetor A\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -264,7 +260,7 @@ void imprimiVetorB()
 {
     int i,j;
 
-    printf("O conteÃºdo do vetor B\n");
+    printf("O conteúdo do vetor B\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -279,7 +275,7 @@ void imprimiVetorC()
 {
     int i,j;
 
-    printf("O conteÃºdo do vetor C\n");
+    printf("O conteúdo do vetor C\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -306,7 +302,7 @@ int main()
         imprimiVetorC();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -339,10 +335,10 @@ int criaVetorInt()
 {
     int i;
 
-    printf("Primeiro serÃ£o valores do tipo inteiros\n");
+    printf("Primeiro serão valores do tipo inteiros\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %dÂ° nÃºmero: ",i+1);
+        printf("\nDigite o %d° número: ",i+1);
         scanf("%d",&vetorInt[i][1]);
     }
 }
@@ -351,10 +347,10 @@ float criaVetorFloat()
 {
     int i;
 
-    printf("Segundo serÃ£o valores do tipo ponto flutuante\n");
+    printf("Segundo serão valores do tipo ponto flutuante\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %dÂ° nÃºmero: ",i+1);
+        printf("\nDigite o %d° número: ",i+1);
         scanf("%f",&vetorFloat[i][1]);
     }
 }
@@ -363,10 +359,10 @@ long criaVetorLong()
 {
     int i;
 
-    printf("Terceiro serÃ£o valores do tipo long\n");
+    printf("Terceiro serão valores do tipo long\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %dÂ° nÃºmero: ",i+1);
+        printf("\nDigite o %d° número: ",i+1);
         scanf("%ld",&vetorLong[i][1]);
     }
 }
@@ -375,10 +371,10 @@ double criaVetorDouble()
 {
     int i;
 
-    printf("Quarto serÃ£o valores do tipo double\n");
+    printf("Quarto serão valores do tipo double\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %dÂ° nÃºmero: ",i+1);
+        printf("\nDigite o %d° número: ",i+1);
         scanf("%lf",&vetorDouble[i][1]);
     }
 }
@@ -387,10 +383,10 @@ unsigned criaVetorUnsigned()
 {
     int i;
 
-    printf("Quinto serÃ£o valores do tipo unsingned\n");
+    printf("Quinto serão valores do tipo unsingned\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %dÂ° nÃºmero: ",i+1);
+        printf("\nDigite o %d° número: ",i+1);
         scanf("%u",&vetorUnsigned[i][1]);
     }
 }
@@ -427,7 +423,7 @@ int main()
     {
         system("cls");
 
-        printf("Nosso programa recebera vÃ¡rios valores\n");
+        printf("Nosso programa recebera vários valores\n");
         criaVetorInt();
         criaVetorFloat();
         criaVetorLong();
@@ -436,10 +432,82 @@ int main()
         imprimeVetores();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
     }
     while (result == 1);
     return 0;
 }
 #endif // ex4
+
+#ifdef ex5
+/*
+5 - Receba via teclado 10 valores inteiros e ordene por ordem crescente assim
+    que sao digitados. Guarde-os em um vetor. Mostre ao final os valores ordenados.
+*/
+
+int vetorANA[10];
+
+void criaVetor()
+{
+    int i;
+
+    for(i=0; i<10; i++)
+    {
+        printf("\nDigite o %d° número: ",i+1);
+        scanf("%d",&vetorANA[i]);
+    }
+}
+
+void verificaVetor()
+{
+    int i,j,numero;
+
+    for(i=0; i<10; i++)
+    {
+        for(j=i+1; j<10; j++)
+        {
+            if(vetorANA[i]>vetorANA[j])
+            {
+                numero = vetorANA[i];
+                vetorANA[i] = vetorANA[j];
+                vetorANA[j] = numero;
+            }
+        }
+    }
+}
+
+void imprimiVetor()
+{
+    int i;
+
+    for(i=0; i<10; i++)
+    {
+        printf("\nposição %d° = %d ",i+1,vetorANA[i]);
+    }
+}
+
+
+int main()
+{
+    setlocale (LC_ALL,"portuguese");
+    int result;
+
+    do
+    {
+        system("cls");
+
+        printf("Digite 10 valores inteiros\n");
+
+        criaVetor();
+        verificaVetor();
+        imprimiVetor();
+
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+    }
+    while (result == 1);
+    return 0;
+}
+#endif // ex5
