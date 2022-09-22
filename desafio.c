@@ -73,6 +73,7 @@ int main()
             break;
         case 7:
             printf("Saindo\n");
+            printf("Obrigado por utilizar nosso programa\n");
             exit(0);
             break;
 
@@ -81,7 +82,4 @@ int main()
             break;
         }
     } while (opc != 7);
-
-    printf("Obrigado por utilizar nosso programa\n");
-    return 0;
 }
