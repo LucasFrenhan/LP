@@ -15,23 +15,23 @@ int main()
    do
    {
    system("cls");
-   printf("Digite o primeiro número: ");
+   printf("Digite o primeiro nÃºmero: ");
    scanf("%d", &n1);
-   printf("Digite o segundo número:  ");
+   printf("Digite o segundo nÃºmero:  ");
    scanf("%d", &n2);
 
    soma = n1 + n2;
    sub = n1 - n2;
    mult = n1 * n2;
-   div = n1 / n2;
+   div = (float) n1 / (float)  n2;
 
-   printf("\nO resultado da soma é: %d\n", soma);
-   printf("O resultado da subtração a é: %d\n", sub);
-   printf("O resultado da multiplicação é: %d\n", mult);
-   printf("O resultado da divisão é: %g\n", div);
+   printf("\nO resultado da soma Ã©: %d\n", soma);
+   printf("O resultado da subtraÃ§Ã£o a Ã©: %d\n", sub);
+   printf("O resultado da multiplicaÃ§Ã£o Ã©: %d\n", mult);
+   printf("O resultado da divisÃ£o Ã©: %g\n", div);
 
    printf("\nDigite 1 se quiser executar novamente.");
-   printf("\nPara encerrar o programa digite qualquer número.\n");
+   printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
    scanf("%d", &result);
    } while (result == 1);
 }
