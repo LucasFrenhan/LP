@@ -19,8 +19,8 @@ int entradaDados()
             scanf("%s", &filme[i]);
             printf("\nDigite a produtora:");
             scanf("%s", &produtora[i]);
-            fwrite(filme, sizeof(filme), 1, arquivo);
-            fwrite(produtora, sizeof(produtora), 1, arquivo);
+            fwrite(filme[i], sizeof(filme[i]), 1, arquivo);
+            fwrite(produtora[i], sizeof(produtora[i]), 1, arquivo);
         }
         fclose(arquivo);
     }
@@ -42,10 +42,10 @@ void listaDados()
     {
         for (i = 0; i < 3; i++)
         {
-            fread(filme, sizeof(filme), 1, arquivo);
-            printf("\n%s", filme);
-            fread(produtora, sizeof(produtora), 1, arquivo);
-            printf("\n%s", produtora);
+            fread(filme[i], sizeof(filme[i]), 1, arquivo);
+            printf("\n%s", filme[i]);
+            fread(produtora[i], sizeof(produtora[i]), 1, arquivo);
+            printf("\n%s", produtora[i]);
         }
         fclose(arquivo);
     }

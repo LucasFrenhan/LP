@@ -14,23 +14,19 @@ char nome1[11], nome2[11];
 
 int comparaStrings()
 {
-    int i,valor=0;
+    int i;
 
-    for(i=0; i<11; i++)
+    for(i=0; nome1[i]!='\0'; i++)
     {
-       if(nome1[i] == nome2[i])
+       if(nome1[i] != nome2[i])
        {
-           if(nome1[i] != NULL)
-           {
-               valor = 1;
-           }
+            break;
        }
-       else
-        {
-            valor = 0;
-        }
     }
-    return valor;
+    if(nome1[i] == '\0' && nome2[i] == '\0')
+    return 1;
+    else
+        return 0;
 }
 
 int main()
