@@ -1,8 +1,8 @@
-#define ex2
+#define ex1
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
 
 #ifdef ex1
 /* Exercicio 1 - Escreva um programa que receba via teclado 2 numeros inteiros e
@@ -36,73 +36,26 @@ int main()
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
-    } while (result == 1);
+    }
+    while (result == 1);
 }
 #endif // ex1
 
 #ifdef ex2
 /* Exercício 2 - Reescreva o exercicio anterior utilizando operadores de atribuicao
    composta. */
-   int soma(int x, int y)
-   {
-       int valor;
-       valor = x;
-       valor += y;
-       return valor;
-   }
 
-   int sub(int x, int y)
-   {
-       int valor;
-       valor = x;
-       valor -= y;
-       return valor;
-   }
-
-   int mult(int x, int y)
-   {
-       int valor;
-       valor = x;
-       valor *= y;
-       return valor;
-   }
-
-   float divisao(int x, int y)
-   {
-       float valor;
-       valor = x;
-       valor /= y;
-       return valor;
-   }
-
-int main()
+   int main()
 {
     setlocale(LC_ALL, "portuguese");
-    int n1,n2,result;
-    float resultado;
 
     do
     {
-        system("cls");
 
-        printf("Digite o primeiro número: ");
-        scanf("%d", &n1);
-        printf("Digite o segundo número:  ");
-        scanf("%d", &n2);
-
-        resultado = soma(n1,n2);
-        printf("\nO resultado da soma é: %g\n", resultado);
-        resultado = sub(n1,n2);
-        printf("\nO resultado da subtração é: %g\n", resultado);
-        resultado = mult(n1,n2);
-        printf("\nO resultado da multiplicação é: %g\n", resultado);
-        resultado = divisao(n1,n2);
-        printf("\nO resultado da divisão é: %g\n", resultado);
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
-        getchar();
     } while (result == 1);
 }
 #endif // ex2
@@ -111,14 +64,13 @@ int main()
 /* Exercício 3 - Escreva um programa para determinar a idade de uma pessoa, em anos, meses e
    dias, recebendo via teclado a data (dia, mes e ano) do seu nascimento e a
    data (dia, mes e ano) atual. */
-   int main()
+
+int main()
 {
     setlocale(LC_ALL, "portuguese");
-    int result;
 
     do
     {
-        system("cls");
 
 
         printf("\nDigite 1 se quiser executar novamente.");
@@ -126,26 +78,34 @@ int main()
         scanf("%d", &result);
     } while (result == 1);
 }
-
 #endif // ex3
 
 #ifdef ex4
 /* Exercício 4 - Escreva um programa que receba via teclado 2 numeros inteiros e execute
    as operacoes logicas bit a bit AND, OU, OU EXCLUSIVO e imprima-os no
    video no formato decimal e hexadecimal. */
-   int main()
+
+int main()
 {
-    setlocale(LC_ALL, "portuguese");
-    int result;
+    int x,y, result;
 
     do
     {
-        system("cls");
+    system("cls");
+    printf("Esse programa tem como objetivo executar operações lógicas bit a bit.\n");
+    printf("Digite o primeiro número: ");
+    scanf("%d", &x);
+    printf("Digite o segundo número: ");
+    scanf("%d", &y);
 
+    printf("\nOperadores bit-a-bit\n");
+    printf(" AND = x & y --> %3d  0x%x\n",x & y,x & y);
+    printf(" OU = x | y --> %3d  0x%x\n",x | y,x | y);
+    printf(" OU EXCLUSIVO = x ^ y --> %3d  0x%x\n",x ^ y,x ^ y);
 
-        printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
-        scanf("%d", &result);
+    printf("\nDigite 1 se quiser executar novamente.");
+    printf("\nPara encerrar o programa digite qualquer número.\n");
+    scanf("%d", &result);
     } while (result == 1);
 }
 
