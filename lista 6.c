@@ -1,4 +1,4 @@
-#define ex4
+#define ex3
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -111,19 +111,132 @@ int main()
 /* Exercício 3 - Escreva um programa para determinar a idade de uma pessoa, em anos, meses e
    dias, recebendo via teclado a data (dia, mes e ano) do seu nascimento e a
    data (dia, mes e ano) atual. */
-   int main()
+
+float determinaIdade(int anoInicial, int anoFinal, int mesInicial, int mesFinal, int diaInicial, int diaFinal)
+{
+    float ano, mes, dia, data;
+    if (anoInicial > anoFinal)
+    {
+        ano = anoInicial - anoFinal - 1;
+        ano = ano * 365;
+
+    }
+    else
+    {
+        ano = anoFinal - anoInicial;
+        ano = ano * 365;
+
+    }
+
+    if (mesInicial > mesFinal)
+    {
+        mes = mesInicial - mesFinal - 1;
+        mes = mes * 30;
+
+    }
+    else
+    {
+        mes =  mesFinal - mesInicial;
+        mes = mes * 30;
+    }
+
+    if(diaInicial > diaFinal)
+    {
+        dia = diaInicial - diaFinal;
+    }
+    else
+    {
+        dia = diaFinal - diaInicial;
+    }
+
+    data = dia + mes + ano;
+
+    return data;
+}
+
+
+int main()
 {
     setlocale(LC_ALL, "portuguese");
-    int result;
+    float anosNasc, mesesNasc, diasNasc, anosAtual, mesesAtual, diasAtual, dias, meses, result;
+    float anos;
 
     do
     {
         system("cls");
+        printf("Esse programa tem como objetivo determinar a idade de uma pessoa em dias, meses e anos.");
+        do
+        {
+            printf("\nDigite o dia do seu nascimento: ");
+            scanf("%f", &diasNasc);
+            if (diasNasc <= 0 || diasNasc > 32)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (diasNasc <= 0 || diasNasc > 32);
 
+        do
+        {
+            printf("Digite o mês do seu nascimento: ");
+            scanf("%f", &mesesNasc);
+            if (mesesNasc <= 0 || mesesNasc > 12)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (mesesNasc <= 0 || mesesNasc > 12);
+
+        do
+        {
+            printf("Digite o ano em que você nasceu: ");
+            scanf("%f", &anosNasc);
+            if (anosNasc < 0)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (anosNasc < 0);
+
+        do
+        {
+            printf("\nDigite a data atual em dias: ");
+            scanf("%f", &diasAtual);
+            if (diasAtual < 0 || diasAtual >= 32)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (diasAtual < 0 || diasAtual >= 32);
+
+        do
+        {
+            printf("Digite a data atual em meses: ");
+            scanf("%f", &mesesAtual);
+            if (mesesAtual < 0 && mesesAtual > 12)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (mesesAtual < 0 && mesesAtual > 12);
+
+        do
+        {
+            printf("Digite a data atual em anos: ");
+            scanf("%f", &anosAtual);
+            if (anosAtual < 0)
+            {
+                printf("\nData inserida inválida.");
+                printf(" Por favor, insira uma nova data. \n");
+            }
+        } while (anosAtual < 0);
+
+        anos = determinaIdade (anosNasc, anosAtual, mesesNasc, mesesAtual, diasNasc, diasAtual);
+        printf("Você tem %f dias de vida.\n", anos);
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
-        scanf("%d", &result);
+        scanf("%f", &result);
     } while (result == 1);
 }
 
