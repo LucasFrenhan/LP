@@ -1,4 +1,12 @@
-#define ex5
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
+#define ex3
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -81,7 +89,8 @@ int main()
     {
         system("cls");
 
-        printf("Digite o primeiro valor: ");
+        printf("Esse programa tem como objetivo receber dois números inteiros e obedecer as funções exigidas.\n");
+        printf("\nDigite o primeiro valor: ");
         scanf("%d", &a);
         c = verifica1(a);
         printf("\nDigite o segundo valor: ");
@@ -185,7 +194,9 @@ int main()
     do
     {
         system("cls");
-        printf("Digite um número qualquer:\n");
+
+        printf("Esse programa tem como objetivo retornar a soma dos algarismos.\n");
+        printf("\nDigite um número qualquer: ");
         scanf("%d", &a);
         b = fatorial(a);
         printf("O fatorial do número digitado é: %d\n", b);
@@ -206,10 +217,10 @@ int main()
     no video na funcao main(). Passe como informacao para a funcao a letra
     digitada.(utilize o comando return). O vetor deve ser uma variavel global. */
 
-    vetor -> b,d,f,h,j,k,m,o,q,s,u,w,y
+    // vetor -> b,d,f,h,j,k,m,o,q,s,u,w,y
     char vetor[14] = {'b','d','f','h','j','k','m','o','q','s','u','w','y'};
 
-verifica(char v)
+int verifica(char v)
 {
     int i;
 
@@ -234,7 +245,9 @@ int main()
     do
     {
         system("cls");
-        printf("Por favor, digite uma letra qualquer:\n");
+
+        printf("Esse programa tem como objetivo receber uma letra e imprimir o resultado na função.\n");
+        printf("\nPor favor, digite uma letra qualquer: ");
         letra = getchar();
         a = verifica(letra);
 
@@ -250,8 +263,7 @@ int main()
         printf("\nDigite 1 se quiser executar novamente."); // dando erro
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
-    }
-    while (result == 1);
+    } while (result == 1);
 }
 
 #endif // ex3
@@ -303,14 +315,16 @@ int main()
     do
     {
         system("cls");
-        printf("Digite o primeiro valor:\n ");
+
+        printf("Esse programa tem como objetivo receber dois valores e realizar operações aritméticas.\n");
+        printf("\nDigite o primeiro valor: ");
         scanf("%f", &a);
 
-        printf("\nDigite o segundo valor:\n ");
+        printf("\nDigite o segundo valor: ");
         scanf("%f", &b);
 
         c = soma(a,b);
-        printf("O resultado da soma é: %g\n", c);
+        printf("\nO resultado da soma é: %g\n", c);
 
         d = sub(a,b);
         printf("O resultado da subtração é: %g\n", d);
@@ -380,7 +394,8 @@ int main()
     {
         do
         {
-            printf("Qual operação desejar fazer? ( +, -, *, /) \n");
+            printf("Esse programa tem como objetivo receber dois valores e realizar operações aritméticas.\n");
+            printf("\nQual operação desejar fazer? ( +, -, *, /) \n");
             printf("1 - para somar\n");
             printf("2 - para subtrair\n");
             printf("3 - para multiplicar\n");
