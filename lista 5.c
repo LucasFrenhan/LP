@@ -1,10 +1,10 @@
-/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manhã
-/* Componente Curricular: Linguagem de Programação
+/* Nome: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - ManhÃ£
+/* Componente Curricular: Linguagem de ProgramaÃ§Ã£o
 /* Professor: Rui
 
-/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
-/* A presença de caracteres diferentes pode ser presenciada. */
+/* OBSERVAÃ‡ÃƒO: Todos os exercÃ­cios foram compilados no Visual Studio Code.
+/* A presenÃ§a de caracteres diferentes pode ser visualizada. */
 
 #define ex1
 
@@ -13,8 +13,8 @@
 #include<locale.h>
 
 #ifdef ex1
-/* Exercício 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main().
-   Faça uma funcao para compara-las e retorne como resultado se são IGUAIS 1 ou se
+/* ExercÃ­cio 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main().
+   FaÃ§a uma funcao para compara-las e retorne como resultado se sÃ£o IGUAIS 1 ou se
    DIFERENTES 0 para a funcao main(). Imprima o resultado na funcao main().
    (Declare os vetores como variavel global) */
 
@@ -53,10 +53,10 @@ int main()
     gets(nome2);
 
     resultado = comparaStrings();
-    printf("\nO resultado da comparação de string é: %d\n", resultado);
+    printf("\nO resultado da comparaÃ§Ã£o de string Ã©: %d\n", resultado);
 
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer número.\n");
+    printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
     scanf("%d", &result);
     getchar();
     nome1[0] = '\0';
@@ -68,7 +68,7 @@ int main()
 #endif // ex1
 
 #ifdef ex2
-/* Exercício 2 - Escreva um programa para receber 5 nomes, com até 7 caracteres, via
+/* ExercÃ­cio 2 - Escreva um programa para receber 5 nomes, com atÃ© 7 caracteres, via
    teclado e imprima-os no video no seguinte formato:(Declare os 5 vetores como
    variaveis globais)
 
@@ -115,7 +115,7 @@ int main()
     imprimeVetores();
 
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer número.\n");
+    printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
     scanf("%d", &result);
     getchar();
     }
@@ -125,7 +125,7 @@ int main()
 #endif // ex2
 
 #ifdef ex3
-/* Exercício 3 - Receba via teclado uma cadeia de caracteres (10) e converta
+/* ExercÃ­cio 3 - Receba via teclado uma cadeia de caracteres (10) e converta
    todos os caracteres para letras maiusculas. */
 
 int main()
@@ -138,7 +138,7 @@ int main()
     do
     {
     system("cls");
-    printf("Esse programa tem como objetivo converter uma string em maiúsculo.\n");
+    printf("Esse programa tem como objetivo converter uma string em maiÃºsculo.\n");
     printf("\nDigite a string (10): ");
     scanf("%s",&nome);
 
@@ -160,7 +160,7 @@ int main()
         }
     }
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer número.\n");
+    printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
     scanf("%d", &result);
     getchar();
     }
@@ -169,7 +169,7 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/* Exercício 4 - Receba via teclado uma cadeia de caracteres (10) e converta
+/* ExercÃ­cio 4 - Receba via teclado uma cadeia de caracteres (10) e converta
    todos os caracteres para letras minusculas. */
 
 int main()
@@ -183,7 +183,7 @@ int main()
     {
     system("cls");
 
-    printf("Esse programa tem como objetivo converter uma string em minúsculo.\n");
+    printf("Esse programa tem como objetivo converter uma string em minÃºsculo.\n");
     printf("\nDigite a string (10): ");
     scanf("%s",&nome);
 
@@ -201,7 +201,7 @@ int main()
         }
     }
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer número.\n");
+    printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
     scanf("%d", &result);
     getchar();
     }
@@ -210,7 +210,7 @@ int main()
 #endif // ex4
 
 #ifdef ex5
-/* Exercício 5 - Faca um programa que receba uma string de no maximo 20 caracteres na funcao main().
+/* ExercÃ­cio 5 - Faca um programa que receba uma string de no maximo 20 caracteres na funcao main().
    Faca uma funcao que some 2 no valor ASCII de cada um dos caractere recebidos.
    Mostre a string resultante na funcao main().
    (Declare o vetor como variavel global) */
@@ -249,7 +249,7 @@ int main()
     somaDois();
 
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer número.\n");
+    printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
     scanf("%d", &result);
     getchar();
     }
