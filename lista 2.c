@@ -1,4 +1,12 @@
-#define ex3
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
+#define ex1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,8 +28,8 @@
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo determinar o tempo de uma ligação telefônica.\n");
 
+        printf("Esse programa tem como objetivo determinar o tempo de uma ligação telefônica.\n");
         printf("Digite o instante inicial da ligação em horas: ");
         scanf("%d", &h_inicial);
         printf("Digite os minutos: ");
@@ -87,6 +95,7 @@ int main ()
     do
     {
         system("cls");
+
         printf("Seja bem-vindo ao programa!\n");
         printf("Você deve pensar em um número entre 1 e 99.\n");
         printf("Caso o seu número seja maior, use >\n");
@@ -147,6 +156,7 @@ int main ()
      do
      {
      system("cls");
+
      printf("Seja bem-vindo ao programa!\n");
      printf("Você deve pensar em um número entre 1 e 99.\n");
      printf("Caso o seu número seja maior, use >\n");
@@ -209,6 +219,7 @@ int main ()
     do
     {
         system("cls");
+
         printf("Esse programa tem como objetivo receber números via teclado e calcular a média dos valores digitados\n");
         printf("quando for digitado um número negativo.\n");
 
