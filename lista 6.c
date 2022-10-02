@@ -4,7 +4,7 @@
 /* Professor: Rui
 
 /* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
-/* A presença de caracteres diferentes pode ser visualizada. */
+/* A presença de caracteres diferentes pode ser visualizada. */ 
 
 #define ex1
 
