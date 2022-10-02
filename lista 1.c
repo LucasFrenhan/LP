@@ -1,4 +1,12 @@
-#define ex5
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
+#define ex1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,15 +19,15 @@
  int main ()
  {
      setlocale(LC_ALL, "Portuguese");
-     int tempo_segundos, h, m, s;
+     int tempoSegundos, h, m, s;
 
-     printf("Esse programa tem como objetivo converter os segundos em horas, minutos e segundos\n");
-     printf("Digite quantos segundos deseja converter: ");
-     scanf("%d", &tempo_segundos);
+     printf("Esse programa tem como objetivo converter os segundos em horas, minutos e segundos.\n");
+     printf("\nDigite quantos segundos deseja converter: ");
+     scanf("%d", &tempoSegundos);
 
-     h = (tempo_segundos / 3600);
-     m = (tempo_segundos % 3600) / 60;
-     s = (tempo_segundos % 3600) % 60;
+     h = (tempoSegundos / 3600);
+     m = (tempoSegundos % 3600) / 60;
+     s = (tempoSegundos % 3600) % 60;
 
      printf("\nHoras: %d\nMinutos: %d\nSegundos: %d\n", h , m, s);
  }
