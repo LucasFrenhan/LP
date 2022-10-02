@@ -1,12 +1,19 @@
-#define ex4
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
+#define ex3
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
 
-
 #ifdef ex1
-/* Exerc�cio 1 - Escreva um programa que receba um vetor de tamanho 10 e o decomponha em dois
+/* Exercicio 1 - Escreva um programa que receba um vetor de tamanho 10 e o decomponha em dois
    outros vetores. Um contera' as componentes de ordem impar e o outro contera'
    as componentes de ordem par. Por exemplo, se o vetor dado for v = {3, 5, 6, 8, 1, 4, 2, 3, 7},
    o programa deve gerar os vetores u = {3, 6, 1, 2, 7} e w = {5, 8, 4, 3}. */
@@ -19,7 +26,7 @@ void criaVetor()
 
     for(c=0; c<10; c++)
     {
-        printf("Digite o %d�:",c+1);
+        printf("Digite o %d° número:",c+1);
         scanf("%d",&vetorA[c]);
     }
 }
@@ -91,6 +98,8 @@ int main()
     do
     {
         system("cls");
+
+        printf("Esse programa tem como objetivo decompor vetores.\n");
         criaVetor();
         converteVetorPar();
         converteVetorImpar();
@@ -134,7 +143,7 @@ int verificaVetor(int x)
         {
             if (x==vetor[i][j])
             {
-                printf("O n�mero %d est� na posi��o no vetor[%d] [%d]\n",x,i,j);
+                printf("O número %d está na posição no vetor[%d] [%d]\n",x,i,j);
                 k++;
             }
         }
@@ -167,14 +176,16 @@ int main()
     do
     {
         system("cls");
-        printf("Digite um valor: ");
+
+        printf("Esse programa tem como objetivo buscar um valor no vetor.\n");
+        printf("\nDigite um valor: ");
         scanf("%d",&numero);
         criaVetor();
         kx = verificaVetor(numero);
 
         if(kx==0)
         {
-            printf("O n�mero digitado n�o est� no vetor\n");
+            printf("O número digitado não está no vetor\n");
         }
 
         imprimiVetor();
@@ -206,7 +217,7 @@ void criaVetorA()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um n�mero inteiro para o vetor A [%d][%d]:",i,j);
+            printf("\nDigite um número inteiro para o vetor A [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorA[i][j] = x;
         }
@@ -220,7 +231,7 @@ void criaVetorB()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um n�mero inteiro para o vetor B [%d][%d]:",i,j);
+            printf("\nDigite um número inteiro para o vetor B [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorB[i][j] = x;
         }
@@ -275,7 +286,7 @@ void imprimiVetorC()
 {
     int i,j;
 
-    printf("O conte�do do vetor C\n");
+    printf("O conteúdo do vetor C\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -294,6 +305,9 @@ int main()
 
     do
     {
+        system("cls");
+
+        printf("Esse programa tem como objetivo imprimir na tela o índice e os valores dos vetores.\n");
         criaVetorA();
         criaVetorB();
         criaVetorC();
@@ -335,10 +349,10 @@ int criaVetorInt()
 {
     int i;
 
-    printf("Primeiro ser�o valores do tipo inteiros\n");
+    printf("\nPrimeiro serão os valores do tipo inteiros\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%d",&vetorInt[i][1]);
     }
 }
@@ -347,10 +361,10 @@ float criaVetorFloat()
 {
     int i;
 
-    printf("Segundo ser�o valores do tipo ponto flutuante\n");
+    printf("\nSegundo serão os valores do tipo ponto flutuante\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%f",&vetorFloat[i][1]);
     }
 }
@@ -359,10 +373,10 @@ long criaVetorLong()
 {
     int i;
 
-    printf("Terceiro ser�o valores do tipo long\n");
+    printf("\nTerceiro serão os valores do tipo long\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%ld",&vetorLong[i][1]);
     }
 }
@@ -371,10 +385,10 @@ double criaVetorDouble()
 {
     int i;
 
-    printf("Quarto ser�o valores do tipo double\n");
+    printf("\nQuarto serão os valores do tipo double\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%lf",&vetorDouble[i][1]);
     }
 }
@@ -383,10 +397,10 @@ unsigned criaVetorUnsigned()
 {
     int i;
 
-    printf("Quinto ser�o valores do tipo unsingned\n");
+    printf("\nQuinto serão os valores do tipo unsingned\n");
     for(i=0; i<3; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%u",&vetorUnsigned[i][1]);
     }
 }
@@ -395,6 +409,7 @@ void imprimeVetores()
 {
     int i,j=0,k=0;
 
+    printf("                     \n");
     printf("        10        20        30        40        50\n");
     printf("12345678901234567890123456789012345678901234567890\n");
 
@@ -423,7 +438,7 @@ int main()
     {
         system("cls");
 
-        printf("Nosso programa recebera v�rios valores\n");
+        printf("Nosso programa receberá vários valores.\n");
         criaVetorInt();
         criaVetorFloat();
         criaVetorLong();
@@ -454,7 +469,7 @@ void criaVetor()
 
     for(i=0; i<10; i++)
     {
-        printf("\nDigite o %d� n�mero: ",i+1);
+        printf("Digite o %d° número: ",i+1);
         scanf("%d",&vetorANA[i]);
     }
 }
@@ -483,7 +498,7 @@ void imprimiVetor()
 
     for(i=0; i<10; i++)
     {
-        printf("\nposi��o %d� = %d ",i+1,vetorANA[i]);
+        printf("\nPosição %d° = %d ",i+1,vetorANA[i]);
     }
 }
 
@@ -497,7 +512,8 @@ int main()
     {
         system("cls");
 
-        printf("Digite 10 valores inteiros\n");
+        printf("Esse programa tem como objetivo ordenar os vetores.\n");
+        printf("Você precisa digitar 10 valores inteiros.\n\n");
 
         criaVetor();
         verificaVetor();
