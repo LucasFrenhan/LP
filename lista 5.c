@@ -1,3 +1,11 @@
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
 #define ex1
 
 #include<stdio.h>
@@ -37,8 +45,9 @@ int main()
     do
     {
     system("cls");
+
     printf("Esse programa tem como objetivo comparar duas strings.\n");
-    printf("Digite a primeira string (10): ");
+    printf("\nDigite a primeira string (10): ");
     gets(nome1);
     printf("Digite a segunda string (10): ");
     gets(nome2);
@@ -90,8 +99,9 @@ int main()
     do
     {
     system("cls");
+
     printf("Esse programa tem como objetivo receber strings e imprimir na tela.\n");
-    printf("Digite o primeiro nome (7): \n");
+    printf("\nDigite o primeiro nome (7): \n");
     scanf("%s", &nome1);
     printf("Digite o segundo nome (7): \n");
     scanf("%s", &nome2);
@@ -129,7 +139,7 @@ int main()
     {
     system("cls");
     printf("Esse programa tem como objetivo converter uma string em maiúsculo.\n");
-    printf("Digite a string (10): ");
+    printf("\nDigite a string (10): ");
     scanf("%s",&nome);
 
     printf("\n");
@@ -172,8 +182,9 @@ int main()
     do
     {
     system("cls");
+
     printf("Esse programa tem como objetivo converter uma string em minúsculo.\n");
-    printf("Digite a string (10): ");
+    printf("\nDigite a string (10): ");
     scanf("%s",&nome);
 
     for(i=0; i<11; i++)
@@ -229,8 +240,9 @@ int main()
     do
     {
     system("cls");
+
     printf("Esse programa criptografa uma mensagem.\n");
-    printf("Digite a string (20): ");
+    printf("\nDigite a string (20): ");
     scanf("%s",&nome);
     printf("\n");
 
