@@ -1,4 +1,12 @@
-#define ex3
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui
+
+/* OBSERVAÇÃO: Todos os exercícios foram compilados no Visual Studio Code.
+/* A presença de caracteres diferentes pode ser presenciada. */
+
+#define ex1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +26,9 @@ int main()
     do
     {
         system("cls");
-        printf("Digite o primeiro número: ");
+
+        printf("Esse programa tem como objetivo receber dois números e imprimir o resultado das\noperações aritméticas.\n");
+        printf("\nDigite o primeiro número: ");
         scanf("%d", &n1);
         printf("Digite o segundo número:  ");
         scanf("%d", &n2);
@@ -85,6 +95,7 @@ int main()
     {
         system("cls");
 
+        printf("Esse programa tem como objetivo receber dois números e imprimir o resultado das\noperações aritméticas.\n");
         printf("Digite o primeiro número: ");
         scanf("%d", &n1);
         printf("Digite o segundo número:  ");
@@ -285,7 +296,7 @@ void converteCelsius()
 {
     float celsius, fahrenheit, kelvin;
 
-    printf("\nDigite um valor em Celsius para ser convertido: \n");
+    printf("\nDigite um valor em Celsius para ser convertido: ");
     scanf("%f", &celsius);
 
     fahrenheit = (celsius * 1.8) + 32;
@@ -299,7 +310,7 @@ void converteFahrenheit()
 {
     float celsius, fahrenheit, kelvin;
 
-    printf("\nDigite um valor em Fahrenheit para ser convertido: \n");
+    printf("\nDigite um valor em Fahrenheit para ser convertido: ");
     scanf("%f", &fahrenheit);
 
     celsius = ((fahrenheit - 32) * 0.55556);
@@ -313,7 +324,7 @@ void converteKelvin()
 {
     float celsius, fahrenheit, kelvin;
 
-    printf("\nDigite um valor em Kelvin para ser convertido: \n");
+    printf("\nDigite um valor em Kelvin para ser convertido: ");
     scanf("%f", &kelvin);
 
     celsius = kelvin - 273.15;
