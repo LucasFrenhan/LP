@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 #ifdef ex1
 /* Exercicio 1 - Escreva um programa que receba via teclado 2 numeros inteiros e
@@ -18,8 +17,6 @@
 
 int main()
 {
-    setlocale(LC_ALL, "portuguese");
-
     int n1, n2, soma, sub, mult, result;
     float div;
 
@@ -87,7 +84,6 @@ int main()
 
 int main()
 {
-    setlocale(LC_ALL, "portuguese");
     int n1,n2,result;
     float resultado;
 
@@ -165,10 +161,8 @@ float determinaIdade(int anoInicial, int anoFinal, int mesInicial, int mesFinal,
     return data;
 }
 
-
 int main()
 {
-    setlocale(LC_ALL, "portuguese");
     float anosNasc, mesesNasc, diasNasc, anosAtual, mesesAtual, diasAtual, dias, meses, result;
     float anos;
 
@@ -257,7 +251,8 @@ int main()
 /* Exercício 4 - Escreva um programa que receba via teclado 2 numeros inteiros e execute
    as operacoes logicas bit a bit AND, OU, OU EXCLUSIVO e imprima-os no
    video no formato decimal e hexadecimal. */
-  int main()
+
+int main()
 {
     int x,y, result;
 
@@ -337,6 +332,7 @@ void converteKelvin()
 void menu()
 {
     int opc;
+   
     do
     {
         system("cls");
@@ -369,8 +365,6 @@ void menu()
 
 int main()
 {
-    setlocale(LC_ALL, "portuguese");
-
     int result;
 
     do
