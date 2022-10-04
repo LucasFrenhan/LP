@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 #ifdef ex1
 /* 1 - Escreva um programa que receba via teclado um tempo em segundos e converta
@@ -18,7 +17,6 @@
 
  int main ()
  {
-     setlocale(LC_ALL, "Portuguese");
      int tempoSegundos, h, m, s;
 
      printf("Esse programa tem como objetivo converter os segundos em horas, minutos e segundos.\n");
@@ -44,8 +42,6 @@
                    float               double              char */
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     short s;
     float f;
     long l;
@@ -85,8 +81,6 @@ int main()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     int limite, mult, x, menor_mult = 0;
 
     printf("Esse programa tem como objetivo encontrar o menor múltiplo de um número inteiro.\n");
@@ -120,8 +114,6 @@ int main()
 
 int main ()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     int x, y;
 
     printf("Esse programa tem como objetivo trocar o valor das variáveis sem o uso de um auxiliar.\n");
@@ -149,8 +141,6 @@ int main ()
     ser decomposto. Escrever o valor lido e a relação de notas necessárias. */
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     int valor;
     int  cem=0, cinquenta=0, vinte=0, dez=0, cinco=0, dois=0, um=0;
 
