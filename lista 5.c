@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<locale.h>
 
 #ifdef ex1
 /* Exercício 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main().
@@ -39,7 +38,6 @@ int comparaStrings()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
     int resultado=0, result;
 
     do
@@ -93,7 +91,6 @@ void imprimeVetores()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
     int result;
 
     do
@@ -130,8 +127,6 @@ int main()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     char nome[10];
     int resultado,i, result;
 
@@ -174,8 +169,6 @@ int main()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     char nome[10];
     int resultado,i, result;
 
@@ -233,8 +226,6 @@ void somaDois()
 }
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     int result;
 
     do
