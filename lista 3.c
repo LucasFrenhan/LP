@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<locale.h>
 
 #ifdef ex1
 /*  Exercício 1 - Faça um programa que receba dois numeros inteiros e execute as seguintes
@@ -81,7 +80,6 @@ float divide(int x, int y)
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int a, b, c, d, e, result;
     float f;
 
@@ -188,7 +186,6 @@ soma(int y)
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int a, b, c, result;
 
     do
@@ -236,19 +233,22 @@ int verifica(char v)
         }
     }
 }
+
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int result, a;
     char letra;
 
     do
     {
+
         system("cls");
 
         printf("Esse programa tem como objetivo receber uma letra e imprimir o resultado na função.\n");
         printf("\nPor favor, digite uma letra qualquer: ");
         letra = getchar();
+        getchar();
+
         a = verifica(letra);
 
         if (a == 1)
@@ -263,6 +263,7 @@ int main()
         printf("\nDigite 1 se quiser executar novamente."); // dando erro
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
+
     } while (result == 1);
 }
 
@@ -384,7 +385,6 @@ float divisao(float x, float y)
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int opc;
     float b, acumulador;
 
