@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 #ifdef ex1
 /* Exercício 1 -  As ligacoes telefonicas são cobradas pela sua duracao.
@@ -21,7 +20,6 @@
 
  int main ()
  {
-    setlocale(LC_ALL, "Portuguese");
     int h_inicial, min_inicial, seg_inicial, h_final, min_final, seg_final;
     int total_h, total_min, total_seg, result;
 
@@ -88,7 +86,6 @@
 
 int main ()
 {
-     setlocale(LC_ALL, "Portuguese");
      int minimo = 1, maximo = 99, n, result;
      char x;
 
@@ -148,7 +145,7 @@ int main ()
 
 int main ()
 {
-     setlocale(LC_ALL, "Portuguese"); // ARRUMAR O SYSTEM CLS
+    // ARRUMAR O SYSTEM CLS
 
      int minimo = 1, maximo = 99, n, result;
      char x;
@@ -211,8 +208,6 @@ int main ()
 
 int main ()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     int n, soma = 0, cont = 0, result;
     float media;
 
@@ -267,8 +262,6 @@ int main ()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
-
     char combustivel;
     int litro, result;
     float preco, pagamento, desconto;
