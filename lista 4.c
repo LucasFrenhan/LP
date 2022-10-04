@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<locale.h>
 
 #ifdef ex1
 /* Exercicio 1 - Escreva um programa que receba um vetor de tamanho 10 e o decomponha em dois
@@ -92,7 +91,6 @@ void converteVetorImpar()
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int result;
 
     do
@@ -169,8 +167,6 @@ void imprimiVetor()
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
-
     int numero,kx, result;
 
     do
@@ -299,8 +295,6 @@ void imprimiVetorC()
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
-
     int result;
 
     do
@@ -431,7 +425,6 @@ void imprimeVetores()
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int result;
 
     do
@@ -505,7 +498,6 @@ void imprimiVetor()
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
     int result;
 
     do
