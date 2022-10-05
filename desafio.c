@@ -60,7 +60,7 @@ void listaDados()
 
 void pesquisaFilme()
 {
-    int i, c, contador = 0;
+    int i, c, contador = 0, controle = 0;
     FILE *arquivo;
     char nome[30];
 
@@ -68,7 +68,6 @@ void pesquisaFilme()
 
     if (arquivo != NULL)
     {
-
         for (i = 0; i < 3; i++)
         {
             fread(filme[i], sizeof(filme[i]), 1, arquivo);
@@ -80,23 +79,33 @@ void pesquisaFilme()
 
         for(i=0; i < 3; i++)
         {
+            if(controle != 0)
+            {
+                break;
+            }
+
             for (c = 0; filme[i][c] != '\0'; c++)
             {
                 if (filme[i][c] != nome[c])
                 {
-                    contador=1;
                     break;
+                }
+                else
+                {
+                    controle++;
                 }
             }
         }
-        if (contador == 1)
+
+        if (controle == 0)
         {
-            printf("\nNenhum filme foi encontrado");
+            printf("\nNenhum filme foi encontrado\n");
         }
         else
         {
-            printf("\nO filme:%s", filme[i]);
-            printf("\nDa produtora:%s", produtora[i]);
+            printf("\nO filme:%s", filme[i - 1]);
+            printf("\nDa produtora:%s", produtora[i - 1]);
+            printf("\n");
         }
     }
     else
@@ -143,6 +152,13 @@ void pesquisaProdutora()
     {
         printf("\nArquivo não encontrado");
     }
+}
+
+void sair()
+{
+    printf("Saindo...\n");
+    printf("Obrigado por utilizar nosso programa\n");
+    exit(0);
 }
 
 int main()
@@ -196,10 +212,7 @@ int main()
             printf("opc 6\n");
             break;
         case 7:
-            printf("Saindo...\n");
-            printf("Obrigado por utilizar nosso programa\n");
-            exit(0);
-            break;
+            sair();
         default:
             printf("Opção inválida\n");
             break;
