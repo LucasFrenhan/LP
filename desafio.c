@@ -4,9 +4,9 @@
 
 char filme[3][30], produtora[3][20];
 
-int entradaDados()
+void entradaDados()
 {
-    int i, resultado;
+    int i;
     FILE *arquivo;
 
     arquivo = fopen("filme.txt", "w");
@@ -15,10 +15,11 @@ int entradaDados()
     {
         for (i = 0; i < 3; i++)
         {
+            getchar();
             printf("\nDigite um filme:");
-            scanf("%s", &filme[i]);
+            gets(filme[i]);
             printf("\nDigite a produtora:");
-            scanf("%s", &produtora[i]);
+            gets(produtora[i]);
             fwrite(filme[i], sizeof(filme[i]), 1, arquivo);
             fwrite(produtora[i], sizeof(produtora[i]), 1, arquivo);
         }
@@ -27,13 +28,13 @@ int entradaDados()
 
     else
     {
-        printf("Arquivo nÃ£o encontrado\n");
+        printf("\nArquivo não encontrado");
     }
 }
 
 void listaDados()
 {
-    int i, resultado;
+    int i;
     FILE *arquivo;
 
     arquivo = fopen("filme.txt", "r");
@@ -43,86 +44,151 @@ void listaDados()
         for (i = 0; i < 3; i++)
         {
             fread(filme[i], sizeof(filme[i]), 1, arquivo);
-            printf("\n%s", filme[i]);
+            printf("\nO filme:%s", filme[i]);
             fread(produtora[i], sizeof(produtora[i]), 1, arquivo);
-            printf("\n%s", produtora[i]);
+            printf("\nDa produtora:%s", produtora[i]);
         }
         fclose(arquivo);
     }
 
     else
     {
-        printf("Arquivo nÃ£o encontrado\n");
+        printf("Arquivo não encontrado\n");
     }
+    fclose(arquivo);
 }
 
 void pesquisaFilme()
 {
-    int i, resultado;
+    int i, c, contador = 0;
     FILE *arquivo;
     char nome[30];
 
-    printf("\nDigite o nome de um filme:");
-    scanf("%s", &nome);
-    for (i = 0; i < 3; i++)
-    {
-        if (nome[i] == filme[i])
-        {
-            arquivo = fopen("filme.txt", "r");
+    arquivo = fopen("filme.txt", "r");
 
-            printf("\nFilme encontrado");
-            fread(filme, sizeof(filme), 1, arquivo);
-            printf("\n%s", filme);
-            fread(produtora, sizeof(produtora), 1, arquivo);
-            printf("\n%s", produtora);
+    if (arquivo != NULL)
+    {
+
+        for (i = 0; i < 3; i++)
+        {
+            fread(filme[i], sizeof(filme[i]), 1, arquivo);
+            fread(produtora[i], sizeof(produtora[i]), 1, arquivo);
+        }
+
+        printf("\nDigite o nome de um filme:");
+        gets(nome);
+
+        for(i=0; i < 3; i++)
+        {
+            for (c = 0; filme[i][c] != '\0'; c++)
+            {
+                if (filme[i][c] != nome[c])
+                {
+                    contador=1;
+                    break;
+                }
+            }
+        }
+        if (contador == 1)
+        {
+            printf("\nNenhum filme foi encontrado");
         }
         else
         {
-            printf("\nFilme nÃ£o encontrado!");
+            printf("\nO filme:%s", filme[i]);
+            printf("\nDa produtora:%s", produtora[i]);
         }
+    }
+    else
+    {
+        printf("Arquivo não encontrado\n");
+    }
+    fclose(arquivo);
+}
+
+void pesquisaProdutora()
+{
+    int i, contador = 0;
+    FILE *arquivo;
+    char nome;
+
+    arquivo = fopen("filme.txt", "r");
+
+    if (arquivo != NULL)
+    {
+        for (i = 0; i < 3; i++)
+        {
+            fread(filme[i], sizeof(filme[i]), 1, arquivo);
+            fread(produtora[i], sizeof(produtora[i]), 1, arquivo);
+        }
+
+        printf("\nDigite a primeira letra da produtora:");
+        scanf("%c", &nome);
+
+        for (i = 0; i < 3; i++)
+        {
+            if (nome == produtora[i][0])
+            {
+                printf("\nO filme:%s", filme[i]);
+                printf("\nDa produtora:%s", produtora[i]);
+                contador++;
+            }
+        }
+        if (contador == 0)
+        {
+            printf("\nNenhuma produtora foi encontrada");
+        }
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
     }
 }
 
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
-    int opc, resultado;
+    int opc;
 
     do
     {
         printf("\n1 - Entrada de dados\n");
         printf("2 - Lista todos os dados na tela\n");
         printf("3 - Pesquisa um filme com o nome completo\n");
-        printf("4 - Pesquisa produtora pela 1Â° letra\n");
+        printf("4 - Pesquisa produtora pela 1° letra\n");
         printf("5 - Altera dados (pesquisa pelo filme completo)\n");
-        printf("6 - Exclui dados (pesquisa pelo filme completo\n");
+        printf("6 - Exclui dados (pesquisa pelo filme completo)\n");
         printf("7 - Sair\n");
-        printf("Escolha uma opÃ§Ã£o: ");
+        printf("Escolha uma opção: ");
         scanf("%d", &opc);
+        getchar();
 
         switch (opc)
         {
         case 1:
         {
+            system("cls");
             entradaDados();
-            getchar();
             break;
         }
         case 2:
         {
+            system("cls");
             listaDados();
-            getchar();
             break;
         }
         case 3:
         {
+            system("cls");
             pesquisaFilme();
-            getchar();
             break;
         }
         case 4:
-            printf("opc 4\n");
+        {
+            system("cls");
+            pesquisaProdutora();
             break;
+        }
         case 5:
             printf("opc 5\n");
             break;
@@ -135,7 +201,7 @@ int main()
             exit(0);
             break;
         default:
-            printf("OpÃ§Ã£o invÃ¡lida\n");
+            printf("Opção inválida\n");
             break;
         }
     } while (opc != 7);
