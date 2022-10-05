@@ -1,4 +1,4 @@
-// ARRUMAR O EXERCÍCIO 3 (SYSTEM CLS E TENTATIVAS)
+// ARRUMAR O EXERCÍCIO 3 (RETORNO DO PROGRAMA - DEVERIA RETORNAR PRO INICIO MAS RETORNA DO ULTIMO NUMERO QUE PAROU)
 
 /* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
 /* Semestre: Segundo Semestre de ADS - Manhã
@@ -136,7 +136,6 @@ int main ()
         scanf("%d", &result);
     } while (result == 1);
 }
-
 #endif // ex2
 
 #ifdef ex3
@@ -146,7 +145,7 @@ int main ()
 
 int main ()
 {
-    // ARRUMAR O SYSTEM CLS
+    // ARRUMAR O RETORNO DO PROGRAMA
      setlocale (LC_ALL,"portuguese");
 
      int minimo = 1, maximo = 99, n, result;
@@ -175,6 +174,7 @@ int main ()
             minimo = n;
             n = maximo + minimo/2;
             getchar();
+            tentativa++;
             break;
         }
 
@@ -183,6 +183,7 @@ int main ()
             maximo = n;
             n = maximo + minimo/2;
             getchar();
+            tentativa++;
             break;
         }
 
@@ -191,6 +192,7 @@ int main ()
             printf("\nO número pensado é: %d\n",n);
             printf("UUHUUU! Encontrei o número em %d tentativas.\n", tentativa);
             getchar();
+            tentativa++;
             break;
         }
         }
@@ -202,8 +204,6 @@ int main ()
         getchar();
     } while (result == 1);
 }
-
-
 #endif // ex3
 
 #ifdef ex4
@@ -252,7 +252,6 @@ int main ()
     }
     while (result == 1);
 }
-
 #endif // ex3
 
 #ifdef ex5
