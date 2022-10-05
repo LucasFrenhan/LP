@@ -1,6 +1,6 @@
-/* Nome: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manh„
-/* Componente Curricular: Linguagem de ProgramaÁ„o
+/* Nome: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manh√£
+/* Componente Curricular: Linguagem de Programa√ß√£o
 /* Professor: Rui */
 
 #define ex1
@@ -23,7 +23,7 @@ void criaVetor()
 
     for(c=0; c<10; c++)
     {
-        printf("\nDigite o %d∞ n˙mero: ",c+1);
+        printf("\nDigite o %d¬∞ n√∫mero: ",c+1);
         scanf("%d",&vetorA[c]);
     }
 }
@@ -102,7 +102,7 @@ int main()
         converteVetorPar();
         converteVetorImpar();
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
 
@@ -142,7 +142,7 @@ int verificaVetor(int x)
             if (x==vetor[i][j])
             {
                 printf("\n");
-                printf("O n˙mero %d est· na posiÁ„o no vetor[%d] [%d]\n",x,i,j);
+                printf("O n√∫mero %d est√° na posi√ß√£o no vetor[%d] [%d]\n",x,i,j);
                 k++;
             }
         }
@@ -184,18 +184,17 @@ int main()
         if(kx==0)
         {
             printf("\n");
-            printf("O n˙mero digitado n„o est· no vetor\n");
+            printf("O n√∫mero digitado n√£o est√° no vetor\n");
         }
         printf("\n");
 
         imprimiVetor();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
-
 #endif // ex2
 
 #ifdef ex3
@@ -216,7 +215,7 @@ void criaVetorA()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um n˙mero inteiro para o vetor A [%d][%d]:",i,j);
+            printf("\nDigite um n√∫mero inteiro para o vetor A [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorA[i][j] = x;
         }
@@ -230,7 +229,7 @@ void criaVetorB()
     {
         for(j=0; j<3; j++)
         {
-            printf("\nDigite um n˙mero inteiro para o vetor B [%d][%d]:",i,j);
+            printf("\nDigite um n√∫mero inteiro para o vetor B [%d][%d]:",i,j);
             scanf("%d",&x);
             vetorB[i][j] = x;
         }
@@ -255,7 +254,7 @@ void imprimiVetorA()
 {
     int i,j;
 
-    printf("O conte˙do do vetor A\n");
+    printf("O conte√∫do do vetor A\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -270,7 +269,7 @@ void imprimiVetorB()
 {
     int i,j;
 
-    printf("O conte˙do do vetor B\n");
+    printf("O conte√∫do do vetor B\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -285,7 +284,7 @@ void imprimiVetorC()
 {
     int i,j;
 
-    printf("O conte˙do do vetor C\n");
+    printf("O conte√∫do do vetor C\n");
     for(i=0; i<2; i++)
     {
         for(j=0; j<3; j++)
@@ -315,17 +314,15 @@ int main()
         imprimiVetorC();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
-
 #endif // ex3
 
 #ifdef ex4
 /* Exercicio 4 - Escreva um programa para receber via teclado em vetores 3 int, 3 long,
     3 unsigned, 3 float e 3 double e imprima-os no video no seguinte formato:
-
             10        20        30        40        50
     12345678901234567890123456789012345678901234567890
       int                 long                unsigned
@@ -346,10 +343,10 @@ int criaVetorInt()
 {
     int i;
 
-    printf("\nPrimeiro ser„o os valores do tipo inteiros\n");
+    printf("\nPrimeiro ser√£o os valores do tipo inteiros\n");
     for(i=0; i<3; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%d",&vetorInt[i][1]);
     }
 }
@@ -358,10 +355,10 @@ float criaVetorFloat()
 {
     int i;
 
-    printf("\nSegundo ser„o os valores do tipo ponto flutuante\n");
+    printf("\nSegundo ser√£o os valores do tipo ponto flutuante\n");
     for(i=0; i<3; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%f",&vetorFloat[i][1]);
     }
 }
@@ -370,10 +367,10 @@ long criaVetorLong()
 {
     int i;
 
-    printf("\nTerceiro ser„o os valores do tipo long\n");
+    printf("\nTerceiro ser√£o os valores do tipo long\n");
     for(i=0; i<3; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%ld",&vetorLong[i][1]);
     }
 }
@@ -382,10 +379,10 @@ double criaVetorDouble()
 {
     int i;
 
-    printf("\nQuarto ser„o os valores do tipo double\n");
+    printf("\nQuarto ser√£o os valores do tipo double\n");
     for(i=0; i<3; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%lf",&vetorDouble[i][1]);
     }
 }
@@ -394,10 +391,10 @@ unsigned criaVetorUnsigned()
 {
     int i;
 
-    printf("\nQuinto ser„o os valores do tipo unsingned\n");
+    printf("\nQuinto ser√£o os valores do tipo unsingned\n");
     for(i=0; i<3; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%u",&vetorUnsigned[i][1]);
     }
 }
@@ -435,7 +432,7 @@ int main()
     {
         system("cls");
 
-        printf("Nosso programa receber· v·rios valores.\n");
+        printf("Nosso programa receber√° v√°rios valores.\n");
         criaVetorInt();
         criaVetorFloat();
         criaVetorLong();
@@ -444,7 +441,7 @@ int main()
         imprimeVetores();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
     return 0;
@@ -464,7 +461,7 @@ void criaVetor()
 
     for(i=0; i<10; i++)
     {
-        printf("Digite o %d∞ n˙mero: ",i+1);
+        printf("Digite o %d¬∞ n√∫mero: ",i+1);
         scanf("%d",&vetorANA[i]);
     }
 }
@@ -493,7 +490,7 @@ void imprimiVetor()
 
     for(i=0; i<10; i++)
     {
-        printf("\nPosiÁ„o %d∞ = %d ",i+1,vetorANA[i]);
+        printf("\nPosi√ß√£o %d¬∞ = %d ",i+1,vetorANA[i]);
     }
 }
 
@@ -508,14 +505,14 @@ int main()
         system("cls");
 
         printf("Esse programa tem como objetivo ordenar os vetores.\n");
-        printf("VocÍ precisa digitar 10 valores inteiros.\n\n");
+        printf("Voc√™ precisa digitar 10 valores inteiros.\n\n");
 
         criaVetor();
         verificaVetor();
         imprimiVetor();
 
-        printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\n\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
     return 0;
