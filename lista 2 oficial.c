@@ -1,8 +1,8 @@
-// ARRUMAR O EXERCÕCIO 3
+// ARRUMAR O EXERC√çCIO 3 (SYSTEM CLS E TENTATIVAS)
 
-/* Nome: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manh„
-/* Componente Curricular: Linguagem de ProgramaÁ„o
+/* Nome: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manh√£
+/* Componente Curricular: Linguagem de Programa√ß√£o
 /* Professor: Rui */
 
 #define ex1
@@ -12,7 +12,7 @@
 #include <locale.h>
 
 #ifdef ex1
-/* ExercÌcio 1 -  As ligacoes telefonicas s„o cobradas pela sua duracao.
+/* Exerc√≠cio 1 -  As ligacoes telefonicas s√£o cobradas pela sua duracao.
    O sistema registra os instantes em que a ligacao foi iniciada e concluida.
    Escreva um programa que recebe via teclado dois instantes dados em
    horas, minutos e segundo e determina o intervalo de tempo
@@ -29,15 +29,15 @@
     {
         system("cls");
 
-        printf("Esse programa tem como objetivo determinar o tempo de uma ligaÁ„o telefÙnica.\n");
-        printf("\nDigite o instante inicial da ligaÁ„o em horas: ");
+        printf("Esse programa tem como objetivo determinar o tempo de uma liga√ß√£o telef√¥nica.\n");
+        printf("\nDigite o instante inicial da liga√ß√£o em horas: ");
         scanf("%d", &h_inicial);
         printf("Digite os minutos: ");
         scanf("%d", &min_inicial);
         printf("Digite os segundos: ");
         scanf("%d", &seg_inicial);
 
-        printf("\nDigite o instante final da ligaÁ„o em horas: ");
+        printf("\nDigite o instante final da liga√ß√£o em horas: ");
         scanf("%d", &h_final);
         printf("Digite os minutos: ");
         scanf("%d", &min_final);
@@ -72,7 +72,7 @@
             total_seg = seg_final - seg_inicial;
         }
 
-        printf ("\nA duraÁ„o da ligaÁ„o foi de %d:%d:%d", total_h, total_min, total_seg);
+        printf ("\nA dura√ß√£o da liga√ß√£o foi de %d:%d:%d", total_h, total_min, total_seg);
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer numero.\n");
         scanf("%d", &result);
@@ -81,7 +81,7 @@
 #endif // ex1
 
 #ifdef ex2
-/* ExercÌcio 2 - Escreva um programa para adivinhar um numero entre 1 e 99 que o usuario
+/* Exerc√≠cio 2 - Escreva um programa para adivinhar um numero entre 1 e 99 que o usuario
    pensou. Digite via teclado os simbolos =, > ou < a cada pergunta. Utilize o
    comando if-else. */
 
@@ -97,19 +97,19 @@ int main ()
         system("cls");
 
         printf("Seja bem-vindo ao programa!\n");
-        printf("VocÍ deve pensar em um n˙mero entre 1 e 99.\n");
+        printf("Voc√™ deve pensar em um n√∫mero entre 1 e 99.\n");
         printf("Caso o seu numero seja maior, use >\n");
         printf("Caso o seu numero seja menor, use <\n");
         printf("Caso seja o numero pensado, use =\n");
 
         do
         {
-            printf("\nO n˙mero pensado È maior, menor ou igual a %d? ", n = (maximo + minimo)/2);
+            printf("\nO n√∫mero pensado √© maior, menor ou igual a %d? ", n = (maximo + minimo)/2);
             scanf("%c", &x);
 
             if (x == '=')
             {
-                printf("\nO n˙mero pensado È: %d", n);
+                printf("\nO n√∫mero pensado √©: %d", n);
                 getchar();
             }
             else
@@ -132,7 +132,7 @@ int main ()
         } while(x!='=');
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
@@ -140,7 +140,7 @@ int main ()
 #endif // ex2
 
 #ifdef ex3
-/* ExercÌcio 3 - Reescreva o programa do exercicio anterior
+/* Exerc√≠cio 3 - Reescreva o programa do exercicio anterior
    agora utilizando o comando switch. Conte o n. de tentativas
    e imprima o resultado no video. */
 
@@ -150,6 +150,7 @@ int main ()
      setlocale (LC_ALL,"portuguese");
 
      int minimo = 1, maximo = 99, n, result;
+     int tentativa = 0;
      char x;
 
      do
@@ -157,14 +158,14 @@ int main ()
      system("cls");
 
      printf("Seja bem-vindo ao programa!\n");
-     printf("VocÍ deve pensar em um n˙mero entre 1 e 99.\n");
-     printf("Caso o seu n˙mero seja maior, use >\n");
-     printf("Caso o seu n˙mero seja menor, use <\n");
-     printf("Caso seja o n˙mero pensado, use =\n");
-W
+     printf("Voc√™ deve pensar em um n√∫mero entre 1 e 99.\n");
+     printf("Caso o seu n√∫mero seja maior, use >\n");
+     printf("Caso o seu n√∫mero seja menor, use <\n");
+     printf("Caso seja o n√∫mero pensado, use =\n");
+
     do
     {
-        printf("\nO n˙mero pensado È maior, menor ou igual a %d? ", n =(maximo + minimo)/2);
+        printf("\nO n√∫mero pensado √© maior, menor ou igual a %d? ", n =(maximo + minimo)/2);
         scanf("%c",&x);
 
         switch(x)
@@ -187,7 +188,8 @@ W
 
         case '=':
         {
-            printf("O n˙mero pensado È: %d",n);
+            printf("\nO n√∫mero pensado √©: %d\n",n);
+            printf("UUHUUU! Encontrei o n√∫mero em %d tentativas.\n", tentativa);
             getchar();
             break;
         }
@@ -195,15 +197,17 @@ W
     } while(x!='=');
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
+        getchar();
     } while (result == 1);
 }
+
 
 #endif // ex3
 
 #ifdef ex4
-/* ExercÌcio 4 - Escreva um programa que receba via teclado numeros
+/* Exerc√≠cio 4 - Escreva um programa que receba via teclado numeros
    inteiros positivos. Quando o numero digitado for negativo o programa
    deve parar e calcula a media dos valores positivos digitados. */
 
@@ -218,12 +222,12 @@ int main ()
     {
         system("cls");
 
-        printf("Esse programa tem como objetivo receber n˙meros via teclado e calcular a mÈdia dos valores digitados\n");
-        printf("quando for digitado um n˙mero negativo.\n");
+        printf("Esse programa tem como objetivo receber n√∫meros via teclado e calcular a m√©dia dos valores digitados\n");
+        printf("quando for digitado um n√∫mero negativo.\n");
 
         do
         {
-            printf("\nDigite um n˙mero: ");
+            printf("\nDigite um n√∫mero: ");
             scanf("%d",&n);
 
             if(n > 0)
@@ -234,10 +238,10 @@ int main ()
         } while (n > 0);
 
         media = soma / cont;
-        printf("\nA media dos n˙meros inteiros positivos È: %.2f\n", media);
+        printf("\nA media dos n√∫meros inteiros positivos √©: %.2f\n", media);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
 
         soma = 0;
@@ -252,16 +256,16 @@ int main ()
 #endif // ex3
 
 #ifdef ex5
-/* ExercÌcio 5 - Um posto est· vendendo combustÌveis com a seguinte tabela de descontos:
-   ¡lcool: atÈ 20 litros, desconto de 3% por litro
+/* Exerc√≠cio 5 - Um posto est√° vendendo combust√≠veis com a seguinte tabela de descontos:
+   √Ålcool: at√© 20 litros, desconto de 3% por litro
         acima de 20 litros, desconto de 5% por litro
-   Gasolina: atÈ 20 litros, desconto de 4% por litro
+   Gasolina: at√© 20 litros, desconto de 4% por litro
           acima de 20 litros, desconto de 6% por litro
 
-   Escreva um programa que leia o n˙mero de litros vendidos e o tipo de
-   combustÌvel (codificado da seguinte forma: A-·lcool, G-gasolina). Calcule e
-   imprima o valor a ser pago pelo cliente sabendo-se que o preÁo do litro da
-   gasolina È R$ 5,88 e o preÁo do litro do ·lcool È R$ 4,18. */
+   Escreva um programa que leia o n√∫mero de litros vendidos e o tipo de
+   combust√≠vel (codificado da seguinte forma: A-√°lcool, G-gasolina). Calcule e
+   imprima o valor a ser pago pelo cliente sabendo-se que o pre√ßo do litro da
+   gasolina √© R$ 5,88 e o pre√ßo do litro do √°lcool √© R$ 4,18. */
 
 int main()
 {
@@ -280,12 +284,12 @@ int main()
         printf("------------------------------------\n");
         printf("\nQuantos litros voce deseja abastecer? ");
         scanf("%d",&litro);
-        printf("\nDIGITE A PARA ¡LCOOL E G PARA GASOLINA.\n");
-        printf("Agora informe o tipo de combustÌvel desejado: ");
+        printf("\nDIGITE A PARA √ÅLCOOL E G PARA GASOLINA.\n");
+        printf("Agora informe o tipo de combust√≠vel desejado: ");
         getchar();
         combustivel = getchar();
 
-        printf("\nO combustÌvel escolhido foi: %c. ”tima escolha!\n", combustivel);
+        printf("\nO combust√≠vel escolhido foi: %c. √ìtima escolha!\n", combustivel);
 
         switch(combustivel)
         {
@@ -346,17 +350,17 @@ int main()
         }
         default:
         {
-            printf ("\nA opÁ„o escolhida n„o existe.\n");
+            printf ("\nA op√ß√£o escolhida n√£o existe.\n");
             printf("\nPor favor, tente novamente.\n");
         }
         }
 
-        printf("\nO preÁo normal do pagamento È R$ %.2f\n", preco);
-        printf("O total do desconto È R$ %.2f\n", desconto = preco - pagamento);
-        printf("O valor com desconto È R$ %.2f\n", pagamento);
+        printf("\nO pre√ßo normal do pagamento √© R$ %.2f\n", preco);
+        printf("O total do desconto √© R$ %.2f\n", desconto = preco - pagamento);
+        printf("O valor com desconto √© R$ %.2f\n", pagamento);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
