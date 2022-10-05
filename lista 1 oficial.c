@@ -1,8 +1,6 @@
-// LISTA OK
-
-/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manhã
-/* Componente Curricular: Linguagem de Programação
+/* Nome: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - ManhÃ£
+/* Componente Curricular: Linguagem de ProgramaÃ§Ã£o
 /* Professor: Rui */
 
 #define ex1
@@ -12,7 +10,7 @@
 #include <locale.h>
 
 #ifdef ex1
-/* Exercício 1 - Escreva um programa que receba via teclado um tempo em segundos e converta
+/* ExercÃ­cio 1 - Escreva um programa que receba via teclado um tempo em segundos e converta
    para horas, minutos e segundos. */
 
  int main ()
@@ -35,7 +33,7 @@
  #endif // ex1
 
  #ifdef ex2
- /* Exercício 2 - Escreva um programa que receba dados via teclado para variaveis do tipo short,
+ /* ExercÃ­cio 2 - Escreva um programa que receba dados via teclado para variaveis do tipo short,
     long, int, float, double e um char e imprima-os no video no seguinte formato:
 
              10        20        30        40        50        60
@@ -53,19 +51,19 @@ int main()
     int i;
     char c;
 
-    printf("Esse programa tem como objetivo imprimir as variáveis no vídeo em um determinado formato.\n");
+    printf("Esse programa tem como objetivo imprimir as variÃ¡veis no vÃ­deo em um determinado formato.\n");
 
-    printf("\nDigite um número para o short: ");
+    printf("\nDigite um nÃºmero para o short: ");
     scanf("%d",&s);
-    printf("\nDigite um número para o float: ");
+    printf("\nDigite um nÃºmero para o float: ");
     scanf("%f",&f);
-    printf("\nDigite um número para o long: ");
+    printf("\nDigite um nÃºmero para o long: ");
     scanf("%ld",&l);
-    printf("\nDigite um número para o double: ");
+    printf("\nDigite um nÃºmero para o double: ");
     scanf("%lf",&d);
-    printf("\nDigite um número para o int: ");
+    printf("\nDigite um nÃºmero para o int: ");
     scanf("%d",&i);
-    printf("\nDigite um número para o char: ");
+    printf("\nDigite um nÃºmero para o char: ");
     scanf("%c",&c);
     c = getchar();
 
@@ -80,8 +78,8 @@ int main()
 #endif // ex2
 
 #ifdef ex3
-/* Exercício 3 - Escreva um programa que determine o menor multiplo de um numero inteiro. Este
-   múltiplo deve ser maior que o limite minimo recebido. Recebe os 2 numeros via teclado.
+/* ExercÃ­cio 3 - Escreva um programa que determine o menor multiplo de um numero inteiro. Este
+   mÃºltiplo deve ser maior que o limite minimo recebido. Recebe os 2 numeros via teclado.
    Ex: menor multiplo de 13 maior que 100. Resultado: 104. */
 
 int main()
@@ -90,7 +88,7 @@ int main()
 
     int limite, mult, x, menor_mult = 0;
 
-    printf("Esse programa tem como objetivo encontrar o menor múltiplo de um número inteiro.\n");
+    printf("Esse programa tem como objetivo encontrar o menor mÃºltiplo de um nÃºmero inteiro.\n");
     printf("\nDigite o limite: ");
     scanf("%d",&limite);
     printf("\nDigite o multiplo: ");
@@ -110,14 +108,14 @@ int main()
                 }
         }
     }
-    printf("\nO menor múltiplo de %d maior que o limite mínimo encontrado de %d é =  %d", mult, limite, menor_mult);
+    printf("\nO menor mÃºltiplo de %d maior que o limite mÃ­nimo encontrado de %d Ã© =  %d", mult, limite, menor_mult);
 }
 
 #endif // ex3
 
 #ifdef ex4
-/* Exercício 4 - Escreva um programa que permute o conteúdo de duas variáveis sem utilizar uma
-   variável auxiliar. */
+/* ExercÃ­cio 4 - Escreva um programa que permute o conteÃºdo de duas variÃ¡veis sem utilizar uma
+   variÃ¡vel auxiliar. */
 
 int main ()
 {
@@ -125,7 +123,7 @@ int main ()
 
     int x, y;
 
-    printf("Esse programa tem como objetivo trocar o valor das variáveis sem o uso de um auxiliar.\n");
+    printf("Esse programa tem como objetivo trocar o valor das variÃ¡veis sem o uso de um auxiliar.\n");
 
     printf("\nInsira o valor de x: ");
     scanf("%d", &x);
@@ -146,9 +144,9 @@ int main ()
 #endif // ex4
 
 #ifdef ex5
-/*  Exercício 5 - Escreva um programa que lê um valor em reais e calcula qual o menor número
-    possível de notas de $100, $50, $20, $10, $5, $2 e $1 em que o valor lido pode
-    ser decomposto. Escrever o valor lido e a relação de notas necessárias. */
+/*  ExercÃ­cio 5 - Escreva um programa que lÃª um valor em reais e calcula qual o menor nÃºmero
+    possÃ­vel de notas de $100, $50, $20, $10, $5, $2 e $1 em que o valor lido pode
+    ser decomposto. Escrever o valor lido e a relaÃ§Ã£o de notas necessÃ¡rias. */
 int main()
 {
     setlocale (LC_ALL,"portuguese");
@@ -156,7 +154,7 @@ int main()
     int valor;
     int  cem=0, cinquenta=0, vinte=0, dez=0, cinco=0, dois=0, um=0;
 
-    printf("Esse programa tem como objetivo receber um valor em reais e decompor em cédulas.\n");
+    printf("Esse programa tem como objetivo receber um valor em reais e decompor em cÃ©dulas.\n");
     printf("\nDigite um valor R$: ");
     scanf("%d", &valor);
 
