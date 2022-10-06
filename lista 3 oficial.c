@@ -5,7 +5,7 @@
 /* Componente Curricular: Linguagem de Programação
 /* Professor: Rui */
 
-#define ex1
+#define ex3
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -218,7 +218,7 @@ int main()
     digitada.(utilize o comando return). O vetor deve ser uma variavel global. */
 
     // vetor -> b,d,f,h,j,k,m,o,q,s,u,w,y
-    char vetor[14] = {'b','d','f','h','j','k','m','o','q','s','u','w','y'};
+    char vetor[14] = {'b','d','f','h','j','k','m','o','q','s','u','w','y','\0'};
 
 int verifica(char v)
 {
@@ -230,10 +230,7 @@ int verifica(char v)
         {
             return 1;
         }
-        else
-        {
-            return 0;
-        }
+        return 0;
     }
 }
 
@@ -255,7 +252,7 @@ int main()
 
         a = verifica(letra);
 
-        if (a == 1)
+        if (a == 0)
         {
             printf("A letra digitada não existe no vetor.\n");
         }
@@ -267,6 +264,7 @@ int main()
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
+        getchar();
     } while (result == 1);
 }
 

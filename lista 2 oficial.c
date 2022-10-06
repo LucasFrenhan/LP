@@ -1,11 +1,9 @@
-// ARRUMAR O EXERCÍCIO 3 (RETORNO DO PROGRAMA - DEVERIA RETORNAR PRO INICIO MAS RETORNA DO ULTIMO NUMERO QUE PAROU)
-
 /* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
 /* Semestre: Segundo Semestre de ADS - Manhã
 /* Componente Curricular: Linguagem de Programação
 /* Professor: Rui */
 
-#define ex1
+#define ex3
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -145,7 +143,6 @@ int main ()
 
 int main ()
 {
-    // ARRUMAR O RETORNO DO PROGRAMA
      setlocale (LC_ALL,"portuguese");
 
      int minimo = 1, maximo = 99, n, result;
@@ -155,6 +152,7 @@ int main ()
      do
      {
      system("cls");
+
 
      printf("Seja bem-vindo ao programa!\n");
      printf("Você deve pensar em um número entre 1 e 99.\n");
@@ -197,6 +195,9 @@ int main ()
         }
         }
     } while(x!='=');
+        maximo=99;
+        minimo=1;
+        tentativa=0;
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
