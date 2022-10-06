@@ -1,8 +1,6 @@
-// ARRUMAR O EXERCICIO 3
-
-/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manhã
-/* Componente Curricular: Linguagem de Programação
+/* Nome: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - ManhÃ£
+/* Componente Curricular: Linguagem de ProgramaÃ§Ã£o
 /* Professor: Rui */
 
 #define ex3
@@ -12,8 +10,8 @@
 #include<locale.h>
 
 #ifdef ex1
-/*  Exercício 1 - Faça um programa que receba dois numeros inteiros e execute as seguintes
-    funçoes:
+/*  ExercÃ­cio 1 - FaÃ§a um programa que receba dois numeros inteiros e execute as seguintes
+    funÃ§oes:
     - Verificar se o numero digitado e' positivo ou negativo. Sendo que o valor de
       retorno sera' 1 se positivo, 0 se negativo ou -1 se for igual a 0.
     - Se os 2 numeros sao positivos, retorne a soma dos N numeros existentes entre
@@ -89,7 +87,7 @@ int main()
     {
         system("cls");
 
-        printf("Esse programa tem como objetivo receber dois números inteiros e executar funções.\n");
+        printf("Esse programa tem como objetivo receber dois nÃºmeros inteiros e executar funÃ§Ãµes.\n");
         printf("\nDigite o primeiro valor: ");
         scanf("%d", &a);
         c = verifica1(a);
@@ -102,16 +100,16 @@ int main()
             if (a < b)
             {
                 e = soma(a,b);
-                printf("\nA soma dos números entre %d e %d é igual a: %d\n", a,b,e);
+                printf("\nA soma dos nÃºmeros entre %d e %d Ã© igual a: %d\n", a,b,e);
             }
             if (a > b)
             {
                 e = soma(b,a);
-                printf("\nA soma dos números entre %d e %d é igual a: %d\n", b,a,e);
+                printf("\nA soma dos nÃºmeros entre %d e %d Ã© igual a: %d\n", b,a,e);
             }
             if (a == b)
             {
-                printf("\nNão existe números inteiros entre %d e %d\n", a,b);
+                printf("\nNÃ£o existe nÃºmeros inteiros entre %d e %d\n", a,b);
             }
         }
 
@@ -127,7 +125,7 @@ int main()
             }
             if (a == b)
             {
-                printf("\nNão existe números inteiros entre %d e %d",a,b);
+                printf("\nNÃ£o existe nÃºmeros inteiros entre %d e %d",a,b);
             }
             if(e!=1)
             {
@@ -144,21 +142,21 @@ int main()
         if (c == 1 && d == 0)
         {
             f = divide(a,b);
-            printf("\nA divisão entre %d e %d é: %g", a,b,f);
+            printf("\nA divisÃ£o entre %d e %d Ã©: %g", a,b,f);
         }
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
 #endif // ex1
 
 #ifdef ex2
-/*  Exercício 2 - Escreva um programa que receba um numero N via teclado. Escreva uma funcao
+/*  ExercÃ­cio 2 - Escreva um programa que receba um numero N via teclado. Escreva uma funcao
     que retorne a soma dos algarismos do resultado de N!. O resultado deve ser
     mostrado na funcao main().
 
-    Ex: se N = 4, N! = 24. Logo, a soma de seus algarismos e´ 2 + 4 = 6. */
+    Ex: se N = 4, N! = 24. Logo, a soma de seus algarismos eÂ´ 2 + 4 = 6. */
 
 int fatorial(int x)
 {
@@ -182,7 +180,7 @@ soma(int y)
         soma = soma + digito;
         y = y / 10;
     }
-    printf("\nA soma dos digitos é igual a: %d\n", soma);
+    printf("\nA soma dos digitos Ã© igual a: %d\n", soma);
 }
 
 int main()
@@ -196,15 +194,15 @@ int main()
         system("cls");
 
         printf("Esse programa tem como objetivo retornar a soma dos algarismos.\n");
-        printf("\nDigite um número qualquer: ");
+        printf("\nDigite um nÃºmero qualquer: ");
         scanf("%d", &a);
 
         b = fatorial(a);
-        printf("\nO fatorial do número digitado é: %d\n", b);
+        printf("\nO fatorial do nÃºmero digitado Ã©: %d\n", b);
         c = soma(b);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
@@ -212,7 +210,7 @@ int main()
 
 #ifdef ex3
 // DANDO ERRO
-/*  Exercício 3 - Escreva um programa que receba uma letra via teclado. Escreva uma funcao que
+/*  ExercÃ­cio 3 - Escreva um programa que receba uma letra via teclado. Escreva uma funcao que
     pesquise esta letra dentro do vetor abaixo. Imprima o resultado da pesquisa
     no video na funcao main(). Passe como informacao para a funcao a letra
     digitada.(utilize o comando return). O vetor deve ser uma variavel global. */
@@ -230,8 +228,8 @@ int verifica(char v)
         {
             return 1;
         }
-        return 0;
     }
+    return 0;
 }
 
 int main()
@@ -245,7 +243,7 @@ int main()
     {
         system("cls");
 
-        printf("Esse programa tem como objetivo receber uma letra e imprimir o resultado na função.\n");
+        printf("Esse programa tem como objetivo receber uma letra e imprimir o resultado na funÃ§Ã£o.\n");
         printf("\nDigite uma letra qualquer: ");
         letra = getchar();
         getchar();
@@ -254,7 +252,7 @@ int main()
 
         if (a == 0)
         {
-            printf("A letra digitada não existe no vetor.\n");
+            printf("A letra digitada nÃ£o existe no vetor.\n");
         }
         else
         {
@@ -262,7 +260,7 @@ int main()
         }
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     } while (result == 1);
@@ -271,7 +269,7 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/*  Exercício 4 - Escreva um programa que receba na funcao main() 2 valores inteiro. Escreva
+/*  ExercÃ­cio 4 - Escreva um programa que receba na funcao main() 2 valores inteiro. Escreva
     uma funcao para cada operacoes aritmeticas e passe como parametro os 2
     valores recebidos na funcao main(). Retorne os resultados usando o comando
     return e imprima os 4 resultados no video na funcao main(). */
@@ -319,27 +317,27 @@ int main()
     {
         system("cls");
 
-        printf("Esse programa tem como objetivo receber dois valores e realizar operações aritméticas.\n");
-        printf("\nDigite o primeiro número: ");
+        printf("Esse programa tem como objetivo receber dois valores e realizar operaÃ§Ãµes aritmÃ©ticas.\n");
+        printf("\nDigite o primeiro nÃºmero: ");
         scanf("%f", &a);
 
-        printf("\nDigite o segundo número: ");
+        printf("\nDigite o segundo nÃºmero: ");
         scanf("%f", &b);
 
         c = soma(a,b);
-        printf("\nO resultado da soma é: %g\n", c);
+        printf("\nO resultado da soma Ã©: %g\n", c);
 
         d = sub(a,b);
-        printf("O resultado da subtração é: %g\n", d);
+        printf("O resultado da subtraÃ§Ã£o Ã©: %g\n", d);
 
         e = mult(a,b);
-        printf("O resultado da multiplicação é: %g\n", e);
+        printf("O resultado da multiplicaÃ§Ã£o Ã©: %g\n", e);
 
         f = divisao(a,b);
-        printf("O resultado da divisão é: %g\n", f);
+        printf("O resultado da divisÃ£o Ã©: %g\n", f);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     } while (result == 1);
 }
@@ -347,7 +345,7 @@ int main()
 #endif // ex4
 
 #ifdef ex5
-/*  Exercício 5 - Aproveitando o programa anterior, inclua a selecao das operacoes aritmeticas
+/*  ExercÃ­cio 5 - Aproveitando o programa anterior, inclua a selecao das operacoes aritmeticas
     para transforma esse programa em uma calculadora. (utilize o comando switch).
     As operacoes aritmeticas devem ser funcoes. O resultado deve ser mostrado na
     funcao main() */
@@ -391,14 +389,14 @@ int main()
     int opc;
     float b, acumulador;
 
-    printf("Esse programa tem como objetivo receber dois valores e realizar operações aritméticas.\n");
-    printf("\nDigite o primeiro número: ");
+    printf("Esse programa tem como objetivo receber dois valores e realizar operaÃ§Ãµes aritmÃ©ticas.\n");
+    printf("\nDigite o primeiro nÃºmero: ");
     scanf("%f",&acumulador);
     do
     {
         do
         {
-            printf("\nQual operação desejar fazer? ( +, -, *, /) \n");
+            printf("\nQual operaÃ§Ã£o desejar fazer? ( +, -, *, /) \n");
             printf("1 - para somar\n");
             printf("2 - para subtrair\n");
             printf("3 - para multiplicar\n");
@@ -407,7 +405,7 @@ int main()
             scanf("%d",&opc);
             if(opc>5)
             {
-                printf("Opção inválida!\n");
+                printf("OpÃ§Ã£o invÃ¡lida!\n");
             }
         }
         while(opc<1 || opc>5);
@@ -416,7 +414,7 @@ int main()
         {
         case 1:
         {
-            printf("\nDigite o segundo número: \n");
+            printf("\nDigite o segundo nÃºmero: \n");
             scanf("%f",&b);
             system("cls");
             acumulador = soma(acumulador,b);
@@ -425,29 +423,29 @@ int main()
         }
         case 2:
         {
-            printf("\nDigite o segundo número: ");
+            printf("\nDigite o segundo nÃºmero: ");
             scanf("%f",&b);
             system("cls");
             acumulador = sub(acumulador,b);
-            printf("A resultado da subtração foi de: %g\n", acumulador);
+            printf("A resultado da subtraÃ§Ã£o foi de: %g\n", acumulador);
             break;
         }
         case 3:
         {
-            printf("\nDigite o segundo número: ");
+            printf("\nDigite o segundo nÃºmero: ");
             scanf("%f",&b);
             system("cls");
             acumulador = mult(acumulador,b);
-            printf("A resultado da multiplicação foi de: %g\n", acumulador);
+            printf("A resultado da multiplicaÃ§Ã£o foi de: %g\n", acumulador);
             break;
         }
         case 4:
         {
-            printf("\nDigite o segundo número: ");
+            printf("\nDigite o segundo nÃºmero: ");
             scanf("%f",&b);
             system("cls");
             acumulador = divisao(acumulador,b);
-            printf("A resultado da divisão foi de: %g\n", acumulador);
+            printf("A resultado da divisÃ£o foi de: %g\n", acumulador);
             break;
         }
         case 5:
