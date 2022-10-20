@@ -66,7 +66,6 @@ int main()
        em outra funcao, no seguinte formato.
        estrutura: char, int, long, float, double, unsigned char, unsigned int,
        unsigned long
-
             10        20        30        40        50        60        70
     1234567890123456789012345678901234567890123456789012345678901234567890
         char      int       long                float               double
@@ -85,8 +84,26 @@ int main()
        Estrutura: nome, peso, altura */
 
 struct dados {
-
-
+    char nome[20];
+    float peso;
+    float altura;
 };
+
+int main()
+{
+    struct dados X[4];
+    int i;
+
+    printf("Insira o nome do paciente: ");
+    gets(X.nome);
+
+    printf("Insira o peso do paciente: ");
+    scanf("%f", &X.peso);
+
+    printf("Insira a altura do paciente: ");
+    scanf("%f", &X.altura);
+
+    printf("%s , %g , %g", X.nome, X.peso, X.altura);
+}
 
 #endif // ex3
