@@ -1,6 +1,6 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+// Nomes: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
-// Componente: Linguagem de Programação
+// Componente: Linguagem de ProgramaÃ§Ã£o
 // Data: 20/10/2020
 
 #define ex3
@@ -10,7 +10,7 @@
 #ifdef ex1
 /* 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
        estruturas de 4 elementos. Receba os dados pelo teclado e imprima-os no
-       video. Faça um menu. (vetor de estruturas)
+       video. FaÃ§a um menu. (vetor de estruturas)
        estrutura: nome, end, cidade, estado, cep */
 
 struct local{
@@ -29,10 +29,10 @@ int main()
     for (i = 0; i < 4; i++)
     {
 
-    printf("Insira o nome do usuário: ");
+    printf("Insira o nome do usuÃ¡rio: ");
     gets(X[i].nome);
 
-    printf("Insir o nome do endereço: ");
+    printf("Insir o nome do endereÃ§o: ");
     gets(X[i].end);
 
     printf("Insira o nome da cidade: ");
@@ -75,7 +75,7 @@ int main()
 #ifdef ex3
 /* 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
        estrutura de 4 elementos. Receba dados via teclado e imprima-os no video.
-       Faça um menu com as seguintes opcoes:
+       FaÃ§a um menu com as seguintes opcoes:
         1 - receber todos os dados
         2 - imprime todos os dados
         3 - calcula o IMC de todas as pessoas.
@@ -105,5 +105,9 @@ int main()
 
     printf("%s , %g , %g", X.nome, X.peso, X.altura);
 }
-
 #endif // ex3
+
+/* ExercÃ­cio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
+    teclado e calculo, o numero de dias entre elas e mostre o resultado no
+    video. (vetor de estruturas)
+                dia, mes, ano */ 
