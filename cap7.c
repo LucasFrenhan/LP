@@ -1,7 +1,7 @@
 // Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
 // Componente: Linguagem de Programação
-// Data: 20/10/2020
+// Data: 20/10/2022
 
 #define ex2
 #include<stdio.h>
@@ -210,7 +210,17 @@ int main()
 }
 #endif // ex3
 
+#ifdef ex4
 /* Exercício - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
     teclado e calculo, o numero de dias entre elas e mostre o resultado no
     video. (vetor de estruturas)
-                dia, mes, ano */
+                dia, mes, ano
+*/
+int main()
+{
+    setlocale (LC_ALL,"");
+
+}
+#endif // ex4
+
+
