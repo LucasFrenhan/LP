@@ -133,8 +133,6 @@ struct dados {
 
 int main()
 {
-    setlocale (LC_ALL,"");
-
     struct dados X[4];
     int i, opc;
     float imc[4];
@@ -147,13 +145,14 @@ int main()
     do
     {
         system("cls");
-        printf("1 - Recebe dados;\n");
-        printf("2 - Imprime todos os dados;\n");
+        printf("1 - Recebe dados\n");
+        printf("2 - Imprime todos os dados\n");
         printf("3 - Calcula os dados\n");
         printf("4 - Sair\n");
         printf("Qual opção deseja realizar? ");
         scanf("%d", &opc);
         getchar();
+
         if (opc > 4)
         {
             printf("Opção inválida!\n");
@@ -170,6 +169,7 @@ int main()
 
                     printf("Insira o peso do paciente: ");
                     scanf("%f", &X[i].peso);
+
 
                     printf("Insira a altura do paciente: ");
                     scanf("%f", &X[i].altura);
