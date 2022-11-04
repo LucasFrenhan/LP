@@ -1,16 +1,16 @@
-// Nomes: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
+// Nomes: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
-// Componente: Linguagem de Programa√ß√£o
+// Componente: Linguagem de ProgramaÁ„o
 // Data: 20/10/2022
 
-#define ex2
+#define ex4
 #include<stdio.h>
 #include<locale.h>
 
 #ifdef ex1
 /* 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
        estruturas de 4 elementos. Receba os dados pelo teclado e imprima-os no
-       video. Fa√ßa um menu. (vetor de estruturas)
+       video. FaÁa um menu. (vetor de estruturas)
        estrutura: nome, end, cidade, estado, cep */
 
 struct local{
@@ -31,10 +31,10 @@ int main()
     for (i = 0; i < 4; i++)
     {
 
-    printf("Insira o nome do usu√°rio: ");
+    printf("Insira o nome do usu·rio: ");
     gets(X[i].nome);
 
-    printf("Insir o nome do endere√ßo: ");
+    printf("Insir o nome do endereÁo: ");
     gets(X[i].end);
 
     printf("Insira o nome da cidade: ");
@@ -89,25 +89,27 @@ int main()
 
     printf("Digite um nome (8): \n");
     gets(Estrutura.nome);
-    printf("Digite um n√∫mero inteiro: \n");
+    printf("Digite um n˙mero inteiro: \n");
     scanf("%d",&Estrutura.inteiro);
-   /* printf("Digite um n√∫mero Longo: \n");
+    printf("Digite um n˙mero Longo: \n");
     scanf("%d",&Estrutura.longo);
-    printf("Digite um n√∫mero Real: \n");
-    scanf("%d",&Estrutura.real);
-    printf("Digite um n√∫mero Double: \n");
-    scanf("%d",&Estrutura.numero);
-    printf("Digite um n√∫mero nome (8): \n");
-    scanf("%d",&Estrutura.nomeSinal);
-    printf("Digite um n√∫mero inteiro: \n");
+    printf("Digite um n˙mero Real: \n");
+    scanf("%f",&Estrutura.real);
+    printf("Digite um n˙mero Double: \n");
+    scanf("%f",&Estrutura.numero);
+    getchar();
+    printf("Digite um n˙mero nome (8): \n");
+    gets(Estrutura.nomeSinal);
+    printf("Digite um n˙mero inteiro: \n");
     scanf("%d",&Estrutura.inteiroSinal);
-    printf("Digite um n√∫mero Longo: \n");
-    scanf("%d",&Estrutura.longoSinal);*/
+    printf("Digite um n˙mero Longo: \n");
+    scanf("%d",&Estrutura.longoSinal);
 
 
     printf("        10        20        30        40        50        60        70\n");
     printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
-    printf("%8s %8d",Estrutura.nome, Estrutura.inteiro);
+    printf("%8s%9d%11ld%21f%21f\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
+    printf("%23u%19u%21lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
 
 }
 #endif // ex2
@@ -115,7 +117,7 @@ int main()
 #ifdef ex3
 /* 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
        estrutura de 4 elementos. Receba dados via teclado e imprima-os no video.
-       Fa√ßa um menu com as seguintes opcoes:
+       FaÁa um menu com as seguintes opcoes:
         1 - receber todos os dados
         2 - imprime todos os dados
         3 - calcula o IMC de todas as pessoas.
@@ -149,13 +151,13 @@ int main()
         printf("2 - Imprime todos os dados\n");
         printf("3 - Calcula os dados\n");
         printf("4 - Sair\n");
-        printf("Qual op√ß√£o deseja realizar? ");
+        printf("Qual opÁ„o deseja realizar? ");
         scanf("%d", &opc);
         getchar();
 
         if (opc > 4)
         {
-            printf("Op√ß√£o inv√°lida!\n");
+            printf("OpÁ„o inv·lida!\n");
         }
 
         switch(opc)
@@ -211,15 +213,47 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/* Exerc√≠cio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
+/* ExercÌcio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
     teclado e calculo, o numero de dias entre elas e mostre o resultado no
     video. (vetor de estruturas)
                 dia, mes, ano
 */
+
+struct dados{
+    int dia;
+    int mes;
+    int ano;
+};
+
+
 int main()
 {
     setlocale (LC_ALL,"");
 
+    struct dados Datas[2];
+    int i, determinaIdade;
+
+    printf("Primeiro a data atual, depois a data mais antiga\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        printf("Digite o dia: ");
+        scanf("%d",&Datas[i].dia);
+        printf("\nDigite o mÍs: ");
+        scanf("%d",&Datas[i].mes);
+        printf("\nDigite o ano: ");
+        scanf("%d",&Datas[i].ano);
+        printf("\n");
+    }
+
+    determinaIdade = 365 * Datas[0].ano + 30 * Datas[0].mes + Datas[0].dia - 365 * Datas[1].ano - 30 * Datas[1].mes - Datas[1].dia;
+
+    if(determinaIdade < 0)
+    {
+        determinaIdade = determinaIdade * (-1);
+    }
+
+    printf("\nA diferenÁa entre as datas em dias È de : %d dias",determinaIdade);
 }
 #endif // ex4
 
