@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 02/11/2022
 
-#define ex6
+#define ex4
 #include<stdio.h>
 #include<locale.h>
 
@@ -153,9 +153,41 @@ int main()
 */
 
 
+struct dados{
+    int dia;
+    int mes;
+    int ano;
+};
+
 int main()
 {
     setlocale (LC_ALL,"");
+
+    struct dados Datas[2];
+
+    struct dados *ponteiroDia, *ponteiroMes, *ponteiroAno;
+
+    int i=0;
+
+    ponteiroDia = &Datas -> dia;
+    ponteiroMes = &Datas -> mes;
+    ponteiroAno = &Datas -> ano;
+
+        for(i=0;i<2;i++)
+        {
+            printf("Digite o dia: ");
+            scanf("%d",ponteiroDia);
+            printf("\nDigite o mês: ");
+            scanf("%d",ponteiroMes);
+            printf("\nDigite o ano: ");
+            scanf("%d",ponteiroAno);
+            printf("\n");
+        }
+
+        printf("\n%d/%d/%d.", ponteiroDia, ponteiroMes, ponteiroAno);
+
+
+
 
 
 
