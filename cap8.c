@@ -3,6 +3,8 @@
 // Componente: Linguagem de Programação
 // Data: 02/11/2022
 
+//ex3 falta fazer, ex4 não está funcionando
+
 #define ex4
 #include<stdio.h>
 #include<locale.h>
@@ -173,23 +175,22 @@ int main()
     ponteiroMes = &Datas -> mes;
     ponteiroAno = &Datas -> ano;
 
+
         for(i=0;i<2;i++)
         {
             printf("Digite o dia: ");
-            scanf("%d",ponteiroDia);
+            scanf("%d",*(ponteiroDia));
             printf("\nDigite o mês: ");
-            scanf("%d",ponteiroMes);
+            scanf("%d",*(ponteiroMes));
             printf("\nDigite o ano: ");
-            scanf("%d",ponteiroAno);
+            scanf("%d",*(ponteiroAno));
             printf("\n");
         }
 
-        printf("\n%d/%d/%d.", ponteiroDia, ponteiroMes, ponteiroAno);
-
-
-
-
-
+            for(i=0;i<2;i++)
+            {
+            printf("\n%d/%d/%d.", ponteiroDia[i], ponteiroMes[i], ponteiroAno[i]);
+            }
 
 }
 #endif // ex4
