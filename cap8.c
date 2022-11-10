@@ -169,28 +169,26 @@ int main()
 
     struct dados *ponteiroDia, *ponteiroMes, *ponteiroAno;
 
-    int i=0;
+    int i = 0;
 
-    ponteiroDia = &Datas -> dia;
-    ponteiroMes = &Datas -> mes;
-    ponteiroAno = &Datas -> ano;
+    ponteiroDia = (&Datas[0]) -> dia;
+    ponteiroMes = (&Datas[0]) -> mes;
+    ponteiroAno = (&Datas[0]) -> ano;
 
 
         for(i=0;i<2;i++)
         {
             printf("Digite o dia: ");
-            scanf("%d",*(ponteiroDia));
+            scanf("%d",&ponteiroDia);
             printf("\nDigite o mês: ");
-            scanf("%d",*(ponteiroMes));
+            scanf("%d",&ponteiroMes);
             printf("\nDigite o ano: ");
-            scanf("%d",*(ponteiroAno));
+            scanf("%d",&ponteiroAno);
             printf("\n");
         }
 
-            for(i=0;i<2;i++)
-            {
-            printf("\n%d/%d/%d.", ponteiroDia[i], ponteiroMes[i], ponteiroAno[i]);
-            }
+
+        printf("\n%d/%d/%d.", ponteiroDia, ponteiroMes, ponteiroAno);
 
 }
 #endif // ex4
