@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 02/11/2022
 
-//ex3 falta fazer, ex4 não está funcionando
+//ex3 falta fazer
 
 #define ex4
 #include<stdio.h>
@@ -167,28 +167,34 @@ int main()
 
     struct dados Datas[2];
 
-    struct dados *ponteiroDia, *ponteiroMes, *ponteiroAno;
+    struct dados *ponteiroData[2];
 
     int i = 0;
+    int determina;
 
-    ponteiroDia = (&Datas[0]) -> dia;
-    ponteiroMes = (&Datas[0]) -> mes;
-    ponteiroAno = (&Datas[0]) -> ano;
+    ponteiroData[0] = &Datas[0];
+    ponteiroData[1] = &Datas[1];
 
 
         for(i=0;i<2;i++)
         {
             printf("Digite o dia: ");
-            scanf("%d",&ponteiroDia);
+            scanf("%d",&ponteiroData[i]->dia);
             printf("\nDigite o mês: ");
-            scanf("%d",&ponteiroMes);
+            scanf("%d",&ponteiroData[i]->mes);
             printf("\nDigite o ano: ");
-            scanf("%d",&ponteiroAno);
+            scanf("%d",&ponteiroData[i]->ano);
             printf("\n");
         }
 
+        determina = 365 * (*ponteiroData[0]).ano + 30 * (*ponteiroData[0]).mes + (*ponteiroData[0]).dia - 365 * (*ponteiroData[1]).ano - 30 * (*ponteiroData[1]).mes - (*ponteiroData[1]).dia;
 
-        printf("\n%d/%d/%d.", ponteiroDia, ponteiroMes, ponteiroAno);
+        if(determina < 0)
+        {
+            determina = determina * (-1);
+        }
+        printf("\nA diferença entre as datas em dias é de: %d.",determina);
+
 
 }
 #endif // ex4
