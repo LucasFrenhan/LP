@@ -1,6 +1,6 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+// Nomes: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
-// Componente: Linguagem de Programação
+// Componente: Linguagem de ProgramaÃ§Ã£o
 // Data: 27/11/2022
 
 //ex3 falta fazer
@@ -10,7 +10,7 @@
 #include<locale.h>
 
 #ifdef ex1
-/*  Exercício 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main(). Faça uma
+/*  ExercÃ­cio 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main(). FaÃ§a uma
     funcao para compara-las usando ponteiros e retorne como resultado se
     sao IGUAIS 1 ou se sao DIFERENTES 0 para a funcao main().
     Imprima o resultado na funcao main(). (Declare os vetores como variavel global) //
@@ -58,15 +58,15 @@ int main()
         resultado = compara(ponteiro1, ponteiro2);
         if(resultado == 1)
         {
-            printf("\nO resultado da comparação entre strings: são iguais.");
+            printf("\nO resultado da comparaÃ§Ã£o entre strings: sÃ£o iguais.");
         }
         else
         {
-            printf("\nO resultado da comparação entre strings: são diferentes.\n");
+            printf("\nO resultado da comparaÃ§Ã£o entre strings: sÃ£o diferentes.\n");
         }
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     }
@@ -76,7 +76,7 @@ int main()
 
 
 #ifdef ex2
-/*  Exercício 2 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
+/*  ExercÃ­cio 2 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
     uma funcao que pesquise esta letra existe no vetor abaixo usando ponteiros.
     Imprima o resultado da pesquisa no video na funcao main(). Passe como informacao
     para a funcao a letra digitada usando ponteiros.(utilize o comando return).
@@ -114,7 +114,7 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo pesquisar uma informação com ponteiros.\n");
+        printf("Esse programa tem como objetivo pesquisar uma informaÃ§Ã£o com ponteiros.\n");
 
         printf("\nDigite uma letra qualquer: ");
         scanf("%c",&a);
@@ -127,10 +127,10 @@ int main()
         }
         else
         {
-            printf("\nA letra não existe no vetor.\n");
+            printf("\nA letra nÃ£o existe no vetor.\n");
         }
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     }
@@ -141,7 +141,7 @@ int main()
 
 #ifdef ex3
 
-/*  Exercício 3 - Escreva um programa que receba via teclado usando ponteiros um char,
+/*  ExercÃ­cio 3 - Escreva um programa que receba via teclado usando ponteiros um char,
     int, long, unsigned, float, double, unsigned long e unsigned char,
     e imprima-os no video utilizando ponteiros no seguinte formato:
 
@@ -163,13 +163,12 @@ int main()
 
 
 #ifdef ex4
-/*  Exercício 4 - Escreva um programa que contenha uma estrutura representando uma data
+/*  ExercÃ­cio 4 - Escreva um programa que contenha uma estrutura representando uma data
     valida. Essa estrutura deve conter os campos dia, mes e ano. Em seguida,
     leia duas datas e armazene nessa estrutura usando ponteiros. Calcule e exiba
     o numero de dias que decorreram entre as duas datas usando ponteiros.
     Utilize um vetor de estruturas.
 */
-
 
 struct dados{
     int dia;
@@ -193,13 +192,13 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo exibir o número de dias entre duas datas usando ponteiros.\n");
+        printf("Esse programa tem como objetivo exibir o nÃºmero de dias entre duas datas usando ponteiros.\n");
 
         for(i=0;i<2;i++)
         {
             printf("\nDigite o dia: ");
             scanf("%d",&ponteiroData[i]->dia);
-            printf("Digite o mês: ");
+            printf("Digite o mÃªs: ");
             scanf("%d",&ponteiroData[i]->mes);
             printf("Digite o ano: ");
             scanf("%d",&ponteiroData[i]->ano);
@@ -211,10 +210,10 @@ int main()
         {
             determina = determina * (-1);
         }
-        printf("\nA diferença entre as datas em dias é de: %d dias.\n",determina);
+        printf("\nA diferenÃ§a entre as datas em dias Ã© de: %d dias.\n",determina);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     }
@@ -224,7 +223,7 @@ int main()
 
 
 #ifdef ex5
-/*  Exercício 5 - Com a estrutura abaixo, defina um vetor de estruturas de 4 elementos.
+/*  ExercÃ­cio 5 - Com a estrutura abaixo, defina um vetor de estruturas de 4 elementos.
     Receba os dados via teclado numa funcao usando ponteiros. Imprima os dados
     recebidos no video numa usando ponteiros. Utilize um comando de loop.
     O vetor de estruturas de ser declarado como variavel global
@@ -261,7 +260,7 @@ int main()
         {
             printf("\nDigite um nome: ");
             gets(&(ponteiro + i) -> nome[0]);
-            printf("Digite endereço: ");
+            printf("Digite endereÃ§o: ");
             gets(&(ponteiro + i) -> end[0]);
             printf("Digite o nome da cidade: ");
             gets(&(ponteiro + i) -> cidade[0]);
@@ -274,14 +273,14 @@ int main()
         for(i = 0; i < 4; i++)
         {
             printf("\n\tO nome: %s",(ponteiro + i) -> nome);
-            printf("\n\tNo endereço: %s",(ponteiro + i) -> end);
+            printf("\n\tNo endereÃ§o: %s",(ponteiro + i) -> end);
             printf("\n\tNa cidade: %s",(ponteiro + i) -> cidade);
             printf("\n\tNo estado: %s",(ponteiro + i) -> estado);
             printf("\n\tNo CEP: %s",(ponteiro + i) -> cep);
             printf("\n\t------------------------------------");
         }
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     }
@@ -291,12 +290,11 @@ int main()
 
 
 #ifdef ex6
-/*  Exercício 6 - Escreva um programa que receba via teclado numeros inteiros positivos usando
+/*  ExercÃ­cio 6 - Escreva um programa que receba via teclado numeros inteiros positivos usando
     ponteiros. Quando o numero digitado for negativo o programa deve parar e calcula
     a media dos valores digitados e mostrar o resultado. Todos os calculos devem ser
     feitos usando ponteiro.
 */
-
 
 int main()
 {
@@ -315,11 +313,11 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo calcular a média dos valores digitados quando for inserido um negativo.\n");
+        printf("Esse programa tem como objetivo calcular a mÃ©dia dos valores digitados quando for inserido um negativo.\n");
 
         do
         {
-            printf("\nDigite um número: ");
+            printf("\nDigite um nÃºmero: ");
             scanf("%d",ponteiroNum);
 
             if(*(ponteiroNum) > 0)
@@ -332,10 +330,10 @@ int main()
 
         *(ponteiroMedia) = *(ponteiroSoma) / *(ponteiroContador);
 
-        printf("\nA média dos números inteiros positivos é: %.2f\n", *ponteiroMedia);
+        printf("\nA mÃ©dia dos nÃºmeros inteiros positivos Ã©: %.2f\n", *ponteiroMedia);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
         getchar();
     }
