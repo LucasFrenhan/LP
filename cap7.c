@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 20/10/2022
 
-#define ex2
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
