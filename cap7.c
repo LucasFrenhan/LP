@@ -1,6 +1,6 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+// Nomes: Ana VitÃ³ria FranÃ§a da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
-// Componente: Linguagem de Programação
+// Componente: Linguagem de ProgramaÃ§Ã£o
 // Data: 20/10/2022
 
 #define ex2
@@ -9,9 +9,9 @@
 
 
 #ifdef ex1
-/*  Exercício 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
+/*  ExercÃ­cio 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
     estruturas de 4 elementos. Receba os dados pelo teclado e imprima-os no
-    video. Faça um menu. (vetor de estruturas)
+    video. FaÃ§a um menu. (vetor de estruturas)
     estrutura: nome, end, cidade, estado, cep */
 
 struct local{
@@ -37,10 +37,10 @@ int main()
         for (i = 0; i < 4; i++)
         {
 
-            printf("\nInsira o nome do usuário: ");
+            printf("\nInsira o nome do usuÃ¡rio: ");
             gets(X[i].nome);
 
-            printf("Insira o nome do endereço: ");
+            printf("Insira o nome do endereÃ§o: ");
             gets(X[i].end);
 
             printf("Insira o nome da cidade: ");
@@ -66,7 +66,7 @@ int main()
             printf("\n");
         }
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -75,7 +75,7 @@ int main()
 
 
 #ifdef ex2
-/*  Exercício 2 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
+/*  ExercÃ­cio 2 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
     Receba dados via teclado em uma funcao e imprima estes conteudos no video,
     em outra funcao, no seguinte formato.
     estrutura: char, int, long, float, double, unsigned char, unsigned int,
@@ -109,20 +109,20 @@ int main()
 
         printf("Digite um nome (8): ");
         gets(Estrutura.nome);
-        printf("Digite um número inteiro: ");
+        printf("Digite um nÃºmero inteiro: ");
         scanf("%d",&Estrutura.inteiro);
-        printf("Digite um número Longo: ");
+        printf("Digite um nÃºmero Longo: ");
         scanf("%d",&Estrutura.longo);
-        printf("Digite um número Real: ");
+        printf("Digite um nÃºmero Real: ");
         scanf("%f",&Estrutura.real);
-        printf("Digite um número Double: ");
+        printf("Digite um nÃºmero Double: ");
         scanf("%f",&Estrutura.numero);
         getchar();
-        printf("Digite um número nome (8): ");
+        printf("Digite um nÃºmero nome (8): ");
         gets(Estrutura.nomeSinal);
-        printf("Digite um número inteiro: ");
+        printf("Digite um nÃºmero inteiro: ");
         scanf("%d",&Estrutura.inteiroSinal);
-        printf("Digite um número Longo: ");
+        printf("Digite um nÃºmero Longo: ");
         scanf("%d",&Estrutura.longoSinal);
         printf("\n");
 
@@ -133,7 +133,7 @@ int main()
         printf("%23u%19u%21lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -142,9 +142,9 @@ int main()
 
 
 #ifdef ex3
-/*  Exercício 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
+/*  ExercÃ­cio 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
     estrutura de 4 elementos. Receba dados via teclado e imprima-os no video.
-    Faça um menu com as seguintes opcoes:
+    FaÃ§a um menu com as seguintes opcoes:
        1 - receber todos os dados
        2 - imprime todos os dados
        3 - calcula o IMC de todas as pessoas.
@@ -176,13 +176,13 @@ int main()
         printf("2 - Imprime todos os dados\n");
         printf("3 - Calcula os dados\n");
         printf("4 - Sair\n");
-        printf("Qual opção deseja realizar? ");
+        printf("Qual opÃ§Ã£o deseja realizar? ");
         scanf("%d", &opc);
         getchar();
 
         if (opc > 4)
         {
-            printf("Opção inválida!\n");
+            printf("OpÃ§Ã£o invÃ¡lida!\n");
         }
 
         switch(opc)
@@ -238,7 +238,7 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/*  Exercício - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
+/*  ExercÃ­cio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
     teclado e calculo, o numero de dias entre elas e mostre o resultado no
     video. (vetor de estruturas = dia, mes, ano)
 */
@@ -259,14 +259,14 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo calcular o número de dias entre duas datas.\n");
+        printf("Esse programa tem como objetivo calcular o nÃºmero de dias entre duas datas.\n");
         printf("Primeiro insira a data atual, em seguida a data mais antiga.\n");
 
         for(i = 0; i < 2; i++)
         {
             printf("\nDigite o dia: ");
             scanf("%d",&Datas[i].dia);
-            printf("Digite o mês: ");
+            printf("Digite o mÃªs: ");
             scanf("%d",&Datas[i].mes);
             printf("Digite o ano: ");
             scanf("%d",&Datas[i].ano);
@@ -279,13 +279,11 @@ int main()
             determinaIdade = determinaIdade * (-1);
         }
 
-        printf("\nA diferença entre as datas em dias é de : %d dias\n",determinaIdade);
+        printf("\nA diferenÃ§a entre as datas em dias Ã© de : %d dias\n",determinaIdade);
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
+        printf("\nPara encerrar o programa digite qualquer nÃºmero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
 }
 #endif // ex4
-
-
