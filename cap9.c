@@ -1,15 +1,16 @@
-// Nomes: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
+// Nomes: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
-// Componente: Linguagem de ProgramaÁ„o
+// Componente: Linguagem de Programa√ß√£o
 // Data: 03/11/2022
 
 #define ex1
 #include<stdio.h>
 #include<locale.h>
 
+// FAZER EXERC√çCIO 4
 
 #ifdef ex1
-/*  ExercÌcio 1 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
+/*  Exerc√≠cio 1 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
     uma funcao que pesquise se esta letra existe no vetor abaixo usando ponteiros.
     Imprima o resultado da pesquisa no video na funcao main(). Passe como informacao
     para a funcao a letra digitada e o vetor usando ponteiros e faca a pesquisa
@@ -32,7 +33,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -41,9 +42,9 @@ int main()
 
 
 #ifdef ex2
-/*  ExercÌcio 2 - Escreva um programa que receba em uma funcao 2 strings de ate' 10 caracteres
+/*  Exerc√≠cio 2 - Escreva um programa que receba em uma funcao 2 strings de ate' 10 caracteres
     passando como parametro um ponteiro.
-    Os vetores devem ser declarados como variaveis LOCAIS na funÁ„o main().
+    Os vetores devem ser declarados como variaveis LOCAIS na fun√ß√£o main().
     Escreva uma funcao para comparar as 2 strings. Passe como parametros para
     a funcao as 2 strings usando ponteiros e retorne como resultado se IGUAIS 1
     ou se DIFERENTES 0. Mostre o resultado no video na funcao main().
@@ -62,7 +63,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -71,9 +72,9 @@ int main()
 
 
 #ifdef ex3
-/*  ExercÌcio 3 - Escreva um programa que receba n valores via teclado e receba tambem a
-    operaÁ„o a ser executada. Quando for digitado "=" o programa deve mostrar
-    o resultado acumulado dos n valores. As operaÁıes aritmeticas e a entrada
+/*  Exerc√≠cio 3 - Escreva um programa que receba n valores via teclado e receba tambem a
+    opera√ß√£o a ser executada. Quando for digitado "=" o programa deve mostrar
+    o resultado acumulado dos n valores. As opera√ß√µes aritmeticas e a entrada
     de dados devem ser funcoes que recebe os valores usando ponteiros.
     As variaveis sao LOCAIS na funcao main().
 */
@@ -91,7 +92,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -100,10 +101,10 @@ int main()
 
 
 #ifdef ex4
-/*  ExercÌcio 4 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
+/*  Exerc√≠cio 4 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
     A estrutura e' uma variavel LOCAL na funcao main().Receba via teclado o
     conteudo de cada um dos membros numa funcao e imprima-os no video no
-    seguinte formato(tambÈm numa funÁ„o).
+    seguinte formato(tamb√©m numa fun√ß√£o).
 
     estrutura: char, int, long, float, double, unsigned char, unsigned int,
     unsigned long
@@ -127,7 +128,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -136,11 +137,11 @@ int main()
 
 
 #ifdef ex5
-/*  ExercÌcio 5 - Escreva um programa com a estrutura abaixo. Defina um vetor de estruturas
+/*  Exerc√≠cio 5 - Escreva um programa com a estrutura abaixo. Defina um vetor de estruturas
     de 4 elementos como variavel LOCAL na funcao main(). Receba os 4 registros
-    sequencialmente pelo teclado numa funÁ„o e imprima todos os registros no
-    video em outra funcao. FaÁa um menu. Utilize ponteiros nas funcoes.
-    Coloque no menu a opÁ„o de sair tambem. Utilize o comando switch.
+    sequencialmente pelo teclado numa fun√ß√£o e imprima todos os registros no
+    video em outra funcao. Fa√ßa um menu. Utilize ponteiros nas funcoes.
+    Coloque no menu a op√ß√£o de sair tambem. Utilize o comando switch.
     (vetor de estruturas)
     estutura: nome, end, cidade, estado, cep
 */
@@ -158,7 +159,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -167,7 +168,7 @@ int main()
 
 
 #ifdef ex6
-/*  ExercÌcio 6 - Acrescente ao menu do exercicio anterior as funcoes de procura, altera e
+/*  Exerc√≠cio 6 - Acrescente ao menu do exercicio anterior as funcoes de procura, altera e
     exclui um registro sempre usando ponteiros.
 */
 
@@ -184,7 +185,7 @@ int main()
         printf("Esse programa tem como objetivo.......\n");
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
