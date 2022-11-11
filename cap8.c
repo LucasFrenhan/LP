@@ -1,18 +1,16 @@
 // Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
 // Professor: Rui
 // Componente: Linguagem de Programação
-// Data: 02/11/2022
+// Data: 27/11/2022
 
 //ex3 falta fazer
 
-#define ex4
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
 #ifdef ex1
-
-/*
-1 - Receba 2 string de ate 10 caracteres via teclado na funcao main(). Faça uma
+/*  Exercício 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main(). Faça uma
     funcao para compara-las usando ponteiros e retorne como resultado se
     sao IGUAIS 1 ou se sao DIFERENTES 0 para a funcao main().
     Imprima o resultado na funcao main(). (Declare os vetores como variavel global) //
@@ -41,35 +39,44 @@ int main()
 {
     setlocale (LC_ALL,"");
 
-
     char *ponteiro1, *ponteiro2;
-    int resultado;
+    int resultado, result;
 
     ponteiro1 = &nome1[0];
     ponteiro2 = &nome2[0];
 
-    printf("Digite o primeiro nome: ");
-    gets(nome1);
-    printf("Digite o segundo nome: ");
-    gets(nome2);
+    do
+    {
+        system("cls");
+        printf("Esse programa tem como objetivo comparar duas strings.\n");
 
-    resultado = compara(ponteiro1, ponteiro2);
-    if(resultado == 1)
-    {
-        printf("\nO resultado da comparação entre strings: são iguais");
+        printf("\nDigite o primeiro nome: ");
+        gets(nome1);
+        printf("Digite o segundo nome: ");
+        gets(nome2);
+
+        resultado = compara(ponteiro1, ponteiro2);
+        if(resultado == 1)
+        {
+            printf("\nO resultado da comparação entre strings: são iguais.");
+        }
+        else
+        {
+            printf("\nO resultado da comparação entre strings: são diferentes.\n");
+        }
+
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
     }
-    else
-    {
-        printf("\nO resultado da comparação entre strings: são diferentes");
-    }
+    while (result == 1);
 }
 #endif // ex1
 
 
 #ifdef ex2
-
-/*
-    2 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
+/*  Exercício 2 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
     uma funcao que pesquise esta letra existe no vetor abaixo usando ponteiros.
     Imprima o resultado da pesquisa no video na funcao main(). Passe como informacao
     para a funcao a letra digitada usando ponteiros.(utilize o comando return).
@@ -98,32 +105,43 @@ int main()
 {
     setlocale (LC_ALL,"");
 
-    int resultado;
+    int resultado, result;
     char *ponteiro;
     char a;
 
     ponteiro=&a;
 
-    printf("Digite uma letra qualquer: ");
-    scanf("%c",&a);
-
-    resultado = comparaLetra(ponteiro);
-
-    if(resultado == 1)
+    do
     {
-        printf("\nA letra existe no vetor.");
+        system("cls");
+        printf("Esse programa tem como objetivo pesquisar uma informação com ponteiros.\n");
+
+        printf("\nDigite uma letra qualquer: ");
+        scanf("%c",&a);
+
+        resultado = comparaLetra(ponteiro);
+
+        if(resultado == 1)
+        {
+            printf("\nA letra existe no vetor.");
+        }
+        else
+        {
+            printf("\nA letra não existe no vetor.\n");
+        }
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
     }
-    else
-    {
-        printf("\nA letra não existe no vetor.");
-    }
+    while (result == 1);
 }
 #endif // ex2
 
+
 #ifdef ex3
 
-/*
-    3 - Escreva um programa que receba via teclado usando ponteiros um char,
+/*  Exercício 3 - Escreva um programa que receba via teclado usando ponteiros um char,
     int, long, unsigned, float, double, unsigned long e unsigned char,
     e imprima-os no video utilizando ponteiros no seguinte formato:
 
@@ -145,9 +163,7 @@ int main()
 
 
 #ifdef ex4
-
-/*
-    4 - Escreva um programa que contenha uma estrutura representando uma data
+/*  Exercício 4 - Escreva um programa que contenha uma estrutura representando uma data
     valida. Essa estrutura deve conter os campos dia, mes e ano. Em seguida,
     leia duas datas e armazene nessa estrutura usando ponteiros. Calcule e exiba
     o numero de dias que decorreram entre as duas datas usando ponteiros.
@@ -166,25 +182,27 @@ int main()
     setlocale (LC_ALL,"");
 
     struct dados Datas[2];
-
     struct dados *ponteiroData[2];
 
     int i = 0;
-    int determina;
+    int determina, result;
 
     ponteiroData[0] = &Datas[0];
     ponteiroData[1] = &Datas[1];
 
+    do
+    {
+        system("cls");
+        printf("Esse programa tem como objetivo exibir o número de dias entre duas datas usando ponteiros.\n");
 
         for(i=0;i<2;i++)
         {
-            printf("Digite o dia: ");
+            printf("\nDigite o dia: ");
             scanf("%d",&ponteiroData[i]->dia);
-            printf("\nDigite o mês: ");
+            printf("Digite o mês: ");
             scanf("%d",&ponteiroData[i]->mes);
-            printf("\nDigite o ano: ");
+            printf("Digite o ano: ");
             scanf("%d",&ponteiroData[i]->ano);
-            printf("\n");
         }
 
         determina = 365 * (*ponteiroData[0]).ano + 30 * (*ponteiroData[0]).mes + (*ponteiroData[0]).dia - 365 * (*ponteiroData[1]).ano - 30 * (*ponteiroData[1]).mes - (*ponteiroData[1]).dia;
@@ -193,24 +211,28 @@ int main()
         {
             determina = determina * (-1);
         }
-        printf("\nA diferença entre as datas em dias é de: %d.",determina);
+        printf("\nA diferença entre as datas em dias é de: %d dias.\n",determina);
 
-
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
+    }
+    while (result == 1);
 }
 #endif // ex4
 
 
 #ifdef ex5
-
-/*
-    5 - Com a estrutura abaixo, defina um vetor de estruturas de 4 elementos.
+/*  Exercício 5 - Com a estrutura abaixo, defina um vetor de estruturas de 4 elementos.
     Receba os dados via teclado numa funcao usando ponteiros. Imprima os dados
     recebidos no video numa usando ponteiros. Utilize um comando de loop.
     O vetor de estruturas de ser declarado como variavel global
        estrutura: nome, end, cidade, estado, cep
 */
 
-struct dados{
+struct dados
+{
     char nome[20];
     char end[20];
     char cidade[20];
@@ -225,42 +247,51 @@ int main()
     setlocale (LC_ALL,"");
 
     int i = 0;
+    int result;
 
     struct dados *ponteiro;
     ponteiro = &Locais[i];
 
-    for(i = 0; i < 4; i++)
+    do
     {
-        printf("Digite um nome: ");
-        gets(&(ponteiro + i) -> nome[0]);
-        printf("Digite endereço: ");
-        gets(&(ponteiro + i) -> end[0]);
-        printf("Digite o nome da cidade: ");
-        gets(&(ponteiro + i) -> cidade[0]);
-        printf("Digite estado: ");
-        gets(&(ponteiro + i) -> estado[0]);
-        printf("Digite o CEP: ");
-        gets(&(ponteiro + i) -> cep[0]);
-        printf("------------------------------------\n");
-    }
+        system("cls");
+        printf("Esse programa tem como objetivo receber dados e imprimi-los na tela com a ajuda de ponteiros.\n");
 
-    for(i = 0; i < 4; i++)
-    {
-        printf("\n\tO nome: %s",(ponteiro + i) -> nome);
-        printf("\n\tNo endereço: %s",(ponteiro + i) -> end);
-        printf("\n\tNa cidade: %s",(ponteiro + i) -> cidade);
-        printf("\n\tNo estado: %s",(ponteiro + i) -> estado);
-        printf("\n\tNo CEP: %s",(ponteiro + i) -> cep);
-        printf("\n\t------------------------------------");
+        for(i = 0; i < 4; i++)
+        {
+            printf("\nDigite um nome: ");
+            gets(&(ponteiro + i) -> nome[0]);
+            printf("Digite endereço: ");
+            gets(&(ponteiro + i) -> end[0]);
+            printf("Digite o nome da cidade: ");
+            gets(&(ponteiro + i) -> cidade[0]);
+            printf("Digite estado: ");
+            gets(&(ponteiro + i) -> estado[0]);
+            printf("Digite o CEP: ");
+            gets(&(ponteiro + i) -> cep[0]);
+        }
+
+        for(i = 0; i < 4; i++)
+        {
+            printf("\n\tO nome: %s",(ponteiro + i) -> nome);
+            printf("\n\tNo endereço: %s",(ponteiro + i) -> end);
+            printf("\n\tNa cidade: %s",(ponteiro + i) -> cidade);
+            printf("\n\tNo estado: %s",(ponteiro + i) -> estado);
+            printf("\n\tNo CEP: %s",(ponteiro + i) -> cep);
+            printf("\n\t------------------------------------");
+        }
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
     }
+    while (result == 1);
 }
 #endif // ex5
 
 
 #ifdef ex6
-
-/*
-    6 - Escreva um programa que receba via teclado numeros inteiros positivos usando
+/*  Exercício 6 - Escreva um programa que receba via teclado numeros inteiros positivos usando
     ponteiros. Quando o numero digitado for negativo o programa deve parar e calcula
     a media dos valores digitados e mostrar o resultado. Todos os calculos devem ser
     feitos usando ponteiro.
@@ -271,7 +302,7 @@ int main()
 {
     setlocale (LC_ALL,"");
 
-    int numero, soma = 0;
+    int numero, soma = 0, result;
     int *ponteiroNum, *ponteiroSoma;
     float media,  contador = 0;
     float *ponteiroMedia, *ponteiroContador;
@@ -282,6 +313,11 @@ int main()
     ponteiroMedia = &media;
 
     do
+    {
+        system("cls");
+        printf("Esse programa tem como objetivo calcular a média dos valores digitados quando for inserido um negativo.\n");
+
+        do
         {
             printf("\nDigite um número: ");
             scanf("%d",ponteiroNum);
@@ -298,5 +334,11 @@ int main()
 
         printf("\nA média dos números inteiros positivos é: %.2f\n", *ponteiroMedia);
 
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
+    }
+    while (result == 1);
 }
 #endif // ex6

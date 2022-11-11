@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 20/10/2022
 
-#define ex4
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
@@ -28,10 +28,11 @@ int main()
     struct local X[4];
     int i;
 
+    printf("Esse programa tem como objetivo receber e exibir um vetor de estruturas na tela.\n");
     for (i = 0; i < 4; i++)
     {
 
-    printf("Insira o nome do usuário: ");
+    printf("\nInsira o nome do usuário: ");
     gets(X[i].nome);
 
     printf("Insir o nome do endereço: ");
@@ -82,28 +83,32 @@ struct dados{
     unsigned int inteiroSinal;
     unsigned long longoSinal;
 };
+
 int main()
 {
     setlocale (LC_ALL,"");
     struct dados Estrutura;
 
-    printf("Digite um nome (8): \n");
+    printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
+
+    printf("Digite um nome (8): ");
     gets(Estrutura.nome);
-    printf("Digite um número inteiro: \n");
+    printf("Digite um número inteiro: ");
     scanf("%d",&Estrutura.inteiro);
-    printf("Digite um número Longo: \n");
+    printf("Digite um número Longo: ");
     scanf("%d",&Estrutura.longo);
-    printf("Digite um número Real: \n");
+    printf("Digite um número Real: ");
     scanf("%f",&Estrutura.real);
-    printf("Digite um número Double: \n");
+    printf("Digite um número Double: ");
     scanf("%f",&Estrutura.numero);
     getchar();
-    printf("Digite um número nome (8): \n");
+    printf("Digite um número nome (8): ");
     gets(Estrutura.nomeSinal);
-    printf("Digite um número inteiro: \n");
+    printf("Digite um número inteiro: ");
     scanf("%d",&Estrutura.inteiroSinal);
-    printf("Digite um número Longo: \n");
+    printf("Digite um número Longo: ");
     scanf("%d",&Estrutura.longoSinal);
+    printf("\n");
 
 
     printf("        10        20        30        40        50        60        70\n");
@@ -125,13 +130,14 @@ int main()
        Calculo do IMC = peso/(altura*altura).
        Estrutura: nome, peso, altura */
 
+       // OBS: INSERIR ENUNCIADO DENTRO DO PROGRAMA
+
 
 struct dados {
     char nome[20];
     float peso;
     float altura;
 };
-
 
 int main()
 {
@@ -166,7 +172,7 @@ int main()
             {
                 for(i=0; i < 4; i++)
                 {
-                    printf("Insira o nome do paciente: ");
+                    printf("\nInsira o nome do paciente: ");
                     gets(X[i].nome);
 
                     printf("Insira o peso do paciente: ");
@@ -185,11 +191,11 @@ int main()
                 {
                     if(imc[i] != 0)
                     {
-                        printf("O paciente: \t%s\ncom o peso: \t%g kilos\ne altura \t%g metros\ntem o IMC de: \t%g IMC\n", X[i].nome, X[i].peso, X[i].altura, imc[i]);
+                        printf("\nO paciente: \t%s\ncom o peso: \t%g kilos\ne altura \t%g metros\ntem o IMC de: \t%g IMC\n", X[i].nome, X[i].peso, X[i].altura, imc[i]);
                     }
                     else
                     {
-                        printf("\nNenhum dado foi inserido!");
+                        printf("\nNenhum dado foi inserido!\n");
                     }
                 }
                 system("pause");
@@ -225,7 +231,6 @@ struct dados{
     int ano;
 };
 
-
 int main()
 {
     setlocale (LC_ALL,"");
@@ -233,17 +238,17 @@ int main()
     struct dados Datas[2];
     int i, determinaIdade;
 
-    printf("Primeiro a data atual, depois a data mais antiga\n");
+    printf("Esse programa tem como objetivo calcular o número de dias entre duas datas.\n");
+    printf("Primeiro insira a data atual, em seguida a data mais antiga.\n");
 
     for(i = 0; i < 2; i++)
     {
-        printf("Digite o dia: ");
+        printf("\nDigite o dia: ");
         scanf("%d",&Datas[i].dia);
-        printf("\nDigite o mês: ");
+        printf("Digite o mês: ");
         scanf("%d",&Datas[i].mes);
-        printf("\nDigite o ano: ");
+        printf("Digite o ano: ");
         scanf("%d",&Datas[i].ano);
-        printf("\n");
     }
 
     determinaIdade = 365 * Datas[0].ano + 30 * Datas[0].mes + Datas[0].dia - 365 * Datas[1].ano - 30 * Datas[1].mes - Datas[1].dia;
