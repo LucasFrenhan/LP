@@ -7,7 +7,6 @@
 #include<stdio.h>
 #include<locale.h>
 
-
 #ifdef ex1
 /*  Exercício 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
     estruturas de 4 elementos. Receba os dados pelo teclado e imprima-os no
