@@ -5,7 +5,7 @@
 
 //ex3 falta fazer
 
-#define ex1
+#define ex3
 #include<stdio.h>
 #include<locale.h>
 
@@ -140,7 +140,6 @@ int main()
 
 
 #ifdef ex3
-
 /*  Exercício 3 - Escreva um programa que receba via teclado usando ponteiros um char,
     int, long, unsigned, float, double, unsigned long e unsigned char,
     e imprima-os no video utilizando ponteiros no seguinte formato:
@@ -152,13 +151,52 @@ int main()
              unsigned long       unsigned char
 */
 
+struct dados {
+    int inteiro;
+    long longo;
+    unsigned semSinal;
+    float real;
+    double numero;
+    char nome[8];
+    unsigned long longoSinal;
+    unsigned char nomeSinal;
+};
+
 int main()
 {
-    setlocale (LC_ALL,"");
+    struct dados Estrutura;
+    int result;
 
+        system("cls");
+        printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
 
+        printf("Digite um número Inteiro: ");
+        scanf("%d",&Estrutura.inteiro);
+        printf("Digite um número Longo: ");
+        scanf("%ld",&Estrutura.longo);
+        printf("Digite um número Sem Sinal: ");
+        scanf("%u",&Estrutura.semSinal);
+        printf("Digite um número Real: ");
+        scanf("%f",&Estrutura.real);
+        printf("Digite um número Double: ");
+        scanf("%lf",&Estrutura.numero);
+        getchar();
+        printf("Digite um nome (7): ");
+        gets(Estrutura.nome);
+        printf("Digite um número Longo: ");
+        scanf("%u",&Estrutura.longoSinal);
+        printf("Digite um número nome: ");
+        scanf("%u",&Estrutura.nomeSinal);
+        printf("\n");
 
+    printf("        10        20        30        40        50        60\n");
+    printf("123456789012345678901234567890123456789012345678901234567890\n");
+    printf(" ",Estrutura.inteiro,Estrutura.longo,Estrutura.semSinal);
+    printf(" ",Estrutura.real,Estrutura.real,Estrutura.nome);
+    printf(" ",Estrutura.longoSinal,Estrutura.nomeSinal);
 }
+
+
 #endif // ex3
 
 
