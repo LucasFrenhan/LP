@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 27/11/2022
 
-//ex3 falta fazer
+// ARRUMAR O EX. 3 - CHAR
 
 #define ex3
 #include<stdio.h>
@@ -157,7 +157,7 @@ struct dados {
     unsigned semSinal;
     float real;
     double numero;
-    char nome[8];
+    char nome;
     unsigned long longoSinal;
     unsigned char nomeSinal;
 };
@@ -167,6 +167,8 @@ int main()
     struct dados Estrutura;
     int result;
 
+    do
+    {
         system("cls");
         printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
 
@@ -176,27 +178,36 @@ int main()
         scanf("%ld",&Estrutura.longo);
         printf("Digite um número Sem Sinal: ");
         scanf("%u",&Estrutura.semSinal);
+
         printf("Digite um número Real: ");
         scanf("%f",&Estrutura.real);
         printf("Digite um número Double: ");
         scanf("%lf",&Estrutura.numero);
         getchar();
         printf("Digite um nome (7): ");
-        gets(Estrutura.nome);
+        scanf("%c",&Estrutura.nome);
+
         printf("Digite um número Longo: ");
-        scanf("%u",&Estrutura.longoSinal);
+        scanf("%lu",&Estrutura.longoSinal);
+        getchar();
         printf("Digite um número nome: ");
         scanf("%u",&Estrutura.nomeSinal);
         printf("\n");
 
-    printf("        10        20        30        40        50        60\n");
-    printf("123456789012345678901234567890123456789012345678901234567890\n");
-    printf(" ",Estrutura.inteiro,Estrutura.longo,Estrutura.semSinal);
-    printf(" ",Estrutura.real,Estrutura.real,Estrutura.nome);
-    printf(" ",Estrutura.longoSinal,Estrutura.nomeSinal);
+        printf("        10        20        30        40        50        60\n");
+        printf("123456789012345678901234567890123456789012345678901234567890\n");
+        printf("    %-11d         %-11ld         %-11u\n",Estrutura.inteiro,Estrutura.longo,Estrutura.semSinal);
+        printf("              %-11e       %-22e%-3c\n",Estrutura.real,Estrutura.numero,Estrutura.nome);
+        printf("         %-11lu         %-3u",Estrutura.longoSinal,Estrutura.nomeSinal);
+
+        printf("\n");
+        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\nPara encerrar o programa digite qualquer número.\n");
+        scanf("%d", &result);
+        getchar();
+    }
+    while (result == 1);
 }
-
-
 #endif // ex3
 
 

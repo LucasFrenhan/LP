@@ -3,9 +3,12 @@
 // Componente: Linguagem de Programação
 // Data: 20/10/2022
 
-#define ex1
+#define ex2
 #include<stdio.h>
 #include<locale.h>
+
+// ARRUMAR EX. 2
+
 
 #ifdef ex1
 /*  Exercício 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
@@ -85,12 +88,12 @@ int main()
               unsigned char       unsigned int        unsigned long */
 
 struct dados{
-    char nome[9];
+    char nome;
     int inteiro;
     long longo;
     float real;
     double numero;
-    unsigned char nomeSinal[9];
+    unsigned char nomeSinal;
     unsigned int inteiroSinal;
     unsigned long longoSinal;
 };
@@ -107,29 +110,29 @@ int main()
         printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
 
         printf("Digite um nome (8): ");
-        gets(Estrutura.nome);
+        gets(&Estrutura.nome);
         printf("Digite um número inteiro: ");
         scanf("%d",&Estrutura.inteiro);
         printf("Digite um número Longo: ");
-        scanf("%d",&Estrutura.longo);
+        scanf("%ld",&Estrutura.longo);
         printf("Digite um número Real: ");
         scanf("%f",&Estrutura.real);
         printf("Digite um número Double: ");
-        scanf("%f",&Estrutura.numero);
+        scanf("%lf",&Estrutura.numero);
         getchar();
         printf("Digite um número nome (8): ");
-        gets(Estrutura.nomeSinal);
+        gets(&Estrutura.nomeSinal);
         printf("Digite um número inteiro: ");
-        scanf("%d",&Estrutura.inteiroSinal);
+        scanf("%u",&Estrutura.inteiroSinal);
         printf("Digite um número Longo: ");
-        scanf("%d",&Estrutura.longoSinal);
+        scanf("%u",&Estrutura.longoSinal);
         printf("\n");
 
 
         printf("        10        20        30        40        50        60        70\n");
         printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
-        printf("%8s%9d%11ld%21f%21f\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
-        printf("%23u%19u%21lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
+        printf("    %-3c       %-11d    %-11ld              %-11f%-22f\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
+        printf("          %-3u          %-11u          %-11lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
