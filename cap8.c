@@ -5,7 +5,7 @@
 
 // ARRUMAR O EX. 3 - CHAR
 
-#define ex3
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 

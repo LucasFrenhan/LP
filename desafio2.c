@@ -2,12 +2,13 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-struct Show{
-char musica[30];
-char autor[30];
-int quantidade;
-float preco;
-};
+ struct Show{
+    char musica[30];
+    char autor[30];
+    int quantidade;
+    float preco;
+    };
+
 
 void sair()
 {
@@ -16,14 +17,27 @@ void sair()
     exit(0);
 }
 
-void entraDados()
+void entraDados(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
 {
-
+    printf("\nDigite o nome da musica: ");
+    gets(pMusica);
+    getchar();
+    printf("\nDigite o nome do autor: ");
+    gets(pAutor);
+    getchar();
+    printf("\nDigite a quantidade: ");
+    scanf("%d",&pQuantidade);
+    getchar();
+    printf("\nDigite o valor: ");
+    scanf("%f",&pPreco);
 }
 
-void listaMusica()
+void listaMusica(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
 {
-
+    printf("\nnome: %s",pMusica);
+    printf("\nautor: %s",pAutor);
+    printf("\nquantidae: %d",pQuantidade);
+    printf("\npreco: %f",pPreco);
 
 }
 
@@ -69,36 +83,49 @@ void alteraQuantidade()
 
 int main()
 {
+
+
     struct Show shows;
+
+    char *pMusica;
+    char *pAutor;
+    int *pQuantidade;
+    float *pPreco;
     int opc;
+
+    pMusica = &shows.musica[0];
+    pAutor = &shows.autor[0];
+    pQuantidade = &shows.quantidade;
+    pPreco = &shows.preco;
 
     do
     {
-        printf("\n1 – Entra dados da musica");
-        printf("\n2 – Lista todos as musicas na tela");
-        printf("\n3 – Pesquisar uma musica pelo nome completo");
-        printf("\n4 – Pesquisar o autor pelo nome completo");
-        printf("\n5 – Pesquisa musica por faixa de preco");
-        printf("\n6 – Altera quantidade (entrada e saida) pesquisado pelo nome completo");
-        printf("\n7 – Altera preco de uma música pesquisando pelo nome completo");
-        printf("\n8 – Altera dados, pesquisando pelo nome completo");
-        printf("\n9 – Exclui dados, pesquisando pelo nome completo");
-        printf("\n10 – Saida pelo usuario");
+        printf("\n1 - Entra dados da musica");
+        printf("\n2 - Lista todos as musicas na tela");
+        printf("\n3 - Pesquisar uma musica pelo nome completo");
+        printf("\n4 - Pesquisar o autor pelo nome completo");
+        printf("\n5 - Pesquisa musica por faixa de preco");
+        printf("\n6 - Altera quantidade (entrada e saida) pesquisado pelo nome completo");
+        printf("\n7 - Altera preco de uma música pesquisando pelo nome completo");
+        printf("\n8 - Altera dados, pesquisando pelo nome completo");
+        printf("\n9 - Exclui dados, pesquisando pelo nome completo");
+        printf("\n10 - Saida pelo usuario");
         printf("\nDigite uma opcao:");
         scanf("%d",&opc);
+        getchar();
 
          switch (opc)
         {
         case 1:
         {
             system("cls");
-            entraDados();
+            entraDados(pMusica,pAutor,pQuantidade,pPreco);
             break;
         }
         case 2:
         {
             system("cls");
-            listaMusica();6
+            listaMusica(pMusica,pAutor,pQuantidade,pPreco);
             break;
         }
         case 3:
