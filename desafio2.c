@@ -2,7 +2,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-struct Show{
+struct Show
+{
     char musica[30];
     char autor[30];
     int quantidade;
@@ -17,36 +18,37 @@ void sair()
     exit(0);
 }
 
-void entraDados(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void entraDados(struct Show *pShow)
 {
     FILE *arquivo;
 
-    arquivo = fopen("musica.txt", "w");
+    arquivo = fopen("musica.txt", "a");
 
     if (arquivo != NULL)
     {
+        system("cls");
         printf("\nDigite o nome da musica: ");
-        gets(pMusica);
+        gets(pShow->musica);
         printf("\nDigite o nome do autor: ");
-        gets(pAutor);
+        gets(pShow->autor);
         printf("\nDigite a quantidade: ");
-        scanf("%d",&pQuantidade);
+        scanf("%d",&pShow->quantidade);
         printf("\nDigite o valor: ");
-        scanf("%f",&pPreco);
-        fwrite(pMusica[0], sizeof(pMusica), 1, arquivo);
-        fwrite(pAutor[0], sizeof(pAutor), 1, arquivo);
-        fwrite(pQuantidade, sizeof(pQuantidade), 1, arquivo);
-        fwrite(pPreco, sizeof(pPreco), 1, arquivo);
+        scanf("%f",&pShow->preco);
+        getchar();
+        fwrite(pShow, sizeof(*pShow), 1, arquivo);
+        system("pause");
+        system("cls");
         fclose(arquivo);
     }
-
     else
     {
         printf("\nArquivo não encontrado");
+        exit(0);
     }
 }
 
-void listaMusica(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void listaMusica(struct Show *pShow)
 {
     FILE *arquivo;
 
@@ -56,112 +58,210 @@ void listaMusica(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
 
     if (arquivo != NULL)
     {
-        for (i=0;i<2;i++)
+        system("cls");
+        for (;;)
         {
-            fread(pMusica, sizeof(pMusica), 1, arquivo);
-            fread(pAutor, sizeof(pAutor), 1, arquivo);
-            fread(pQuantidade, sizeof(pQuantidade), 1, arquivo);
-            fread(pPreco, sizeof(pPreco), 1, arquivo);
 
-            if(pMusica[0] != '#')
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
             {
-                printf("\nNome: %s",pMusica);
-                printf("\nAutor: %s",pAutor);
-                printf("\nQuantidade: %d",pQuantidade);
-                printf("\nPreco: %f",pPreco);
-                controle++;
+                break;
+            }
+
+            if(pShow->musica[0] != '#' && pShow->quantidade!=0)
+            {
+                printf("\nNome da musica: %s",pShow->musica);
+                printf("\nAutor: %s",pShow->autor);
+                printf("\nQuantidade: %d",pShow->quantidade);
+                printf("\nPreco: %.2f\n",pShow->preco);
             }
         }
-
-        if(controle == 0)
-            printf("Nenhuma musica cadastrada\n");
-
+        system("pause");
+        system("cls");
         fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
     }
 }
 
-void pesquisaMusica(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void pesquisaMusica(struct Show *pShow)
 {
     char nome[30];
     FILE *arquivo;
-    int i,controle=0;
+    int i,controle;
+
+    printf("\nDigite o nome da musica para pesquisar: ");
+    gets(nome);
 
     arquivo = fopen("musica.txt", "r");
 
     if (arquivo != NULL)
     {
+        system("cls");
         for (;;)
         {
-            fread(pMusica, sizeof(pMusica), 1, arquivo);
-            fread(pAutor, sizeof(pAutor), 1, arquivo);
-            fread(pQuantidade, sizeof(pQuantidade), 1, arquivo);
-            fread(pPreco, sizeof(pPreco), 1, arquivo);
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
 
-
-            if(nome[i] == '\0' && pMusica[i] == '\0')
+            if(controle == 0)
             {
-                printf("\nA musica: %s", pMusica[i]);
-                controle = 1;
                 break;
             }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->musica[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->musica[i] == '\0')
+            {
+                system("cls");
+                printf("\nA musica: %s",pShow->musica);
+                printf("\nO autor: %s",pShow->autor);
+                printf("\nA quantidade: %d",pShow->quantidade);
+                printf("\nO valor: %.2f\n",pShow->preco);
+            }
+
         }
-    }
-        if (controle == 0)
-        {
-            printf("\nNenhum musica foi encontrada\n");
-        }
+        system("pause");
+        system("cls");
         fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
 }
 
-void pesquisaAutor(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void pesquisaAutor(struct Show *pShow)
+{
+    char nome[30];
+    FILE *arquivo;
+    int i,controle;
+
+    printf("\nDigite o nome do autor para pesquisar: ");
+    gets(nome);
+
+    arquivo = fopen("musica.txt", "r");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->autor[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->autor[i] == '\0')
+            {
+                system("cls");
+                printf("\nA musica: %s",pShow->musica);
+                printf("\nO autor: %s",pShow->autor);
+                printf("\nA quantidade: %d",pShow->quantidade);
+                printf("\nO valor: %.2f\n",pShow->preco);
+            }
+
+        }
+        system("pause");
+        system("cls");
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
+
+}
+
+void pesquisPreco(struct Show *pShow)
+{
+    float valor;
+    FILE *arquivo;
+    int i,controle;
+
+    printf("\nDigite o valor do show para pesquisar: ");
+    scanf("%f",&valor);
+
+    arquivo = fopen("musica.txt", "r");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            if(valor==pShow->preco)
+            {
+                printf("\nA musica: %s",pShow->musica);
+                printf("\nO autor: %s",pShow->autor);
+                printf("\nA quantidade: %d",pShow->quantidade);
+                printf("\nO valor: %.2f\n",pShow->preco);
+            }
+        }
+        system("pause");
+        system("cls");
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
+
+}
+
+void alteraPreco(struct Show *pShow)
 {
 
-
 }
 
-void pesquisPreco(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
-{
-
-
-}
-
-void alteraPreco(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void alteraDados(struct Show *pShow)
 {
 
 }
 
-void alteraDados(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void excluiDados(struct Show *pShow)
 {
 
 }
 
-void excluiDados(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
+void alteraQuantidade(struct Show *pShow)
 {
 
 }
-
-void alteraQuantidade(char *pMusica, char *pAutor, int *pQuantidade, float *pPreco)
-{
-
-}
-
-
 
 int main()
 {
 
     struct Show shows;
 
-    char *pMusica;
-    char *pAutor;
-    int *pQuantidade;
-    float *pPreco;
-    int opc;
+    struct Show *pShow=&shows;
 
-    pMusica = &shows.musica[0];
-    pAutor = &shows.autor[0];
-    pQuantidade = &shows.quantidade;
-    pPreco = &shows.preco;
+    int opc;
 
     do
     {
@@ -179,62 +279,62 @@ int main()
         scanf("%d",&opc);
         getchar();
 
-         switch (opc)
+        switch (opc)
         {
         case 1:
         {
             system("cls");
-            entraDados(pMusica,pAutor,pQuantidade,pPreco);
+            entraDados(pShow);
             break;
         }
         case 2:
         {
             system("cls");
-            listaMusica(pMusica,pAutor,pQuantidade,pPreco);
+            listaMusica(pShow);
             break;
         }
         case 3:
         {
             system("cls");
-            pesquisaMusica(pMusica,pAutor,pQuantidade,pPreco);
+            pesquisaMusica(pShow);
             break;
         }
         case 4:
         {
             system("cls");
-            pesquisaAutor(pMusica,pAutor,pQuantidade,pPreco);
+            pesquisaAutor(pShow);
             break;
         }
         case 5:
         {
             system("cls");
-            pesquisPreco(pMusica,pAutor,pQuantidade,pPreco);
+            pesquisPreco(pShow);
             break;
         }
 
         case 6:
         {
             system("cls");
-            alteraQuantidade(pMusica,pAutor,pQuantidade,pPreco);
+            alteraQuantidade(pShow);
             break;
         }
         case 7:
         {
             system("cls");
-            alteraPreco(pMusica,pAutor,pQuantidade,pPreco);
+            alteraPreco(pShow);
             break;
         }
 
         case 8:
         {
             system("cls");
-            alteraDados(pMusica,pAutor,pQuantidade,pPreco);
+            alteraDados(pShow);
             break;
         }
         case 9:
         {
             system("cls");
-            excluiDados(pMusica,pAutor,pQuantidade,pPreco);
+            excluiDados(pShow);
             break;
         }
         case 10:
