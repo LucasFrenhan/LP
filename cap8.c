@@ -5,7 +5,7 @@
 
 // ARRUMAR O EX. 3 - CHAR
 
-#define ex1
+#define ex2
 #include<stdio.h>
 #include<locale.h>
 
@@ -37,7 +37,7 @@ char nome1[10], nome2[10];
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     char *ponteiro1, *ponteiro2;
     int resultado, result;
@@ -103,7 +103,7 @@ int comparaLetra(char *ponteiro)
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     int resultado, result;
     char *ponteiro;
@@ -114,7 +114,7 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo pesquisar uma informação com ponteiros.\n");
+        printf("Esse programa tem como objetivo pesquisar uma informação no vetor com ponteiros.\n");
 
         printf("\nDigite uma letra qualquer: ");
         scanf("%c",&a);
@@ -129,7 +129,7 @@ int main()
         {
             printf("\nA letra não existe no vetor.\n");
         }
-        printf("\nDigite 1 se quiser executar novamente.");
+        printf("\n\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
         getchar();
@@ -164,6 +164,8 @@ struct dados {
 
 int main()
 {
+    setlocale (LC_ALL,"portuguese");
+
     struct dados Estrutura;
     int result;
 
@@ -227,7 +229,7 @@ struct dados{
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     struct dados Datas[2];
     struct dados *ponteiroData[2];
@@ -292,7 +294,7 @@ struct dados Locais[4];
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     int i = 0;
     int result;
@@ -347,7 +349,7 @@ int main()
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     int numero, soma = 0, result;
     int *ponteiroNum, *ponteiroSoma;

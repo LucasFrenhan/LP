@@ -7,7 +7,6 @@
 #include<stdio.h>
 #include<locale.h>
 
-// FAZER EXERCÍCIO 4
 
 #ifdef ex1
 /*  Exercício 1 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
@@ -20,23 +19,64 @@
     vetor -> b,d,f,h,j,k,m,o,q,s,u,w,y
 */
 
+int comparaLetra(char *letra, char *pvetor)
+{
+    int i;
+
+    for (i = 0; pvetor[i] != '\0'; i++)
+    {
+        if (letra == pvetor[i])
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int main()
 {
     setlocale (LC_ALL,"portuguese");
 
-    int result;
+    char vetor[14] = {'b','d','f','h','j','k','m','o','q','s','u','w','y'};
+    char letra;
+
+    char *pletra;
+    char *pvetor[14];
+
+    int i, resultado, result;
+
+    pletra = &letra;
+    for (i=0;i<14;i++)
+    {
+        pvetor[i] = &vetor[i];
+    }
 
     do
     {
         system("cls");
+        printf("Esse programa tem como objetivo pesquisar uma informação no vetor com ponteiros.\n");
 
-        printf("Esse programa tem como objetivo.......\n");
+        printf("\nDigite a letra desejada: ");
+        scanf("%c",&letra);
 
-        printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer número.\n");
-        scanf("%d", &result);
-    }
-    while (result == 1);
+        resultado = comparaLetra(letra,pvetor);
+
+        if(resultado == 1)
+        {
+            printf("\nA letra existe no vetor.");
+        }
+        else
+        {
+            printf("\nA letra não existe no vetor.\n");
+        }
+
+
+    printf("\nDigite 1 se quiser executar novamente.");
+    printf("\nPara encerrar o programa digite qualquer número.\n");
+    scanf("%d", &result);
+    getchar();
+}
+while (result == 1);
 }
 #endif // ex1
 

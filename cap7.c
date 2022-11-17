@@ -3,7 +3,7 @@
 // Componente: Linguagem de Programação
 // Data: 20/10/2022
 
-#define ex3
+#define ex4
 #include<stdio.h>
 #include<locale.h>
 
@@ -26,7 +26,7 @@ struct local{
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     struct local X[4];
     int i, result;
@@ -100,7 +100,8 @@ struct dados{
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
+
     struct dados Estrutura;
     int result;
 
@@ -109,7 +110,7 @@ int main()
         system("cls");
         printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
 
-        printf("Digite um nome (8): ");
+        printf("Digite um nome: ");
         gets(&Estrutura.nome);
         printf("Digite um número inteiro: ");
         scanf("%d",&Estrutura.inteiro);
@@ -120,19 +121,19 @@ int main()
         printf("Digite um número Double: ");
         scanf("%lf",&Estrutura.numero);
         getchar();
-        printf("Digite um número nome (8): ");
-        gets(&Estrutura.nomeSinal);
-        printf("Digite um número inteiro: ");
+        printf("Digite um caractere sem sinal: ");
+        scanf("%u",&Estrutura.nomeSinal);
+        printf("Digite um número inteiro sem sinal: ");
         scanf("%u",&Estrutura.inteiroSinal);
-        printf("Digite um número Longo: ");
+        printf("Digite um número longo sem sinal: ");
         scanf("%u",&Estrutura.longoSinal);
         printf("\n");
 
 
         printf("        10        20        30        40        50        60        70\n");
         printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
-        printf("    %-3c       %-11d    %-11ld              %-11f%-22f\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
-        printf("          %-3u          %-11u          %-11lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
+        printf("    %-4c      %-11d%-11ld        %-11.2f% %-9lf\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
+        printf("          %-3u                 %-12u        %-12lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
@@ -162,6 +163,8 @@ struct dados {
 
 int main()
 {
+    setlocale (LC_ALL,"portuguese");
+
     struct dados X[4];
     int i, opc;
     float imc[4];
@@ -253,7 +256,7 @@ struct dados{
 
 int main()
 {
-    setlocale (LC_ALL,"");
+    setlocale (LC_ALL,"portuguese");
 
     struct dados Datas[2];
     int i, determinaIdade, result;
