@@ -1,4 +1,3 @@
-#define ex1
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -237,6 +236,7 @@ void pesquisPreco(struct Show *pShow)
 void alteraPreco(struct Show *pShow)
 {
 
+
 }
 
 void alteraDados(struct Show *pShow)
@@ -251,7 +251,63 @@ void excluiDados(struct Show *pShow)
 
 void alteraQuantidade(struct Show *pShow)
 {
+    char nome[30];
+    FILE *arquivo;
+    int i,controle,verifica=0,posicao,quantidade;
 
+    printf("\nDigite o nome da musica para pesquisar: ");
+    gets(nome);
+
+    arquivo = fopen("musica.txt", "r+");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->musica[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->musica[i] == '\0')
+            {
+                verifica++;
+                break;
+            }
+
+        }
+        if(verifica != 0)
+        {
+            posicao = verifica*sizeof(*pShow);
+
+            fseek(arquivo, posicao, 0);
+
+            fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            printf("\nDigite a nova quantidade: ");
+            scanf("%d",&quantidade);
+            pShow->quantidade = pShow->quantidade + quantidade;
+
+            fseek(arquivo, posicao, 0);
+            fwrite(pShow, sizeof(*pShow), 1, arquivo);
+        }
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
 }
 
 int main()
