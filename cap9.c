@@ -1,9 +1,9 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-// Professor: Rui
-// Componente: Linguagem de Programação
-// Data: 03/11/2022
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui */
 
-#define ex1
+#define ex3
 #include<stdio.h>
 #include<locale.h>
 
@@ -90,21 +90,64 @@ while (result == 1);
     ou se DIFERENTES 0. Mostre o resultado no video na funcao main().
 */
 
+int recebaStrings(char *string1, char *string2)
+{
+    printf("\nDigite o primeiro nome: ");
+    gets(string1);
+    printf("Digite o segundo nome: ");
+    gets(string2);
+}
+
+int comparaStrings(char *string1, char *string2)
+{
+    int i;
+
+    for(i = 0; *(string1 + i)!= '\0'; i++)
+    {
+        if(*(string1 + i) != *(string2 + i))
+        {
+            break;
+        }
+    }
+    if(*(string1 + i) == '\0' && *(string2 + i) == '\0')
+        return 1;
+    else
+        return 0;
+}
+
 int main()
 {
+    char nome1[10], nome2[10];
+
     setlocale (LC_ALL,"portuguese");
 
-    int result;
+    char *string1, *string2;
+    int resultado1, resultado2, result;
+
+    string1 = &nome1[0];
+    string2 = &nome2[0];
 
     do
     {
         system("cls");
+        printf("Esse programa tem como objetivo comparar duas strings.\n");
 
-        printf("Esse programa tem como objetivo.......\n");
+        resultado1 = recebaStrings(string1, string2);
+        resultado2 = comparaStrings(string1, string2);
+
+        if(resultado2 == 1)
+        {
+            printf("\nO resultado da comparação entre strings: são iguais.");
+        }
+        else
+        {
+            printf("\nO resultado da comparação entre strings: são diferentes.\n");
+        }
 
         printf("\nDigite 1 se quiser executar novamente.");
         printf("\nPara encerrar o programa digite qualquer número.\n");
         scanf("%d", &result);
+        getchar();
     }
     while (result == 1);
 }
