@@ -10,13 +10,6 @@ struct Show
 };
 
 
-void sair()
-{
-    printf("Saindo...\n");
-    printf("Obrigado por utilizar nosso programa\n");
-    exit(0);
-}
-
 void entraDados(struct Show *pShow)
 {
     FILE *arquivo;
@@ -187,10 +180,9 @@ void pesquisaAutor(struct Show *pShow)
         printf("\nArquivo não encontrado");
         exit(0);
     }
-
 }
 
-void pesquisPreco(struct Show *pShow)
+void pesquisaPreco(struct Show *pShow)
 {
     float valor;
     FILE *arquivo;
@@ -230,23 +222,6 @@ void pesquisPreco(struct Show *pShow)
         printf("\nArquivo não encontrado");
         exit(0);
     }
-
-}
-
-void alteraPreco(struct Show *pShow)
-{
-
-
-}
-
-void alteraDados(struct Show *pShow)
-{
-
-}
-
-void excluiDados(struct Show *pShow)
-{
-
 }
 
 void alteraQuantidade(struct Show *pShow)
@@ -296,7 +271,7 @@ void alteraQuantidade(struct Show *pShow)
 
             printf("\nDigite a nova quantidade: ");
             scanf("%d",&quantidade);
-            pShow->quantidade = pShow->quantidade + quantidade;
+            pShow->quantidade = quantidade;
 
             fseek(arquivo, posicao, 0);
             fwrite(pShow, sizeof(*pShow), 1, arquivo);
@@ -309,6 +284,213 @@ void alteraQuantidade(struct Show *pShow)
         exit(0);
     }
 }
+
+void alteraPreco(struct Show *pShow)
+{
+    char nome[30];
+    FILE *arquivo;
+    int i,controle,verifica=0,posicao;
+    float preco;
+
+    printf("\nDigite o nome da musica para pesquisar: ");
+    gets(nome);
+
+    arquivo = fopen("musica.txt", "r+");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->musica[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->musica[i] == '\0')
+            {
+                verifica++;
+                break;
+            }
+
+        }
+        if(verifica != 0)
+        {
+            posicao = verifica*sizeof(*pShow);
+
+            fseek(arquivo, posicao, 0);
+
+            fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            printf("\nDigite a nova quantidade: ");
+            scanf("%f",&preco);
+            pShow->preco = preco;
+
+            fseek(arquivo, posicao, 0);
+            fwrite(pShow, sizeof(*pShow), 1, arquivo);
+        }
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
+}
+
+void alteraDados(struct Show *pShow)
+{
+    char nome[30], musica[30], autor[30];
+    FILE *arquivo;
+    int i,controle,verifica=0,posicao,quantidade;
+    float preco;
+
+    printf("\nDigite o nome da musica para pesquisar: ");
+    gets(nome);
+
+    arquivo = fopen("musica.txt", "r+");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->musica[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->musica[i] == '\0')
+            {
+                verifica++;
+                break;
+            }
+
+        }
+        if(verifica != 0)
+        {
+            posicao = verifica*sizeof(*pShow);
+
+            fseek(arquivo, posicao, 0);
+
+            fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            system("cls");
+            printf("\nDigite o nome da musica: ");
+            gets(musica);
+            printf("\nDigite o nome do autor: ");
+            gets(autor);
+            printf("\nDigite a quantidade: ");
+            scanf("%d",&quantidade);
+            printf("\nDigite o valor: ");
+            scanf("%f",&preco);
+            getchar();
+
+            for(i=0;i<30;i++)
+            {
+                pShow->musica[i] = musica[i];
+                pShow->autor[i] = autor[i];
+            }
+            pShow->quantidade = quantidade;
+            pShow->preco = preco;
+
+            fseek(arquivo, posicao, 0);
+            fwrite(pShow, sizeof(*pShow), 1, arquivo);
+        }
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
+}
+
+void excluiDados(struct Show *pShow)
+{
+    char nome[30];
+    FILE *arquivo;
+    int i,controle,verifica=0,posicao,quantidade;
+
+    printf("\nDigite o nome da musica para pesquisar: ");
+    gets(nome);
+
+    arquivo = fopen("musica.txt", "r+");
+
+    if (arquivo != NULL)
+    {
+        system("cls");
+        for (;;)
+        {
+            controle = fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            if(controle == 0)
+            {
+                break;
+            }
+
+            for(i = 0; nome[i] != '\0'; i++)
+            {
+                if(nome[i]!=pShow->musica[i])
+                {
+                    break;
+                }
+            }
+            if(nome[i] == '\0' && pShow->musica[i] == '\0')
+            {
+                verifica++;
+                break;
+            }
+
+        }
+        if(verifica != 0)
+        {
+            posicao = verifica*sizeof(*pShow);
+
+            fseek(arquivo, posicao, 0);
+
+            fread(pShow, sizeof(*pShow), 1, arquivo);
+
+            pShow->musica[0] = '#';
+
+            fseek(arquivo, posicao, 0);
+            fwrite(pShow, sizeof(*pShow), 1, arquivo);
+        }
+        fclose(arquivo);
+    }
+    else
+    {
+        printf("\nArquivo não encontrado");
+        exit(0);
+    }
+}
+
+
+void sair()
+{
+    printf("Saindo...\n");
+    printf("Obrigado por utilizar nosso programa\n");
+    exit(0);
+}
+
 
 int main()
 {
@@ -364,7 +546,7 @@ int main()
         case 5:
         {
             system("cls");
-            pesquisPreco(pShow);
+            pesquisaPreco(pShow);
             break;
         }
 
