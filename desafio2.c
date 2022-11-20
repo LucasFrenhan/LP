@@ -169,7 +169,6 @@ void pesquisaAutor(struct Show *pShow)
                 printf("\nA quantidade: %d",pShow->quantidade);
                 printf("\nO valor: %.2f\n",pShow->preco);
             }
-
         }
         system("pause");
         system("cls");
@@ -228,7 +227,7 @@ void alteraQuantidade(struct Show *pShow)
 {
     char nome[30];
     FILE *arquivo;
-    int i,controle,verifica=0,posicao,quantidade;
+    int i,controle,verifica=-1,posicao,quantidade;
 
     printf("\nDigite o nome da musica para pesquisar: ");
     gets(nome);
@@ -254,14 +253,13 @@ void alteraQuantidade(struct Show *pShow)
                     break;
                 }
             }
+            verifica++;
             if(nome[i] == '\0' && pShow->musica[i] == '\0')
             {
-                verifica++;
                 break;
             }
-
         }
-        if(verifica != 0)
+        if(verifica != -1)
         {
             posicao = verifica*sizeof(*pShow);
 
@@ -270,8 +268,7 @@ void alteraQuantidade(struct Show *pShow)
             fread(pShow, sizeof(*pShow), 1, arquivo);
 
             printf("\nDigite a nova quantidade: ");
-            scanf("%d",&quantidade);
-            pShow->quantidade = quantidade;
+            scanf("%d",&pShow->quantidade);
 
             fseek(arquivo, posicao, 0);
             fwrite(pShow, sizeof(*pShow), 1, arquivo);
@@ -289,7 +286,7 @@ void alteraPreco(struct Show *pShow)
 {
     char nome[30];
     FILE *arquivo;
-    int i,controle,verifica=0,posicao;
+    int i,controle,verifica=-1,posicao;
     float preco;
 
     printf("\nDigite o nome da musica para pesquisar: ");
@@ -308,7 +305,6 @@ void alteraPreco(struct Show *pShow)
             {
                 break;
             }
-
             for(i = 0; nome[i] != '\0'; i++)
             {
                 if(nome[i]!=pShow->musica[i])
@@ -316,14 +312,13 @@ void alteraPreco(struct Show *pShow)
                     break;
                 }
             }
+            verifica++;
             if(nome[i] == '\0' && pShow->musica[i] == '\0')
             {
-                verifica++;
                 break;
             }
-
         }
-        if(verifica != 0)
+        if(verifica != -1)
         {
             posicao = verifica*sizeof(*pShow);
 
@@ -332,8 +327,7 @@ void alteraPreco(struct Show *pShow)
             fread(pShow, sizeof(*pShow), 1, arquivo);
 
             printf("\nDigite a nova quantidade: ");
-            scanf("%f",&preco);
-            pShow->preco = preco;
+            scanf("%f",&pShow->preco);
 
             fseek(arquivo, posicao, 0);
             fwrite(pShow, sizeof(*pShow), 1, arquivo);
@@ -351,7 +345,7 @@ void alteraDados(struct Show *pShow)
 {
     char nome[30], musica[30], autor[30];
     FILE *arquivo;
-    int i,controle,verifica=0,posicao,quantidade;
+    int i,controle,verifica=-1,posicao;
     float preco;
 
     printf("\nDigite o nome da musica para pesquisar: ");
@@ -378,14 +372,14 @@ void alteraDados(struct Show *pShow)
                     break;
                 }
             }
+            verifica++;
             if(nome[i] == '\0' && pShow->musica[i] == '\0')
             {
-                verifica++;
                 break;
             }
 
         }
-        if(verifica != 0)
+        if(verifica != -1)
         {
             posicao = verifica*sizeof(*pShow);
 
@@ -395,22 +389,14 @@ void alteraDados(struct Show *pShow)
 
             system("cls");
             printf("\nDigite o nome da musica: ");
-            gets(musica);
+            gets(pShow->musica);
             printf("\nDigite o nome do autor: ");
-            gets(autor);
+            gets(pShow->autor);
             printf("\nDigite a quantidade: ");
-            scanf("%d",&quantidade);
+            scanf("%d",&pShow->quantidade);
             printf("\nDigite o valor: ");
-            scanf("%f",&preco);
+            scanf("%f",&pShow->preco);
             getchar();
-
-            for(i=0;i<30;i++)
-            {
-                pShow->musica[i] = musica[i];
-                pShow->autor[i] = autor[i];
-            }
-            pShow->quantidade = quantidade;
-            pShow->preco = preco;
 
             fseek(arquivo, posicao, 0);
             fwrite(pShow, sizeof(*pShow), 1, arquivo);
@@ -428,7 +414,7 @@ void excluiDados(struct Show *pShow)
 {
     char nome[30];
     FILE *arquivo;
-    int i,controle,verifica=0,posicao,quantidade;
+    int i,controle,verifica=-1,posicao;
 
     printf("\nDigite o nome da musica para pesquisar: ");
     gets(nome);
@@ -454,14 +440,13 @@ void excluiDados(struct Show *pShow)
                     break;
                 }
             }
+            verifica++;
             if(nome[i] == '\0' && pShow->musica[i] == '\0')
             {
-                verifica++;
                 break;
             }
-
         }
-        if(verifica != 0)
+        if(verifica != -1)
         {
             posicao = verifica*sizeof(*pShow);
 
@@ -503,17 +488,17 @@ int main()
 
     do
     {
-        printf("\n1 - Entra dados da musica");
-        printf("\n2 - Lista todos as musicas na tela");
-        printf("\n3 - Pesquisar uma musica pelo nome completo");
-        printf("\n4 - Pesquisar o autor pelo nome completo");
-        printf("\n5 - Pesquisa musica por faixa de preco");
-        printf("\n6 - Altera quantidade (entrada e saida) pesquisado pelo nome completo");
-        printf("\n7 - Altera preco de uma música pesquisando pelo nome completo");
-        printf("\n8 - Altera dados, pesquisando pelo nome completo");
-        printf("\n9 - Exclui dados, pesquisando pelo nome completo");
-        printf("\n10 - Saida pelo usuario");
-        printf("\nDigite uma opcao:");
+        printf("\n\t1  - Entra dados da musica");
+        printf("\n\t2  - Lista todos as musicas na tela");
+        printf("\n\t3  - Pesquisar uma musica pelo nome completo");
+        printf("\n\t4  - Pesquisar o autor pelo nome completo");
+        printf("\n\t5  - Pesquisa musica por faixa de preco");
+        printf("\n\t6  - Altera quantidade (entrada e saida) pesquisado pelo nome completo");
+        printf("\n\t7  - Altera preco de uma musica pesquisando pelo nome completo");
+        printf("\n\t8  - Altera dados, pesquisando pelo nome completo");
+        printf("\n\t9  - Exclui dados, pesquisando pelo nome completo");
+        printf("\n\t10 - Saida pelo usuario");
+        printf("\n\tDigite uma opcao:");
         scanf("%d",&opc);
         getchar();
 
