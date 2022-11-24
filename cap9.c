@@ -3,7 +3,7 @@
 /* Componente Curricular: Linguagem de Programação
 /* Professor: Rui */
 
-#define ex3
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
@@ -46,7 +46,7 @@ int main()
     int i, resultado, result;
 
     pletra = &letra;
-    for (i=0;i<14;i++)
+    for (i = 0; i < 14; i++)
     {
         pvetor[i] = &vetor[i];
     }
@@ -69,7 +69,6 @@ int main()
         {
             printf("\nA letra não existe no vetor.\n");
         }
-
 
     printf("\nDigite 1 se quiser executar novamente.");
     printf("\nPara encerrar o programa digite qualquer número.\n");

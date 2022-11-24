@@ -1,11 +1,9 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-// Professor: Rui
-// Componente: Linguagem de Programação
-// Data: 27/11/2022
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui */
 
-// ARRUMAR O EX. 3 - CHAR
-
-#define ex2
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
@@ -109,7 +107,7 @@ int main()
     char *ponteiro;
     char a;
 
-    ponteiro=&a;
+    ponteiro = &a;
 
     do
     {
@@ -198,9 +196,9 @@ int main()
 
         printf("        10        20        30        40        50        60\n");
         printf("123456789012345678901234567890123456789012345678901234567890\n");
-        printf("    %-11d         %-11ld         %-11u\n",Estrutura.inteiro,Estrutura.longo,Estrutura.semSinal);
-        printf("              %-11e       %-22e%-3c\n",Estrutura.real,Estrutura.numero,Estrutura.nome);
-        printf("         %-11lu         %-3u",Estrutura.longoSinal,Estrutura.nomeSinal);
+        printf("    %d                   %ld                   %u\n",Estrutura.inteiro,Estrutura.longo,Estrutura.semSinal);
+        printf("              %.2f                %.2lf                %c\n",Estrutura.real,Estrutura.numero,Estrutura.nome);
+        printf("         %lu                   %u",Estrutura.longoSinal,Estrutura.nomeSinal);
 
         printf("\n");
         printf("\nDigite 1 se quiser executar novamente.");

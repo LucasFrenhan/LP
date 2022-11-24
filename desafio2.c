@@ -1,3 +1,8 @@
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui */
+
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -476,10 +481,8 @@ void sair()
     exit(0);
 }
 
-
 int main()
 {
-
     struct Show shows;
 
     struct Show *pShow=&shows;

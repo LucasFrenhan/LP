@@ -1,7 +1,7 @@
-// Nomes: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
-// Professor: Rui
-// Componente: Linguagem de Programação
-// Data: 10/11/2022
+/* Nome: Ana Vitória França da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manhã
+/* Componente Curricular: Linguagem de Programação
+/* Professor: Rui */
 
 #define ex1
 #include<stdio.h>
