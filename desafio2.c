@@ -232,7 +232,7 @@ void alteraQuantidade(struct Show *pShow)
 {
     char nome[30];
     FILE *arquivo;
-    int i,controle,verifica=-1,posicao,quantidade;
+    int i,controle,verifica=-1,posicao;
 
     printf("\nDigite o nome da musica para pesquisar: ");
     gets(nome);
@@ -348,10 +348,9 @@ void alteraPreco(struct Show *pShow)
 
 void alteraDados(struct Show *pShow)
 {
-    char nome[30], musica[30], autor[30];
+    char nome[30];
     FILE *arquivo;
     int i,controle,verifica=-1,posicao;
-    float preco;
 
     printf("\nDigite o nome da musica para pesquisar: ");
     gets(nome);
