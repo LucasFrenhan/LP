@@ -1,16 +1,17 @@
-/* Nome: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manh√£
-/* Componente Curricular: Linguagem de Programa√ß√£o
+/* Nome: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manh„
+/* Componente Curricular: Linguagem de ProgramaÁ„o
 /* Professor: Rui */
 
 #define ex1
 #include<stdio.h>
 #include<locale.h>
 
+
 #ifdef ex1
-/*  Exerc√≠cio 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
+/*  ExercÌcio 1 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
     estruturas de 4 elementos. Receba os dados pelo teclado e imprima-os no
-    video. Fa√ßa um menu. (vetor de estruturas)
+    video. FaÁa um menu. (vetor de estruturas)
     estrutura: nome, end, cidade, estado, cep */
 
 struct local{
@@ -23,7 +24,7 @@ struct local{
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
+    setlocale (LC_ALL,"Portuguese");
 
     struct local X[4];
     int i, result;
@@ -36,10 +37,10 @@ int main()
         for (i = 0; i < 4; i++)
         {
 
-            printf("\nInsira o nome do usu√°rio: ");
+            printf("\nInsira o nome do usu·rio: ");
             gets(X[i].nome);
 
-            printf("Insira o nome do endere√ßo: ");
+            printf("Insira o nome do endereÁo: ");
             gets(X[i].end);
 
             printf("Insira o nome da cidade: ");
@@ -65,8 +66,9 @@ int main()
             printf("\n");
         }
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
         scanf("%d", &result);
+        getchar();
     }
     while (result == 1);
 }
@@ -74,7 +76,7 @@ int main()
 
 
 #ifdef ex2
-/*  Exerc√≠cio 2 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
+/*  ExercÌcio 2 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
     Receba dados via teclado em uma funcao e imprima estes conteudos no video,
     em outra funcao, no seguinte formato.
     estrutura: char, int, long, float, double, unsigned char, unsigned int,
@@ -95,11 +97,43 @@ struct dados {
     unsigned long longoSinal;
 };
 
+struct dados Estrutura;
+
+void recebeDados()
+{
+
+    printf("Digite um n˙mero char: ");
+    gets(&Estrutura.nome);
+    printf("Digite um n˙mero int: ");
+    scanf("%d",&Estrutura.inteiro);
+    printf("Digite um n˙mero long: ");
+    scanf("%ld",&Estrutura.longo);
+    printf("Digite um n˙mero float: ");
+    scanf("%f",&Estrutura.real);
+    printf("Digite um n˙mero double: ");
+    scanf("%lf",&Estrutura.numero);
+    getchar();
+
+    printf("Digite um n˙mero unsigned char: ");
+    scanf("%u",&Estrutura.nomeSinal);
+    printf("Digite um n˙mero unsigned int: ");
+    scanf("%u",&Estrutura.inteiroSinal);
+    printf("Digite um n˙mero unsigned long: ");
+    scanf("%u",&Estrutura.longoSinal);
+    printf("\n");
+}
+
+void printaDados()
+{
+    printf("        10        20        30        40        50        60        70\n");
+    printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
+    printf("    %c         %d         %d                   %.2f                %.2lf\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
+    printf("          %u                   %u                   %lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
+}
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
+    setlocale (LC_ALL,"Portuguese");
 
-    struct dados Estrutura;
     int result;
 
     do
@@ -107,34 +141,11 @@ int main()
         system("cls");
         printf("Esse programa tem como objetivo receber uma estrutura de dados no formato desejado.\n\n");
 
-        printf("Digite um caractere: ");
-        gets(&Estrutura.nome);
-        printf("Digite um n√∫mero inteiro: ");
-        scanf("%d",&Estrutura.inteiro);
-        printf("Digite um n√∫mero longo: ");
-        scanf("%ld",&Estrutura.longo);
-        printf("Digite um n√∫mero real: ");
-        scanf("%f",&Estrutura.real);
-        printf("Digite um n√∫mero Double: ");
-        scanf("%lf",&Estrutura.numero);
-        getchar();
-
-        printf("Digite um caractere sem sinal: ");
-        scanf("%u",&Estrutura.nomeSinal);
-        printf("Digite um n√∫mero inteiro sem sinal: ");
-        scanf("%u",&Estrutura.inteiroSinal);
-        printf("Digite um n√∫mero longo sem sinal: ");
-        scanf("%u",&Estrutura.longoSinal);
-        printf("\n");
-
-
-        printf("        10        20        30        40        50        60        70\n");
-        printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
-        printf("    %c         %d         %d                   %.2f                %.2lf\n",Estrutura.nome, Estrutura.inteiro, Estrutura.longo, Estrutura.real, Estrutura.numero);
-        printf("          %u                   %u                   %lu",Estrutura.nomeSinal, Estrutura.inteiroSinal, Estrutura.longoSinal);
+        recebeDados();
+        printaDados();
 
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -143,9 +154,9 @@ int main()
 
 
 #ifdef ex3
-/*  Exerc√≠cio 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
+/*  ExercÌcio 3 - Escreva um programa com a estrutura de dados abaixo. Defina um vetor de
     estrutura de 4 elementos. Receba dados via teclado e imprima-os no video.
-    Fa√ßa um menu com as seguintes opcoes:
+    FaÁa um menu com as seguintes opcoes:
        1 - receber todos os dados
        2 - imprime todos os dados
        3 - calcula o IMC de todas as pessoas.
@@ -161,7 +172,7 @@ struct dados {
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
+    setlocale (LC_ALL,"Portuguese");
 
     struct dados X[4];
     int i, opc;
@@ -179,13 +190,13 @@ int main()
         printf("2 - Imprime todos os dados\n");
         printf("3 - Calcula os dados\n");
         printf("4 - Sair\n");
-        printf("Qual op√ß√£o deseja realizar? ");
+        printf("Qual opÁ„o deseja realizar? ");
         scanf("%d", &opc);
         getchar();
 
         if (opc > 4)
         {
-            printf("Op√ß√£o inv√°lida!\n");
+            printf("OpÁ„o inv·lida!\n");
         }
 
         switch(opc)
@@ -241,7 +252,7 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/*  Exerc√≠cio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
+/*  ExercÌcio - 4 - Escreva um programa com a estrutura de dados abaixo. Receba 2 datas via
     teclado e calculo, o numero de dias entre elas e mostre o resultado no
     video. (vetor de estruturas = dia, mes, ano)
 */
@@ -254,7 +265,7 @@ struct dados{
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
+    setlocale (LC_ALL,"Portuguese");
 
     struct dados Datas[2];
     int i, determinaIdade, result;
@@ -262,14 +273,14 @@ int main()
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo calcular o n√∫mero de dias entre duas datas.\n");
+        printf("Esse programa tem como objetivo calcular o n˙mero de dias entre duas datas.\n");
         printf("Primeiro insira a data atual, em seguida a data mais antiga.\n");
 
         for(i = 0; i < 2; i++)
         {
             printf("\nDigite o dia: ");
             scanf("%d",&Datas[i].dia);
-            printf("Digite o m√™s: ");
+            printf("Digite o mÍs: ");
             scanf("%d",&Datas[i].mes);
             printf("Digite o ano: ");
             scanf("%d",&Datas[i].ano);
@@ -282,9 +293,9 @@ int main()
             determinaIdade = determinaIdade * (-1);
         }
 
-        printf("\nA diferen√ßa entre as datas em dias √© de : %d dias\n",determinaIdade);
+        printf("\nA diferenÁa entre as datas em dias È de : %d dias\n",determinaIdade);
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
