@@ -40,7 +40,7 @@ void entraDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -80,7 +80,7 @@ void listaMusica(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -131,7 +131,7 @@ void pesquisaMusica(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -181,7 +181,7 @@ void pesquisaAutor(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -223,7 +223,7 @@ void pesquisaPreco(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -282,7 +282,7 @@ void alteraQuantidade(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -341,7 +341,7 @@ void alteraPreco(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -409,7 +409,7 @@ void alteraDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -467,7 +467,7 @@ void excluiDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado");
+        printf("\nArquivo não encontrado.");
         exit(0);
     }
 }
@@ -475,8 +475,8 @@ void excluiDados(struct Show *pShow)
 
 void sair()
 {
-    printf("Saindo...\n");
-    printf("Obrigado por utilizar nosso programa\n");
+    printf("\n        Saindo...\n");
+    printf("        Obrigado por utilizar nosso programa!\n");
     exit(0);
 }
 
@@ -490,6 +490,8 @@ int main()
 
     do
     {
+        printf("         *** SEJA BEM VINDO AO DESAFIO!! ***\n");
+        printf("\n");
         printf("\n\t1  - Entra dados da musica");
         printf("\n\t2  - Lista todos as musicas na tela");
         printf("\n\t3  - Pesquisar uma musica pelo nome completo");
@@ -500,7 +502,8 @@ int main()
         printf("\n\t8  - Altera dados, pesquisando pelo nome completo");
         printf("\n\t9  - Exclui dados, pesquisando pelo nome completo");
         printf("\n\t10 - Saida pelo usuario");
-        printf("\n\tDigite uma opcao:");
+        printf("\n");
+        printf("\n\tDigite uma opcao: ");
         scanf("%d",&opc);
         getchar();
 
