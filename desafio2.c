@@ -24,13 +24,13 @@ void entraDados(struct Show *pShow)
     if (arquivo != NULL)
     {
         system("cls");
-        printf("\nDigite o nome da musica: ");
+        printf("Digite o nome da musica: ");
         gets(pShow->musica);
-        printf("\nDigite o nome do autor: ");
+        printf("Digite o nome do autor: ");
         gets(pShow->autor);
-        printf("\nDigite a quantidade: ");
+        printf("Digite a quantidade: ");
         scanf("%d",&pShow->quantidade);
-        printf("\nDigite o valor: ");
+        printf("Digite o valor: ");
         scanf("%f",&pShow->preco);
         getchar();
         fwrite(pShow, sizeof(*pShow), 1, arquivo);
@@ -40,7 +40,7 @@ void entraDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -68,10 +68,11 @@ void listaMusica(struct Show *pShow)
 
             if(pShow->musica[0] != '#' && pShow->quantidade!=0)
             {
-                printf("\nNome da musica: %s",pShow->musica);
+                printf("Nome da musica: %s",pShow->musica);
                 printf("\nAutor: %s",pShow->autor);
                 printf("\nQuantidade: %d",pShow->quantidade);
                 printf("\nPreco: %.2f\n",pShow->preco);
+                printf("\n");
             }
         }
         system("pause");
@@ -80,7 +81,7 @@ void listaMusica(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -91,7 +92,7 @@ void pesquisaMusica(struct Show *pShow)
     FILE *arquivo;
     int i,controle;
 
-    printf("\nDigite o nome da musica para pesquisar: ");
+    printf("Digite o nome da musica para pesquisar: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r");
@@ -118,10 +119,11 @@ void pesquisaMusica(struct Show *pShow)
             if(nome[i] == '\0' && pShow->musica[i] == '\0')
             {
                 system("cls");
-                printf("\nA musica: %s",pShow->musica);
+                printf("A musica: %s",pShow->musica);
                 printf("\nO autor: %s",pShow->autor);
                 printf("\nA quantidade: %d",pShow->quantidade);
                 printf("\nO valor: %.2f\n",pShow->preco);
+                printf("\n");
             }
 
         }
@@ -131,7 +133,7 @@ void pesquisaMusica(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -142,7 +144,7 @@ void pesquisaAutor(struct Show *pShow)
     FILE *arquivo;
     int i,controle;
 
-    printf("\nDigite o nome do autor para pesquisar: ");
+    printf("Digite o nome do autor para pesquisar: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r");
@@ -169,10 +171,11 @@ void pesquisaAutor(struct Show *pShow)
             if(nome[i] == '\0' && pShow->autor[i] == '\0')
             {
                 system("cls");
-                printf("\nA musica: %s",pShow->musica);
+                printf("A musica: %s",pShow->musica);
                 printf("\nO autor: %s",pShow->autor);
                 printf("\nA quantidade: %d",pShow->quantidade);
                 printf("\nO valor: %.2f\n",pShow->preco);
+                printf("\n");
             }
         }
         system("pause");
@@ -181,7 +184,7 @@ void pesquisaAutor(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -192,7 +195,7 @@ void pesquisaPreco(struct Show *pShow)
     FILE *arquivo;
     int i,controle;
 
-    printf("\nDigite o valor do show para pesquisar: ");
+    printf("Digite o valor da musica para pesquisar: ");
     scanf("%f",&valor);
 
     arquivo = fopen("musica.txt", "r");
@@ -211,10 +214,11 @@ void pesquisaPreco(struct Show *pShow)
 
             if(valor==pShow->preco)
             {
-                printf("\nA musica: %s",pShow->musica);
+                printf("A musica: %s",pShow->musica);
                 printf("\nO autor: %s",pShow->autor);
                 printf("\nA quantidade: %d",pShow->quantidade);
                 printf("\nO valor: %.2f\n",pShow->preco);
+                printf("\n");
             }
         }
         system("pause");
@@ -223,7 +227,7 @@ void pesquisaPreco(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -234,7 +238,7 @@ void alteraQuantidade(struct Show *pShow)
     FILE *arquivo;
     int i,controle,verifica=-1,posicao;
 
-    printf("\nDigite o nome da musica para pesquisar: ");
+    printf("Digite o nome da musica que deseja alterar: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r+");
@@ -272,7 +276,7 @@ void alteraQuantidade(struct Show *pShow)
 
             fread(pShow, sizeof(*pShow), 1, arquivo);
 
-            printf("\nDigite a nova quantidade: ");
+            printf("Digite a nova quantidade: ");
             scanf("%d",&pShow->quantidade);
 
             fseek(arquivo, posicao, 0);
@@ -282,7 +286,7 @@ void alteraQuantidade(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -294,7 +298,7 @@ void alteraPreco(struct Show *pShow)
     int i,controle,verifica=-1,posicao;
     float preco;
 
-    printf("\nDigite o nome da musica para pesquisar: ");
+    printf("Digite o nome da musica que deseja alterar: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r+");
@@ -341,7 +345,7 @@ void alteraPreco(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -352,7 +356,7 @@ void alteraDados(struct Show *pShow)
     FILE *arquivo;
     int i,controle,verifica=-1,posicao;
 
-    printf("\nDigite o nome da musica para pesquisar: ");
+    printf("Digite o nome da musica que deseja alterar: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r+");
@@ -392,13 +396,13 @@ void alteraDados(struct Show *pShow)
             fread(pShow, sizeof(*pShow), 1, arquivo);
 
             system("cls");
-            printf("\nDigite o nome da musica: ");
+            printf("Digite o nome da musica: ");
             gets(pShow->musica);
-            printf("\nDigite o nome do autor: ");
+            printf("Digite o nome do autor: ");
             gets(pShow->autor);
-            printf("\nDigite a quantidade: ");
+            printf("Digite a quantidade: ");
             scanf("%d",&pShow->quantidade);
-            printf("\nDigite o valor: ");
+            printf("Digite o valor: ");
             scanf("%f",&pShow->preco);
             getchar();
 
@@ -409,7 +413,7 @@ void alteraDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -420,7 +424,7 @@ void excluiDados(struct Show *pShow)
     FILE *arquivo;
     int i,controle,verifica=-1,posicao;
 
-    printf("\nDigite o nome da musica para pesquisar: ");
+    printf("Digite o nome da musica que deseja excluir: ");
     gets(nome);
 
     arquivo = fopen("musica.txt", "r+");
@@ -467,7 +471,7 @@ void excluiDados(struct Show *pShow)
     }
     else
     {
-        printf("\nArquivo não encontrado.");
+        printf("\nArquivo nao encontrado.");
         exit(0);
     }
 }
@@ -490,6 +494,7 @@ int main()
 
     do
     {
+        system("cls");
         printf("         *** SEJA BEM VINDO AO DESAFIO!! ***\n");
         printf("\n");
         printf("\n\t1  - Entra dados da musica");
