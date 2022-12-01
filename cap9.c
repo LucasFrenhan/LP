@@ -1,16 +1,16 @@
-/* Nome: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manh„
-/* Componente Curricular: Linguagem de ProgramaÁ„o
+/* Nome: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manh√£
+/* Componente Curricular: Linguagem de Programa√ß√£o
 /* Professor: Rui */
 
 #define ex1
 #include<stdio.h>
 #include<locale.h>
 
-// EX. 1 TA RUIM E O EX. 3 PRECISA FINALIZAR
+// EX. 3 PRECISA FINALIZAR
 
 #ifdef ex1
-/*  ExercÌcio 1 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
+/*  Exerc√≠cio 1 - Escreva um programa que receba uma letra via teclado usando ponteiro. Escreva
     uma funcao que pesquise se esta letra existe no vetor abaixo usando ponteiros.
     Imprima o resultado da pesquisa no video na funcao main(). Passe como informacao
     para a funcao a letra digitada e o vetor usando ponteiros e faca a pesquisa
@@ -24,9 +24,9 @@ int comparaLetra(char *letra, char *pvetor)
 {
     int i;
 
-    for (i = 0; pvetor[i] != '\0'; i++)
+    for (i = 0; i < 15; i++)
     {
-        if (letra == pvetor[i])
+        if (*letra == *(pvetor  + i))
         {
             return 1;
         }
@@ -41,26 +41,23 @@ int main()
     char vetor[14] = {'b','d','f','h','j','k','m','o','q','s','u','w','y'};
     char letra;
 
-    char *pletra;
-    char *pvetor[14];
+    char *pl;
+    char *pv;
 
     int i, resultado, result;
 
-    pletra = &letra;
-    for (i = 0; i < 14; i++)
-    {
-        pvetor[i] = &vetor[i];
-    }
-
+    pl = &letra;
+    pv = vetor;
+    
     do
     {
         system("cls");
-        printf("Esse programa tem como objetivo pesquisar uma informaÁ„o no vetor com ponteiros.\n");
+        printf("Esse programa tem como objetivo pesquisar uma informa√ß√£o no vetor com ponteiros.\n");
 
         printf("\nDigite a letra desejada: ");
-        scanf("%c",&letra);
+        scanf("%c",pl);
 
-        resultado = comparaLetra(letra,pvetor);
+        resultado = comparaLetra(pl,pv);
 
         if(resultado == 1)
         {
@@ -68,11 +65,11 @@ int main()
         }
         else
         {
-            printf("\nA letra n„o existe no vetor.\n");
+            printf("\nA letra n√£o existe no vetor.\n");
         }
 
     printf("\nDigite 1 se quiser executar novamente.");
-    printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+    printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
     scanf("%d", &result);
     getchar();
 }
@@ -82,9 +79,9 @@ while (result == 1);
 
 
 #ifdef ex2
-/*  ExercÌcio 2 - Escreva um programa que receba em uma funcao 2 strings de ate' 10 caracteres
+/*  Exerc√≠cio 2 - Escreva um programa que receba em uma funcao 2 strings de ate' 10 caracteres
     passando como parametro um ponteiro.
-    Os vetores devem ser declarados como variaveis LOCAIS na funÁ„o main().
+    Os vetores devem ser declarados como variaveis LOCAIS na fun√ß√£o main().
     Escreva uma funcao para comparar as 2 strings. Passe como parametros para
     a funcao as 2 strings usando ponteiros e retorne como resultado se IGUAIS 1
     ou se DIFERENTES 0. Mostre o resultado no video na funcao main().
@@ -137,15 +134,15 @@ int main()
 
         if(resultado2 == 1)
         {
-            printf("\nO resultado da comparaÁ„o entre strings: s„o iguais.");
+            printf("\nO resultado da compara√ß√£o entre strings: s√£o iguais.");
         }
         else
         {
-            printf("\nO resultado da comparaÁ„o entre strings: s„o diferentes.\n");
+            printf("\nO resultado da compara√ß√£o entre strings: s√£o diferentes.\n");
         }
 
         printf("\n\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
         getchar();
     }
@@ -155,9 +152,9 @@ int main()
 
 
 #ifdef ex3
-/*  ExercÌcio 3 - Escreva um programa que receba n valores via teclado e receba tambem a
-    operaÁ„o a ser executada. Quando for digitado "=" o programa deve mostrar
-    o resultado acumulado dos n valores. As operaÁıes aritmeticas e a entrada
+/*  Exerc√≠cio 3 - Escreva um programa que receba n valores via teclado e receba tambem a
+    opera√ß√£o a ser executada. Quando for digitado "=" o programa deve mostrar
+    o resultado acumulado dos n valores. As opera√ß√µes aritmeticas e a entrada
     de dados devem ser funcoes que recebe os valores usando ponteiros.
     As variaveis sao LOCAIS na funcao main().
 */
@@ -205,13 +202,13 @@ int main()
     pA = &a;
     pB = &b;
 
-    printf("Esse programa tem como objetivo receber dois valores e realizar operaÁıes aritmÈticas.\n");
-    printf("\nDigite o primeiro n˙mero: ");
+    printf("Esse programa tem como objetivo receber dois valores e realizar opera√ß√µes aritm√©ticas.\n");
+    printf("\nDigite o primeiro n√∫mero: ");
     scanf("%f",&a);
 
     do
     {
-        printf("\nQual operaÁ„o desejar fazer? ( +, -, *, /) \n");
+        printf("\nQual opera√ß√£o desejar fazer? ( +, -, *, /) \n");
         printf("(+) - para somar\n");
         printf("(-) - para subtrair\n");
         printf("(*) - para multiplicar\n");
@@ -224,35 +221,35 @@ int main()
         {
         case '+':
         {
-            printf("\nDigite o segundo n˙mero: \n");
+            printf("\nDigite o segundo n√∫mero: \n");
             scanf("%f",&b);
             a = soma(&pA,&pB);
             break;
         }
         case '-':
         {
-            printf("\nDigite o segundo n˙mero: \n");
+            printf("\nDigite o segundo n√∫mero: \n");
             scanf("%f",&b);
             pA = sub(pA,pB);
             break;
         }
         case '*':
         {
-            printf("\nDigite o segundo n˙mero: \n");
+            printf("\nDigite o segundo n√∫mero: \n");
             scanf("%f",&pB);
             pA = mult(pA,pB);
             break;
         }
         case '/':
         {
-            printf("\nDigite o segundo n˙mero: \n");
+            printf("\nDigite o segundo n√∫mero: \n");
             scanf("%f",&pB);
             pA = div(pA,pB);
             break;
         }
         case '=':
         {
-            printf("O resultado È: %.2f.", pA);
+            printf("O resultado √©: %.2f.", pA);
 
         }
         case '0':
@@ -261,7 +258,7 @@ int main()
             break;
         }
         default:
-            printf("OpÁ„o inv·lida! Tente novamente");
+            printf("Op√ß√£o inv√°lida! Tente novamente");
             break;
         }
     }
@@ -271,10 +268,10 @@ int main()
 
 
 #ifdef ex4
-/*  ExercÌcio 4 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
+/*  Exerc√≠cio 4 - Escreva um programa que tem uma estrutura da dados com os membros abaixo.
     A estrutura e' uma variavel LOCAL na funcao main().Receba via teclado o
     conteudo de cada um dos membros numa funcao e imprima-os no video no
-    seguinte formato(tambÈm numa funÁ„o).
+    seguinte formato(tamb√©m numa fun√ß√£o).
 
     estrutura: char, int, long, float, double, unsigned char, unsigned int,
     unsigned long
@@ -298,23 +295,23 @@ struct dados2 {
 
 void recebeDados(struct dados2 *pEstrutura)
 {
-    printf("Digite um n˙mero char: ");
+    printf("Digite um n√∫mero char: ");
     scanf("%c",&pEstrutura -> nome);
-    printf("Digite um n˙mero int: ");
+    printf("Digite um n√∫mero int: ");
     scanf("%d",&pEstrutura -> inteiro);
-    printf("Digite um n˙mero long: ");
+    printf("Digite um n√∫mero long: ");
     scanf("%ld",&pEstrutura -> longo);
-    printf("Digite um n˙mero float: ");
+    printf("Digite um n√∫mero float: ");
     scanf("%f",&pEstrutura -> real);
-    printf("Digite um n˙mero double: ");
+    printf("Digite um n√∫mero double: ");
     scanf("%lf",&pEstrutura -> numero);
     getchar();
 
-    printf("Digite um n˙mero unsigned char: ");
+    printf("Digite um n√∫mero unsigned char: ");
     scanf("%u",&pEstrutura -> nomeSinal);
-    printf("Digite um n˙mero unsigned int: ");
+    printf("Digite um n√∫mero unsigned int: ");
     scanf("%u",&pEstrutura -> inteiroSinal);
-    printf("Digite um n˙mero unsigned long: ");
+    printf("Digite um n√∫mero unsigned long: ");
     scanf("%u",&pEstrutura -> longoSinal);
     printf("\n");
 }
@@ -346,7 +343,7 @@ int main()
         printaDados(&pEstrutura);
 
         printf("\n\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -355,11 +352,11 @@ int main()
 
 
 #ifdef ex5
-/*  ExercÌcio 5 - Escreva um programa com a estrutura abaixo. Defina um vetor de estruturas
+/*  Exerc√≠cio 5 - Escreva um programa com a estrutura abaixo. Defina um vetor de estruturas
     de 4 elementos como variavel LOCAL na funcao main(). Receba os 4 registros
-    sequencialmente pelo teclado numa funÁ„o e imprima todos os registros no
-    video em outra funcao. FaÁa um menu. Utilize ponteiros nas funcoes.
-    Coloque no menu a opÁ„o de sair tambem. Utilize o comando switch.
+    sequencialmente pelo teclado numa fun√ß√£o e imprima todos os registros no
+    video em outra funcao. Fa√ßa um menu. Utilize ponteiros nas funcoes.
+    Coloque no menu a op√ß√£o de sair tambem. Utilize o comando switch.
     (vetor de estruturas)
     estutura: nome, end, cidade, estado, cep.
 */
@@ -378,10 +375,10 @@ void recebeDados(struct local *pLocais)
 
     for (i = 0; i < 4; i++)
     {
-    printf("\nInsira o nome do usu·rio: ");
+    printf("\nInsira o nome do usu√°rio: ");
     gets((pLocais+i)->nome);
 
-    printf("Insira o nome do endereÁo: ");
+    printf("Insira o nome do endere√ßo: ");
     gets((pLocais+i)->end);
 
     printf("Insira o nome da cidade: ");
@@ -428,7 +425,7 @@ int main()
         printf("1 - Entra dados;\n");
         printf("2 - Imprime dados;\n");
         printf("3 - Sair.\n");
-        printf("\nEscolha uma opÁ„o: ");
+        printf("\nEscolha uma op√ß√£o: ");
         scanf("%d", &result);
         getchar();
 
@@ -455,7 +452,7 @@ int main()
                 break;
             }
             default:
-                printf("OpÁ„o inv·lida! Tente novamente.");
+                printf("Op√ß√£o inv√°lida! Tente novamente.");
                 break;
         }
     }
@@ -465,7 +462,7 @@ int main()
 
 
 #ifdef ex6
-/*  ExercÌcio 6 - Acrescente ao menu do exercicio anterior as funcoes de procura, altera e
+/*  Exerc√≠cio 6 - Acrescente ao menu do exercicio anterior as funcoes de procura, altera e
     exclui um registro sempre usando ponteiros.
 */
 
@@ -484,10 +481,10 @@ void recebeDados(struct local *pLocais)
 
     for (i = 0; i < 4; i++)
     {
-        printf("\nInsira o nome do usu·rio: ");
+        printf("\nInsira o nome do usu√°rio: ");
         gets((pLocais+i)->nome);
 
-        printf("Insira o nome do endereÁo: ");
+        printf("Insira o nome do endere√ßo: ");
         gets((pLocais+i)->end);
 
         printf("Insira o nome da cidade: ");
@@ -568,10 +565,10 @@ void alteraDados(struct local *pLocais)
         }
         if (pessoa[i] == '\0' && (pLocais+j)->nome[i] == '\0')
         {
-            printf("\nInsira o nome do usu·rio: ");
+            printf("\nInsira o nome do usu√°rio: ");
             gets((pLocais+j)->nome);
 
-            printf("Insira o nome do endereÁo: ");
+            printf("Insira o nome do endere√ßo: ");
             gets((pLocais+j)->end);
 
             printf("Insira o nome da cidade: ");
@@ -636,7 +633,7 @@ int main()
         printf("4 - Altera dados;\n");
         printf("5 - Exclui dados;\n");
         printf("6 - Sair.\n");
-        printf("\nEscolha uma opÁ„o: ");
+        printf("\nEscolha uma op√ß√£o: ");
         scanf("%d", &result);
         getchar();
 
@@ -681,7 +678,7 @@ int main()
                 break;
             }
             default:
-                printf("OpÁ„o inv·lida! Tente novamente.");
+                printf("Op√ß√£o inv√°lida! Tente novamente.");
                 break;
         }
     }
