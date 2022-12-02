@@ -1,14 +1,15 @@
-/* Nome: Ana Vit√≥ria Fran√ßa da Silva e Lucas Henrique Padilha Frenhan
-/* Semestre: Segundo Semestre de ADS - Manh√£
-/* Componente Curricular: Linguagem de Programa√ß√£o
+/* Nome: Ana VitÛria FranÁa da Silva e Lucas Henrique Padilha Frenhan
+/* Semestre: Segundo Semestre de ADS - Manh„
+/* Componente Curricular: Linguagem de ProgramaÁ„o
 /* Professor: Rui */
 
-#define ex4
+#define ex1
 #include<stdio.h>
 #include<locale.h>
 
+
 #ifdef ex1
-/*  Exerc√≠cio 1 - Escreva um programa para criar e abrir um arquivo texto de nome "arq.txt".
+/*  ExercÌcio 1 - Escreva um programa para criar e abrir um arquivo texto de nome "arq.txt".
     Receba via teclado diversos caracteres (um por vezes) e escreva-os
     nesse arquivo. O caracter '0' finaliza a entrada de dados. Abra o arquivo
     "arq.txt", leia e imprima na tela todos os caracteres armazenados no
@@ -17,18 +18,57 @@
 
 int main()
 {
-    setlocale (LC_ALL,"portuguese");
-
     int result;
 
     do
     {
+        FILE *arquivo;
+        char c[1];
+
         system("cls");
+        printf("Esse programa tem como objetivo ler e imprimir todos os caracteres armazenados no arquivo.\n");
 
-        printf("Esse programa tem como objetivo.......\n");
+        arquivo = fopen("arq.txt", "w");
 
+        if (arquivo == NULL)
+        {
+            printf("\nArquivo n„o encontrado.");
+            exit(0);
+        }
+        printf("\nPor favor, insira os caracteres: ");
+        for(;;)
+        {
+            scanf("%c",&c[0]);
+            if(c[0] == '0')
+            {
+                break;
+            }
+            fwrite(c,sizeof(c),1,arquivo);
+        }
+        fclose(arquivo);
+
+        arquivo = fopen("arq.txt", "r");
+
+        if (arquivo == NULL)
+        {
+            printf("\nArquivo n„o encontrado.");
+            exit(0);
+        }
+        printf("\nExibindo os resultados...\n");
+        int x;
+        for(;;)
+        {
+            x = fread(c,sizeof(c),1,arquivo);
+            printf("%s",c);
+
+            if(x == 0)
+            {
+                break;
+            }
+        }
+        fclose(arquivo);
         printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
+        printf("\nPara encerrar o programa digite qualquer n˙mero.\n");
         scanf("%d", &result);
     }
     while (result == 1);
@@ -37,7 +77,7 @@ int main()
 
 
 #ifdef ex2
-/*  Exerc√≠cio 2 - Escreva um programa para gerenciar uma agenda de contatos. Para cada contato
+/*  ExercÌcio 2 - Escreva um programa para gerenciar uma agenda de contatos. Para cada contato
     armazene o nome, o telefone e o aniversario (dia e mes) em uma estrutura de
     dados. Utilize um vetor de estrutura de 4 elementos como variavel LOCAL na
     funcao main(). Utilize ponteiros para passar o vetor de estrutura para
@@ -51,32 +91,15 @@ int main()
     4 - pesquisar um contato pelo nome
     5 - listar todos os contatos
     6 - listar os contatos cujo nome inicia com uma letra digitada
-    7 - imprimir os aniversariantes do m√™s.
+    7 - imprimir os aniversariantes do mÍs.
     8 - saida
 */
 
-int main()
-{
-    setlocale (LC_ALL,"portuguese");
 
-    int result;
-
-    do
-    {
-        system("cls");
-
-        printf("Esse programa tem como objetivo.......\n");
-
-        printf("\nDigite 1 se quiser executar novamente.");
-        printf("\nPara encerrar o programa digite qualquer n√∫mero.\n");
-        scanf("%d", &result);
-    }
-    while (result == 1);
-}
 #endif // ex2
 
 #ifdef ex3
-/*  Exerc√≠cio 3 - Escreva um programa para controle de um cadastro de clientes. Para cada
+/*  ExercÌcio 3 - Escreva um programa para controle de um cadastro de clientes. Para cada
     registro sera' armazenado nome, end, cidade, estado, cep numa estrutura
     de dados. A unica estrutura de dados e' uma variavel LOCAL na funcao main().
     Escreva os registros direto no arquivo. (utilize a funcao fseek quando
@@ -126,7 +149,7 @@ void incluiDados(struct Cliente *pR)
     }
     else
     {
-        printf("\nArquivo n√£o encontrado.");
+        printf("\nArquivo n„o encontrado.");
         exit(0);
     }
 }
@@ -168,7 +191,7 @@ void listaDados(struct Cliente *pR)
     }
     else
     {
-        printf("\nArquivo n√£o encontrado.");
+        printf("\nArquivo n„o encontrado.");
         exit(0);
     }
 }
@@ -221,7 +244,7 @@ void pesquisaDados(struct Cliente *pR)
     }
     else
     {
-        printf("\nArquivo n√£o encontrado.");
+        printf("\nArquivo n„o encontrado.");
         exit(0);
     }
 }
@@ -291,7 +314,7 @@ void alteraDados(struct Cliente *pR)
     }
     else
     {
-        printf("\nArquivo n√£o encontrado.");
+        printf("\nArquivo n„o encontrado.");
         exit(0);
     }
 }
@@ -349,7 +372,7 @@ void excluiDados(struct Cliente *pR)
     }
     else
     {
-        printf("\nArquivo n√£o encontrado.");
+        printf("\nArquivo n„o encontrado.");
         exit(0);
     }
 }
@@ -389,37 +412,37 @@ int main()
             system("cls");
             incluiDados(pC);
             break;
-        case 2:
-        {
-            system("cls");
-            listaDados(pC);
-            break;
-        }
-        case 3:
-        {
-            system("cls");
-            pesquisaDados(pC);
-            break;
+            case 2:
+            {
+                system("cls");
+                listaDados(pC);
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                pesquisaDados(pC);
+                break;
 
-        }
-        case 4:
-        {
-            system("cls");
-            alteraDados(pC);
-            break;
-        }
-        case 5:
-        {
-            system("cls");
-            excluiDados(pC);
-            break;
-        }
-        case 6:
-            sair();
-            break;
-        default:
-            printf("Opcao invalida.\n");
-            break;
+            }
+            case 4:
+            {
+                system("cls");
+                alteraDados(pC);
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                excluiDados(pC);
+                break;
+            }
+            case 6:
+                sair();
+                break;
+            default:
+                printf("Opcao invalida.\n");
+                break;
             }
         }
     }
@@ -429,7 +452,7 @@ int main()
 #endif // ex3
 
 #ifdef ex4
-/*  Exerc√≠cio 4 - Escreva um programa para o controle de mercadorias em uma despensa
+/*  ExercÌcio 4 - Escreva um programa para o controle de mercadorias em uma despensa
     domestica. Para cada produto sera' armazenado um codigo numerico, nome
     do produto e quantidade atual numa estrutura de dados. A unica estrutura
     de dados deve ser declarada como variavel LOCAL na funcao main(). Escreva
@@ -439,20 +462,10 @@ int main()
     1 - inclui produtos
     2 - altera produtos
     3 - exclui produtos
-    4 - pesquisar uma mercadoria pela descri√ß√£o
+    4 - pesquisar uma mercadoria pela descriÁ„o
     5 - listar todos os produtos
-    6 - listar os produtos n√£o dispon√≠veis.
+    6 - listar os produtos n„o disponÌveis.
     7 - alterar a quantidade atual
     8 - saida
 */
-
-struct Mercadoria
-{
-    char codigo[20];
-    char nome[20];
-    char quantidade[20];
-    char estado[3];
-    char cep[10];
-};
-
-#endif //ex4
+#endif // ex4
