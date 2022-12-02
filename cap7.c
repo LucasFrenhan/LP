@@ -178,6 +178,7 @@ int main()
     int i, opc;
     float imc[4];
 
+
     for(i = 0; i < 4; i++)
     {
         imc[i] = 0;
@@ -186,6 +187,9 @@ int main()
     do
     {
         system("cls");
+
+        printf("Esse programa tem como objetivo receber e exibir um vetor de estruturas na tela.\n\n");
+
         printf("1 - Recebe dados\n");
         printf("2 - Imprime todos os dados\n");
         printf("3 - Calcula os dados\n");
@@ -205,12 +209,12 @@ int main()
             {
                 for(i=0; i < 4; i++)
                 {
-                    printf("\nInsira o nome do paciente: ");
+                    system("cls");
+                    printf("Insira o nome do paciente: ");
                     gets(X[i].nome);
 
                     printf("Insira o peso do paciente: ");
                     scanf("%f", &X[i].peso);
-
 
                     printf("Insira a altura do paciente: ");
                     scanf("%f", &X[i].altura);

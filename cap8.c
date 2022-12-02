@@ -7,6 +7,7 @@
 #include<stdio.h>
 #include<locale.h>
 
+
 #ifdef ex1
 /*  Exercício 1 - Receba 2 string de ate 10 caracteres via teclado na funcao main(). Faça uma
     funcao para compara-las usando ponteiros e retorne como resultado se
